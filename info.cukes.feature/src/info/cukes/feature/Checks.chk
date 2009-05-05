@@ -1,0 +1,43 @@
+import cucumberfeature;
+
+extension info::cukes::feature::Extensions;
+/*
+ * This check file is used by the parser
+ * and by the editor. Add your constraints here!
+ */
+ 
+context Cucumber ERROR "Only one Feature allowed per file!" :
+	allElements().typeSelect(Feature).size == 1;
+
+context Feature ERROR "Write your constraint message here...!" :
+	true;
+   
+context FeatureDescription WARNING "Scenario with the same name as the Feature detected: "+ this.text :
+	true;
+
+context Scenario ERROR "Write your constraint message here...!" :
+	true;
+ 
+context RoleDefinition ERROR "Write your constraint message here...!" :
+	true;
+
+context SomeActionDefinition ERROR "Write your constraint message here...!" :
+	true;
+
+context WhenBlock ERROR "Write your constraint message here...!" :
+	true;
+
+context GivenBlock ERROR "Write your constraint message here...!" :
+	true;
+
+context ThenBlock ERROR "Write your constraint message here...!" :
+	true;
+
+context ScenarioDescription WARNING "Scenario with the same name detected: "+ this.text :
+	allElements().
+	typeSelect(ScenarioDescription).
+	select(e|e.text == this.text).size==1;
+	
+context AndBlock ERROR "Write your constraint message here...!" :
+   true;
+

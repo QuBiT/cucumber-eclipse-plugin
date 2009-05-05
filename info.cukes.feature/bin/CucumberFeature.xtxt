@@ -1,0 +1,79 @@
+// specify your DSL grammar rules here ...
+// IMPORTANT: You should change the property 'overwrite.pluginresources=true' in the properties file to 'overwrite.pluginresources=false' AFTER first generation
+
+Cucumber: f=Feature;
+
+Feature:
+fi=FeatureIdentifier fd=FeatureDescription bvd=BusinessValueDefinition rd=RoleDefinition sad=SomeActionDefinition
+	(ss += Scenario)*;
+
+FeatureIdentifier: "Feature:";
+FeatureDescription: (text+=Word)+;
+
+BusinessValueDefinition: bv=BusinessValueIdentifier bv_desc=BusinessValueDescription;
+Native BusinessValueIdentifier: "'In order to '";
+BusinessValueDescription: (text+=Word)+;
+
+RoleDefinition: ri=RoleIdentifier role_desc=RoleDescription;
+Native RoleIdentifier: "'As a '|'As an '";
+RoleDescription: (text+=Word)+;
+
+SomeActionDefinition: sa=SomeActionIdentifier sa_desc=SomeActionDescription;
+Native SomeActionIdentifier: "'I want to '";
+SomeActionDescription: (text+=Word)+;
+
+Scenario:
+si=ScenarioIdentifier sd=ScenarioDescription gb=GivenBlock wb=WhenBlock tb=ThenBlock;
+
+ScenarioIdentifier: "Scenario:";
+ScenarioDescription: (text+=Word)+;
+
+GivenBlock: gi=GivenIdentifier given_def=GivenDefinition
+(ab += AndBlock)*;
+GivenIdentifier: "Given";
+
+WhenBlock: wi=WhenIdentifier when_def=WhenDefinition
+(ab += AndBlock)*;
+WhenIdentifier: "When";
+
+ThenBlock: ti=ThenIdentifier then_def=ThenDefinition
+(ab += AndBlock)*;
+ThenIdentifier: "Then";
+
+AndBlock: ai=AndIdentifier and_def=AndDefinition;
+AndIdentifier: "And";
+
+GivenDefinition: (text+=Word)+;
+WhenDefinition: (text+=Word)+;
+ThenDefinition: (text+=Word)+;
+AndDefinition: (text+=Word)+;
+
+//Native AndBlock:
+//"And ~('\n'|'\r')* '\r'? '\n'";
+
+//Native Text: "~('\n'|'\r')* '\r'? '\n'";
+
+//Text: (ID|STRING|INT|special_char)+ ; // |special_word
+//special_char: ".";
+
+//Native WS:"(' '|'\t'|'\r'|'\n')+";
+
+String Word: ID|STRING|INT|NotInorderto|NotAsa|NotIwantto|".";//|WS;
+
+Native NotInorderto:"'In '(~'o')?|'In o'(~'r')?|'In or'(~'d')?|'In ord'(~'e')?|'In orde'(~'r')?| 'In order '(~'t')?|'In order t'(~'o')?";
+Native NotAsa:"'As '(~'a')?|'As a'(~'n')?";
+Native NotIwantto:"'I '(~'w')?|'I w'(~'a')?|'I wa'(~'n')?|'In wan'(~'t')?|'In want '(~'t')?|'In want t'(~'o')?";
+
+// special_word:"Feature"|"Scenario"|"As"|"a"|"an"|"I"|"want"|"to"|"In"|"order"|"to"|"Given"|"When"|"Then";
+
+// Newline "\n" is no whitespace in ATASM but a end of line marker
+// so for parsing they must not be ignored
+//Native NEW_LINE:
+//"('\r'? '\n')+"; //{$channel=HIDDEN;}";
+
+// in contrast to the remaining white spaces
+//Native WS:
+//"(' '|'\t')+ {$channel=HIDDEN;}";
+
+Native SL_COMMENT:
+"'#' ~('\n'|'\r')* '\r'? '\n' {$channel=HIDDEN;}";

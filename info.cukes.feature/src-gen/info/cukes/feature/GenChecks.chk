@@ -1,0 +1,13 @@
+import cucumberfeature;
+
+extension org::openarchitectureware::xtext::parser::LinkerUtils;
+
+extension info::cukes::feature::Extensions;
+
+/*
+ * check linking
+ */
+
+
+
+

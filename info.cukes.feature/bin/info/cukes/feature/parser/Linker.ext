@@ -1,0 +1,8 @@
+
+extension info::cukes::feature::Extensions;
+extension info::cukes::feature::parser::GenLinker reexport;
+
+/*
+ * If you need more sophisticated linker semantic just overwrite the linker extensions here and add your own logic.
+ * Have a look at the generated info::cukes::feature::parser::GenLinker (typically located in src-gen)
+ */

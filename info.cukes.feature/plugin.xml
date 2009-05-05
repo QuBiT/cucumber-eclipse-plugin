@@ -1,0 +1,12 @@
+<plugin>
+   
+   
+   
+   <extension
+         point="org.eclipse.emf.ecore.extension_parser">
+      <parser
+            class="info.cukes.feature.resource.CucumberFeatureResourceFactory"
+            type="feature">
+      </parser>
+   </extension>
+</plugin>

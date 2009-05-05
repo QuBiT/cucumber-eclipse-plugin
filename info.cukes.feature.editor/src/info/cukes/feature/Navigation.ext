@@ -1,0 +1,10 @@
+import cucumberfeature;
+
+extension info::cukes::feature::Extensions;
+extension info::cukes::feature::GenNavigation reexport;
+/*
+ * overwrite the extensions
+ * ''emf::EObject findDeclaration(String,Object,Object)''
+ * ''List[emf::EObject] findReferences(String,Object,Object)''
+ * from info::cukes::feature::GenNavigation.ext to control the construction of the findReferences / findDeclaration actions
+ */

@@ -1,0 +1,35 @@
+import scanning;
+import cucumberfeature;
+
+extension info::cukes::feature::GenStyle reexport;
+
+/*
+ * Overwrite 'FontStyle fontstyle(String keyword, Object ctx)' to customize the style of keywords.
+ * Use 'createFontStyle(boolean bold, boolean italic, boolean strikethrough, boolean underline, Color fg, Color bg)' 
+ * and 'createColor(Integer red, Integer green, Integer blue)' as utility extenisons
+ *
+ * By default the context sensitive coloring is NOT executed. To change this overwrite
+ * 'delayContextSensitiveStyling()' where -1 means no execution, 0 stands for execution in time and any number larger 
+ * than 0 is the amount of milliseconds to deleay the context coloring;
+ */
+delayContextSensitiveStyling(): 0;
+ 
+// does not work ... how to add GivenBlock to the Keywords, then maybe it works.
+FontStyle fontstyle(String keyword, AndIdentifier node) :
+	createFontStyle(false, false,false, false,createColor(51,102,255), createColor(255,255,255));
+	
+FontStyle fontstyle(String keyword, GivenIdentifier node) :
+	createFontStyle(false, false,false, false,createColor(51,102,255), createColor(255,255,255));
+	
+FontStyle fontstyle(String keyword, WhenIdentifier node) :
+	createFontStyle(false, false,false, false,createColor(51,102,255), createColor(255,255,255));
+	
+FontStyle fontstyle(String keyword, ThenIdentifier node) :
+	createFontStyle(false, false,false, false,createColor(51,102,255), createColor(255,255,255));
+
+FontStyle fontstyle(String keyword, FeatureIdentifier node) :
+	createFontStyle(true, false,false, false,createColor(51,102,255), createColor(255,255,255));
+
+FontStyle fontstyle(String keyword, ScenarioIdentifier node) :
+	createFontStyle(true, false,false, false,createColor(51,102,255), createColor(255,255,255));
+	

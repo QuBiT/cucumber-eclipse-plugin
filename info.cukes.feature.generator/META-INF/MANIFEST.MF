@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: info.cukes.feature.generator
+Bundle-SymbolicName: info.cukes.feature.generator; singleton:=true
+Bundle-Version: 1.0.0
+Require-Bundle:  org.openarchitectureware.xtext.core,
+ info.cukes.feature,
+ org.antlr,
+ org.openarchitectureware.xtext.core.base,
+ org.openarchitectureware.xtext.editor.base,
+ org.openarchitectureware.xtext.generator,
+ org.openarchitectureware.dependencies
+Bundle-RequiredExecutionEnvironment: J2SE-1.5

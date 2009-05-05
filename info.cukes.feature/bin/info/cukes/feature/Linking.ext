@@ -1,0 +1,9 @@
+import cucumberfeature;
+
+extension info::cukes::feature::Extensions;
+extension info::cukes::feature::GenLinking reexport;
+
+/*
+ * If you need more sophisticated linking semantic just overwrite the linking extensions here and add your own logic.
+ * Have a look at the generated info::cukes::feature::GenLinking (typically located in src-gen)
+ */

@@ -1,0 +1,17 @@
+<workflow>
+    <property name="doCheck" value="true"/>
+    <bean class="org.eclipse.mwe.emf.StandaloneSetup"/>
+    <bean class="info.cukes.feature.MetaModelRegistration"/>
+	<component id="CucumberFeature-parser" class="info.cukes.feature.parser.ParserComponent">
+		<modelFile value="${modelFile}"/>
+		<outputSlot value="${outputSlot}"/>
+	</component>
+	<if cond="${doCheck}">
+		<component id="CucumberFeature-checker" class="oaw.check.CheckComponent">
+	       <metaModel id="mm" class="org.eclipse.m2t.type.emf.EmfRegistryMetaModel"/>
+	       <expression value="${outputSlot}.eAllContents.union({${outputSlot}})"/>
+		   <checkFile value="info::cukes::feature::GenChecks"/>
+		   <checkFile value="info::cukes::feature::Checks"/>
+		</component>
+	</if>
+</workflow>

@@ -1,0 +1,21 @@
+
+import cucumberfeature;
+
+extension org::openarchitectureware::xtext::registry::Modelloader reexport;
+
+List[emf::EObject] allElements(emf::EObject x):
+	x.allLocalElements()
+		.flatten().toSet();
+		
+List[emf::EObject] allVisibleElements(emf::EObject x):
+	x.allElements();
+
+List[emf::EObject] allLocalElements(emf::EObject x):
+	{x.eRootContainer}.union(x.eRootContainer.eAllContents);
+
+String id(emf::EObject x) :
+	let p = x.metaType.getProperty("name") :
+		p==null?
+			null :
+			p.get(x);
+			

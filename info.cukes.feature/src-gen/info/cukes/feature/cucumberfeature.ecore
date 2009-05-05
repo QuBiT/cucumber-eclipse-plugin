@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="ASCII"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="cucumberfeature" nsURI="http://www.example.org/info/cukes/feature" nsPrefix="cucumberfeature">
+  <eClassifiers xsi:type="ecore:EClass" name="Cucumber">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="f" ordered="false" eType="//Feature" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Feature">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ss" ordered="false" upperBound="-1" eType="//Scenario" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bvd" ordered="false" eType="//BusinessValueDefinition" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fd" ordered="false" eType="//FeatureDescription" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rd" ordered="false" eType="//RoleDefinition" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sad" ordered="false" eType="//SomeActionDefinition" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fi" ordered="false" eType="//FeatureIdentifier" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FeatureIdentifier"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FeatureDescription">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" ordered="false" unique="false" upperBound="-1">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BusinessValueDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bv_desc" ordered="false" eType="//BusinessValueDescription" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bv" ordered="false" unique="false">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BusinessValueDescription">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" ordered="false" unique="false" upperBound="-1">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RoleDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="role_desc" ordered="false" eType="//RoleDescription" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ri" ordered="false" unique="false">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RoleDescription">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" ordered="false" unique="false" upperBound="-1">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SomeActionDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sa_desc" ordered="false" eType="//SomeActionDescription" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sa" ordered="false" unique="false">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SomeActionDescription">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" ordered="false" unique="false" upperBound="-1">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Scenario">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="wb" ordered="false" eType="//WhenBlock" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="si" ordered="false" eType="//ScenarioIdentifier" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tb" ordered="false" eType="//ThenBlock" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sd" ordered="false" eType="//ScenarioDescription" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="gb" ordered="false" eType="//GivenBlock" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ScenarioIdentifier"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ScenarioDescription">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" ordered="false" unique="false" upperBound="-1">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GivenBlock">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="gi" ordered="false" eType="//GivenIdentifier" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="given_def" ordered="false" eType="//GivenDefinition" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ab" ordered="false" upperBound="-1" eType="//AndBlock" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GivenIdentifier"/>
+  <eClassifiers xsi:type="ecore:EClass" name="WhenBlock">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="when_def" ordered="false" eType="//WhenDefinition" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="wi" ordered="false" eType="//WhenIdentifier" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ab" ordered="false" upperBound="-1" eType="//AndBlock" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WhenIdentifier"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ThenBlock">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ti" ordered="false" eType="//ThenIdentifier" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ab" ordered="false" upperBound="-1" eType="//AndBlock" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="then_def" ordered="false" eType="//ThenDefinition" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ThenIdentifier"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AndBlock">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="and_def" ordered="false" eType="//AndDefinition" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ai" ordered="false" eType="//AndIdentifier" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AndIdentifier"/>
+  <eClassifiers xsi:type="ecore:EClass" name="GivenDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" ordered="false" unique="false" upperBound="-1">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WhenDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" ordered="false" unique="false" upperBound="-1">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ThenDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" ordered="false" unique="false" upperBound="-1">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AndDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" ordered="false" unique="false" upperBound="-1">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+</ecore:EPackage>

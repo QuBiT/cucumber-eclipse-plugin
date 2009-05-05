@@ -1,0 +1,12 @@
+
+extension info::cukes::feature::Extensions;
+extension info::cukes::feature::Linking;
+
+link(emf::EObject this) :
+	this.allVisibleElements().internalLink();
+
+Void internalLink(emf::EObject this) :
+	null;
+
+
+

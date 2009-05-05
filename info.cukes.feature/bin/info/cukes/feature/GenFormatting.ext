@@ -1,0 +1,10 @@
+import cucumberfeature;
+import org::openarchitectureware::xtext::resource::AbstractXtextResource;
+
+extension info::cukes::feature::Extensions;
+
+String format(List[emf::EObject] this) :
+	JAVA org.openarchitectureware.xtext.resource.AbstractXtextResource.throwNoFormatterException();
+
+String NL() : "\n";
+String TAB() : "\t";

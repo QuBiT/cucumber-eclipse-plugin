@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="info.cukes.feature.editor.CucumberFeatureEditor"
+            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+            extensions="feature"
+            icon="icons/file.gif"
+            id="info.cukes.feature.editor.CucumberFeatureEditor"
+            name="CucumberFeature Editor">
+      </editor>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.newWizards">
+         
+		<wizard
+			category="org.openarchitectureware.xtext.wizards"
+			class="info.cukes.feature.wizards.NewCucumberFeatureProjectWizard"
+			icon="icons/template.gif"
+			id="info.cukes.feature.wizards.NewCucumberFeatureProjectWizard"
+			name="CucumberFeature Project"
+			project="true">
+		</wizard>
+         
+		<wizard
+			category="org.openarchitectureware.xtext.wizards"
+			class="info.cukes.feature.wizards.NewCucumberFeatureFileWizard"
+			icon="icons/file.gif"
+			id="info.cukes.feature.wizards.NewCucumberFeatureFileWizard"
+			name="CucumberFeature Editor file">
+		</wizard>
+	</extension>
+</plugin>

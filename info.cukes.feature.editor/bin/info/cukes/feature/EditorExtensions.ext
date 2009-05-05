@@ -1,0 +1,57 @@
+import cucumberfeature;
+
+extension info::cukes::feature::Extensions reexport;
+extension info::cukes::feature::GenEditorExtensions reexport;
+
+/*
+ * use this file to overwrite the label() and the image()
+ * extension for your model elements
+ */
+
+label(Object this)		:	metaType.getProperty("name")!=null ? metaType.getProperty("name") : "Object";
+label(Feature this)		:	"Feature: "+fd.text;
+//label(FeatureDescription this) :	this.text; // does not work.
+label(BusinessValueDefinition this)	:	"In order to "+bv_desc.text;
+label(RoleDefinition this)	:	"As a "+role_desc.text;
+label(SomeActionDefinition this)	:	"I want to "+sa_desc.text;
+
+image(Scenario this)	:	"file.gif";
+label(Scenario this)	:	"Scenario: "+sd.text;
+
+label(FeatureIdentifier this)	:	null;
+label(ScenarioIdentifier this)	:	null;
+label(FeatureDescription this)	:	null;
+label(ScenarioDescription this)	:	null;
+
+label(GivenBlock this)		:	"Given "+given_def.text;
+label(GivenIdentifier this) :	null;
+label(GivenDefinition this) :	null; //this.text;
+
+label(WhenBlock this)		:	"When "+when_def.text;
+label(WhenIdentifier this)	:	null;
+label(WhenDefinition this)	:	null; //this.text;
+
+label(ThenBlock this)		:	"Then "+then_def.text;
+label(ThenIdentifier this)	:	null;
+label(ThenDefinition this)	:	null; //this.text;
+
+image(AndBlock this)		:	"link_obj.gif";
+label(AndBlock this)		:	"And "+and_def.text;
+label(AndIdentifier this)	:	null;
+label(AndDefinition this)	:	null; //this.text;
+
+image(Feature this)			:	"template.gif";
+image(FeatureDescription this)	:	"build_var_obj.gif";
+
+image(BusinessValueDefinition this)		:	"progress_ok.gif";
+image(BusinessValueDescription this)	:	"build_var_obj.gif";
+label(BusinessValueDescription this)	:	null;
+
+image(RoleDefinition this)	:	"person.gif";
+image(RoleDescription this) :	"build_var_obj.gif";
+label(RoleDescription this) :	null;
+
+image(SomeActionDefinition this)	:	"profile_exc.gif";
+image(SomeActionDescription this)	:	"build_var_obj.gif";
+label(SomeActionDescription this)	:	null;
+
