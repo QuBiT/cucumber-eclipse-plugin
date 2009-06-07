@@ -33,11 +33,13 @@ public class CucumberFeatureUtilities extends AbstractLanguageUtilities {
 
 	List<String> r = new ArrayList<String>();
 	{
+		r.add("Examples:");
 		r.add("Feature:");
 		r.add("Then");
+		r.add("Background:");
 		r.add("Given");
-		r.add("Scenario:");
 		r.add("When");
+		r.add("Scenario:");
 		r.add("And");
 	}
 	public List<String> allKeywords() {

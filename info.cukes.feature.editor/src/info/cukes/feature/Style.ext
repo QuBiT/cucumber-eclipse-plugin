@@ -15,6 +15,10 @@ extension info::cukes::feature::GenStyle reexport;
 delayContextSensitiveStyling(): 0;
  
 // does not work ... how to add GivenBlock to the Keywords, then maybe it works.
+
+FontStyle fontstyle(String keyword, Object ctx):
+	createFontStyle(false, false,false, false,createColor(51,102,255), createColor(255,255,255));
+
 FontStyle fontstyle(String keyword, AndIdentifier node) :
 	createFontStyle(false, false,false, false,createColor(51,102,255), createColor(255,255,255));
 	
@@ -30,6 +34,11 @@ FontStyle fontstyle(String keyword, ThenIdentifier node) :
 FontStyle fontstyle(String keyword, FeatureIdentifier node) :
 	createFontStyle(true, false,false, false,createColor(51,102,255), createColor(255,255,255));
 
+FontStyle fontstyle(String keyword, TableScenarioIdentifier node) :
+	createFontStyle(true, false,false, false,createColor(51,102,255), createColor(255,255,255));
+
 FontStyle fontstyle(String keyword, ScenarioIdentifier node) :
 	createFontStyle(true, false,false, false,createColor(51,102,255), createColor(255,255,255));
-	
+
+FontStyle fontstyle(String keyword, BackgroundIdentifier node) :
+	createFontStyle(true, false,false, false,createColor(51,102,255), createColor(255,255,255));	

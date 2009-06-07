@@ -2,7 +2,7 @@
 <org.openarchitectureware.xtext:XtextFile xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.openarchitectureware.xtext="http://www.openarchitectureware.org/xtext" name="cucumberfeature" nsURI="http://www.example.org/info/cukes/feature">
   <rules xsi:type="org.openarchitectureware.xtext:TypeRule" name="Cucumber">
     <type alias="" name="Cucumber"/>
-    <content xsi:type="org.openarchitectureware.xtext:Assignment" feature="f" operator="ASSIGN">
+    <content xsi:type="org.openarchitectureware.xtext:Assignment" cardinality="ANY" feature="f" operator="ADD">
       <token xsi:type="org.openarchitectureware.xtext:RuleName" name="Feature"/>
     </content>
   </rules>
@@ -15,17 +15,28 @@
       <children xsi:type="org.openarchitectureware.xtext:Assignment" feature="fd" operator="ASSIGN">
         <token xsi:type="org.openarchitectureware.xtext:RuleName" name="FeatureDescription"/>
       </children>
-      <children xsi:type="org.openarchitectureware.xtext:Assignment" feature="bvd" operator="ASSIGN">
-        <token xsi:type="org.openarchitectureware.xtext:RuleName" name="BusinessValueDefinition"/>
+      <children xsi:type="org.openarchitectureware.xtext:Assignment" feature="fb" operator="ASSIGN">
+        <token xsi:type="org.openarchitectureware.xtext:RuleName" name="FeatureBlock"/>
       </children>
-      <children xsi:type="org.openarchitectureware.xtext:Assignment" feature="rd" operator="ASSIGN">
-        <token xsi:type="org.openarchitectureware.xtext:RuleName" name="RoleDefinition"/>
-      </children>
-      <children xsi:type="org.openarchitectureware.xtext:Assignment" feature="sad" operator="ASSIGN">
-        <token xsi:type="org.openarchitectureware.xtext:RuleName" name="SomeActionDefinition"/>
+      <children xsi:type="org.openarchitectureware.xtext:Assignment" cardinality="OPTIONAL" feature="b" operator="ASSIGN">
+        <token xsi:type="org.openarchitectureware.xtext:RuleName" name="Background"/>
       </children>
       <children xsi:type="org.openarchitectureware.xtext:Assignment" cardinality="ANY" feature="ss" operator="ADD">
         <token xsi:type="org.openarchitectureware.xtext:RuleName" name="Scenario"/>
+      </children>
+    </content>
+  </rules>
+  <rules xsi:type="org.openarchitectureware.xtext:TypeRule" name="FeatureBlock">
+    <type alias="" name="FeatureBlock"/>
+    <content xsi:type="org.openarchitectureware.xtext:Group">
+      <children xsi:type="org.openarchitectureware.xtext:Assignment" cardinality="OPTIONAL" feature="bvd" operator="ASSIGN">
+        <token xsi:type="org.openarchitectureware.xtext:RuleName" name="BusinessValueDefinition"/>
+      </children>
+      <children xsi:type="org.openarchitectureware.xtext:Assignment" cardinality="OPTIONAL" feature="rd" operator="ASSIGN">
+        <token xsi:type="org.openarchitectureware.xtext:RuleName" name="RoleDefinition"/>
+      </children>
+      <children xsi:type="org.openarchitectureware.xtext:Assignment" cardinality="OPTIONAL" feature="sad" operator="ASSIGN">
+        <token xsi:type="org.openarchitectureware.xtext:RuleName" name="SomeActionDefinition"/>
       </children>
     </content>
   </rules>
@@ -41,60 +52,52 @@
   </rules>
   <rules xsi:type="org.openarchitectureware.xtext:TypeRule" name="BusinessValueDefinition">
     <type alias="" name="BusinessValueDefinition"/>
-    <content xsi:type="org.openarchitectureware.xtext:Group">
-      <children xsi:type="org.openarchitectureware.xtext:Assignment" feature="bv" operator="ASSIGN">
-        <token xsi:type="org.openarchitectureware.xtext:RuleName" name="BusinessValueIdentifier"/>
-      </children>
-      <children xsi:type="org.openarchitectureware.xtext:Assignment" feature="bv_desc" operator="ASSIGN">
-        <token xsi:type="org.openarchitectureware.xtext:RuleName" name="BusinessValueDescription"/>
-      </children>
-    </content>
-  </rules>
-  <rules xsi:type="org.openarchitectureware.xtext:NativeLexerRule" name="BusinessValueIdentifier" impl="'In order to '"/>
-  <rules xsi:type="org.openarchitectureware.xtext:TypeRule" name="BusinessValueDescription">
-    <type alias="" name="BusinessValueDescription"/>
     <content xsi:type="org.openarchitectureware.xtext:Assignment" cardinality="ONEORMORE" feature="text" operator="ADD">
       <token xsi:type="org.openarchitectureware.xtext:RuleName" name="Word"/>
     </content>
   </rules>
   <rules xsi:type="org.openarchitectureware.xtext:TypeRule" name="RoleDefinition">
     <type alias="" name="RoleDefinition"/>
-    <content xsi:type="org.openarchitectureware.xtext:Group">
-      <children xsi:type="org.openarchitectureware.xtext:Assignment" feature="ri" operator="ASSIGN">
-        <token xsi:type="org.openarchitectureware.xtext:RuleName" name="RoleIdentifier"/>
-      </children>
-      <children xsi:type="org.openarchitectureware.xtext:Assignment" feature="role_desc" operator="ASSIGN">
-        <token xsi:type="org.openarchitectureware.xtext:RuleName" name="RoleDescription"/>
-      </children>
-    </content>
-  </rules>
-  <rules xsi:type="org.openarchitectureware.xtext:NativeLexerRule" name="RoleIdentifier" impl="'As a '|'As an '"/>
-  <rules xsi:type="org.openarchitectureware.xtext:TypeRule" name="RoleDescription">
-    <type alias="" name="RoleDescription"/>
     <content xsi:type="org.openarchitectureware.xtext:Assignment" cardinality="ONEORMORE" feature="text" operator="ADD">
       <token xsi:type="org.openarchitectureware.xtext:RuleName" name="Word"/>
     </content>
   </rules>
   <rules xsi:type="org.openarchitectureware.xtext:TypeRule" name="SomeActionDefinition">
     <type alias="" name="SomeActionDefinition"/>
-    <content xsi:type="org.openarchitectureware.xtext:Group">
-      <children xsi:type="org.openarchitectureware.xtext:Assignment" feature="sa" operator="ASSIGN">
-        <token xsi:type="org.openarchitectureware.xtext:RuleName" name="SomeActionIdentifier"/>
-      </children>
-      <children xsi:type="org.openarchitectureware.xtext:Assignment" feature="sa_desc" operator="ASSIGN">
-        <token xsi:type="org.openarchitectureware.xtext:RuleName" name="SomeActionDescription"/>
-      </children>
-    </content>
-  </rules>
-  <rules xsi:type="org.openarchitectureware.xtext:NativeLexerRule" name="SomeActionIdentifier" impl="'I want to '"/>
-  <rules xsi:type="org.openarchitectureware.xtext:TypeRule" name="SomeActionDescription">
-    <type alias="" name="SomeActionDescription"/>
     <content xsi:type="org.openarchitectureware.xtext:Assignment" cardinality="ONEORMORE" feature="text" operator="ADD">
       <token xsi:type="org.openarchitectureware.xtext:RuleName" name="Word"/>
     </content>
   </rules>
+  <rules xsi:type="org.openarchitectureware.xtext:TypeRule" name="Background">
+    <type alias="" name="Background"/>
+    <content xsi:type="org.openarchitectureware.xtext:Group">
+      <children xsi:type="org.openarchitectureware.xtext:Assignment" feature="bi" operator="ASSIGN">
+        <token xsi:type="org.openarchitectureware.xtext:RuleName" name="BackgroundIdentifier"/>
+      </children>
+      <children xsi:type="org.openarchitectureware.xtext:Assignment" cardinality="OPTIONAL" feature="gb" operator="ASSIGN">
+        <token xsi:type="org.openarchitectureware.xtext:RuleName" name="GivenBlock"/>
+      </children>
+      <children xsi:type="org.openarchitectureware.xtext:Assignment" cardinality="OPTIONAL" feature="wb" operator="ASSIGN">
+        <token xsi:type="org.openarchitectureware.xtext:RuleName" name="WhenBlock"/>
+      </children>
+      <children xsi:type="org.openarchitectureware.xtext:Assignment" cardinality="OPTIONAL" feature="tb" operator="ASSIGN">
+        <token xsi:type="org.openarchitectureware.xtext:RuleName" name="ThenBlock"/>
+      </children>
+    </content>
+  </rules>
+  <rules xsi:type="org.openarchitectureware.xtext:TypeRule" name="BackgroundIdentifier">
+    <type alias="" name="BackgroundIdentifier"/>
+    <content xsi:type="org.openarchitectureware.xtext:Keyword" value="Background:"/>
+  </rules>
   <rules xsi:type="org.openarchitectureware.xtext:TypeRule" name="Scenario">
     <type alias="" name="Scenario"/>
+    <content xsi:type="org.openarchitectureware.xtext:Alternatives">
+      <alternatives xsi:type="org.openarchitectureware.xtext:RuleName" name="BasicScenario"/>
+      <alternatives xsi:type="org.openarchitectureware.xtext:RuleName" name="TableScenario"/>
+    </content>
+  </rules>
+  <rules xsi:type="org.openarchitectureware.xtext:TypeRule" name="BasicScenario">
+    <type alias="" name="BasicScenario"/>
     <content xsi:type="org.openarchitectureware.xtext:Group">
       <children xsi:type="org.openarchitectureware.xtext:Assignment" feature="si" operator="ASSIGN">
         <token xsi:type="org.openarchitectureware.xtext:RuleName" name="ScenarioIdentifier"/>
@@ -102,15 +105,72 @@
       <children xsi:type="org.openarchitectureware.xtext:Assignment" feature="sd" operator="ASSIGN">
         <token xsi:type="org.openarchitectureware.xtext:RuleName" name="ScenarioDescription"/>
       </children>
-      <children xsi:type="org.openarchitectureware.xtext:Assignment" feature="gb" operator="ASSIGN">
+      <children xsi:type="org.openarchitectureware.xtext:Assignment" cardinality="OPTIONAL" feature="gb" operator="ASSIGN">
         <token xsi:type="org.openarchitectureware.xtext:RuleName" name="GivenBlock"/>
       </children>
-      <children xsi:type="org.openarchitectureware.xtext:Assignment" feature="wb" operator="ASSIGN">
+      <children xsi:type="org.openarchitectureware.xtext:Assignment" cardinality="OPTIONAL" feature="wb" operator="ASSIGN">
         <token xsi:type="org.openarchitectureware.xtext:RuleName" name="WhenBlock"/>
       </children>
-      <children xsi:type="org.openarchitectureware.xtext:Assignment" feature="tb" operator="ASSIGN">
+      <children xsi:type="org.openarchitectureware.xtext:Assignment" cardinality="OPTIONAL" feature="tb" operator="ASSIGN">
         <token xsi:type="org.openarchitectureware.xtext:RuleName" name="ThenBlock"/>
       </children>
+    </content>
+  </rules>
+  <rules xsi:type="org.openarchitectureware.xtext:TypeRule" name="TableScenario">
+    <type alias="" name="TableScenario"/>
+    <content xsi:type="org.openarchitectureware.xtext:Group">
+      <children xsi:type="org.openarchitectureware.xtext:Assignment" feature="tsi" operator="ASSIGN">
+        <token xsi:type="org.openarchitectureware.xtext:RuleName" name="TableScenarioIdentifier"/>
+      </children>
+      <children xsi:type="org.openarchitectureware.xtext:Assignment" feature="sd" operator="ASSIGN">
+        <token xsi:type="org.openarchitectureware.xtext:RuleName" name="ScenarioDescription"/>
+      </children>
+      <children xsi:type="org.openarchitectureware.xtext:Assignment" cardinality="OPTIONAL" feature="gb" operator="ASSIGN">
+        <token xsi:type="org.openarchitectureware.xtext:RuleName" name="GivenBlock"/>
+      </children>
+      <children xsi:type="org.openarchitectureware.xtext:Assignment" cardinality="OPTIONAL" feature="wb" operator="ASSIGN">
+        <token xsi:type="org.openarchitectureware.xtext:RuleName" name="WhenBlock"/>
+      </children>
+      <children xsi:type="org.openarchitectureware.xtext:Assignment" cardinality="OPTIONAL" feature="tb" operator="ASSIGN">
+        <token xsi:type="org.openarchitectureware.xtext:RuleName" name="ThenBlock"/>
+      </children>
+      <children xsi:type="org.openarchitectureware.xtext:Assignment" feature="table_block" operator="ASSIGN">
+        <token xsi:type="org.openarchitectureware.xtext:RuleName" name="TableBlock"/>
+      </children>
+    </content>
+  </rules>
+  <rules xsi:type="org.openarchitectureware.xtext:TypeRule" name="TableScenarioIdentifier">
+    <type alias="" name="TableScenarioIdentifier"/>
+    <content xsi:type="org.openarchitectureware.xtext:Keyword" value="Scenario Outline:"/>
+  </rules>
+  <rules xsi:type="org.openarchitectureware.xtext:TypeRule" name="TableBlock">
+    <type alias="" name="TableBlock"/>
+    <content xsi:type="org.openarchitectureware.xtext:Group">
+      <children xsi:type="org.openarchitectureware.xtext:Assignment" feature="ti" operator="ASSIGN">
+        <token xsi:type="org.openarchitectureware.xtext:RuleName" name="TableIdentifier"/>
+      </children>
+      <children xsi:type="org.openarchitectureware.xtext:Assignment" feature="th" operator="ASSIGN">
+        <token xsi:type="org.openarchitectureware.xtext:RuleName" name="TableHeader"/>
+      </children>
+      <children xsi:type="org.openarchitectureware.xtext:Assignment" cardinality="ANY" feature="tr" operator="ADD">
+        <token xsi:type="org.openarchitectureware.xtext:RuleName" name="TableRow"/>
+      </children>
+    </content>
+  </rules>
+  <rules xsi:type="org.openarchitectureware.xtext:TypeRule" name="TableIdentifier">
+    <type alias="" name="TableIdentifier"/>
+    <content xsi:type="org.openarchitectureware.xtext:Keyword" value="Examples:"/>
+  </rules>
+  <rules xsi:type="org.openarchitectureware.xtext:TypeRule" name="TableHeader">
+    <type alias="" name="TableHeader"/>
+    <content xsi:type="org.openarchitectureware.xtext:Assignment" cardinality="ONEORMORE" feature="text" operator="ADD">
+      <token xsi:type="org.openarchitectureware.xtext:RuleName" name="Word"/>
+    </content>
+  </rules>
+  <rules xsi:type="org.openarchitectureware.xtext:TypeRule" name="TableRow">
+    <type alias="" name="TableRow"/>
+    <content xsi:type="org.openarchitectureware.xtext:Assignment" cardinality="ONEORMORE" feature="text" operator="ADD">
+      <token xsi:type="org.openarchitectureware.xtext:RuleName" name="Word"/>
     </content>
   </rules>
   <rules xsi:type="org.openarchitectureware.xtext:TypeRule" name="ScenarioIdentifier">
@@ -221,15 +281,14 @@
       <alternatives xsi:type="org.openarchitectureware.xtext:RuleName" name="ID"/>
       <alternatives xsi:type="org.openarchitectureware.xtext:RuleName" name="STRING"/>
       <alternatives xsi:type="org.openarchitectureware.xtext:RuleName" name="INT"/>
-      <alternatives xsi:type="org.openarchitectureware.xtext:RuleName" name="NotInorderto"/>
-      <alternatives xsi:type="org.openarchitectureware.xtext:RuleName" name="NotAsa"/>
-      <alternatives xsi:type="org.openarchitectureware.xtext:RuleName" name="NotIwantto"/>
       <alternatives xsi:type="org.openarchitectureware.xtext:Keyword" value="."/>
+      <alternatives xsi:type="org.openarchitectureware.xtext:Keyword" value=":"/>
+      <alternatives xsi:type="org.openarchitectureware.xtext:Keyword" value=","/>
+      <alternatives xsi:type="org.openarchitectureware.xtext:Keyword" value="|"/>
+      <alternatives xsi:type="org.openarchitectureware.xtext:Keyword" value="&lt;"/>
+      <alternatives xsi:type="org.openarchitectureware.xtext:Keyword" value=">"/>
     </content>
   </rules>
-  <rules xsi:type="org.openarchitectureware.xtext:NativeLexerRule" name="NotInorderto" impl="'In '(~'o')?|'In o'(~'r')?|'In or'(~'d')?|'In ord'(~'e')?|'In orde'(~'r')?| 'In order '(~'t')?|'In order t'(~'o')?"/>
-  <rules xsi:type="org.openarchitectureware.xtext:NativeLexerRule" name="NotAsa" impl="'As '(~'a')?|'As a'(~'n')?"/>
-  <rules xsi:type="org.openarchitectureware.xtext:NativeLexerRule" name="NotIwantto" impl="'I '(~'w')?|'I w'(~'a')?|'I wa'(~'n')?|'In wan'(~'t')?|'In want '(~'t')?|'In want t'(~'o')?"/>
   <rules xsi:type="org.openarchitectureware.xtext:NativeLexerRule" name="SL_COMMENT" impl="'#' ~('\n'|'\r')* '\r'? '\n' {$channel=HIDDEN;}"/>
   <rules xsi:type="org.openarchitectureware.xtext:NativeLexerRule" name="ID"/>
   <rules xsi:type="org.openarchitectureware.xtext:NativeLexerRule" name="STRING"/>

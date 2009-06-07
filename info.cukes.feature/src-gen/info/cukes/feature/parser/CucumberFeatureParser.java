@@ -1,4 +1,4 @@
-// $ANTLR 3.0 ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g 2009-06-07 11:04:22
+// $ANTLR 3.0 ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g 2009-06-07 18:03:07
 
 package info.cukes.feature.parser;
 
@@ -24,25 +24,19 @@ import java.util.Map;
 import java.util.HashMap;
 public class CucumberFeatureParser extends Parser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_BusinessValueIdentifier", "RULE_RoleIdentifier", "RULE_SomeActionIdentifier", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_NotInorderto", "RULE_NotAsa", "RULE_NotIwantto", "RULE_SL_COMMENT", "RULE_WS", "RULE_ML_COMMENT", "'Feature:'", "'Scenario:'", "'Given'", "'When'", "'Then'", "'And'", "'.'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ML_COMMENT", "'Feature:'", "'Background:'", "'Scenario Outline:'", "'Examples:'", "'Scenario:'", "'Given'", "'When'", "'Then'", "'And'", "'.'", "':'", "','", "'|'", "'<'", "'>'"
     };
-    public static final int RULE_ID=7;
-    public static final int RULE_STRING=8;
-    public static final int RULE_SomeActionIdentifier=6;
-    public static final int RULE_NotIwantto=12;
-    public static final int RULE_BusinessValueIdentifier=4;
-    public static final int RULE_INT=9;
-    public static final int RULE_RoleIdentifier=5;
-    public static final int RULE_NotInorderto=10;
-    public static final int RULE_WS=14;
-    public static final int RULE_SL_COMMENT=13;
+    public static final int RULE_ID=4;
+    public static final int RULE_STRING=5;
+    public static final int RULE_INT=6;
+    public static final int RULE_WS=8;
     public static final int EOF=-1;
-    public static final int RULE_NotAsa=11;
-    public static final int RULE_ML_COMMENT=15;
+    public static final int RULE_SL_COMMENT=7;
+    public static final int RULE_ML_COMMENT=9;
 
         public CucumberFeatureParser(TokenStream input) {
             super(input);
-            ruleMemo = new HashMap[46+1];
+            ruleMemo = new HashMap[73+1];
          }
         
 
@@ -151,7 +145,7 @@ public class CucumberFeatureParser extends Parser {
 
 
     // $ANTLR start ruleCucumber
-    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:112:1: ruleCucumber returns [EObject result] : (temp_Feature= ruleFeature ) ;
+    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:112:1: ruleCucumber returns [EObject result] : (temp_Feature= ruleFeature )* ;
     public EObject ruleCucumber() throws RecognitionException {
         EObject result = null;
         int ruleCucumber_StartIndex = input.index();
@@ -161,37 +155,55 @@ public class CucumberFeatureParser extends Parser {
         boolean hasContent = false;
         try {
             if ( backtracking>0 && alreadyParsedRule(input, 2) ) { return result; }
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:115:4: ( (temp_Feature= ruleFeature ) )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:115:4: (temp_Feature= ruleFeature )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:115:4: ( (temp_Feature= ruleFeature )* )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:115:4: (temp_Feature= ruleFeature )*
             {
             if ( backtracking==0 ) {
 
               				result = factory.create("", "Cucumber");
               			 
             }
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:118:1: (temp_Feature= ruleFeature )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:118:2: temp_Feature= ruleFeature
-            {
-            if ( backtracking==0 ) {
-              ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(0)).eContents().get(1)));
-            }
-            pushFollow(FOLLOW_ruleFeature_in_ruleCucumber106);
-            temp_Feature=ruleFeature();
-            _fsp--;
-            if (failed) return result;
-            if ( backtracking==0 ) {
-              if (temp_Feature != null) {
-                hasContent = true;
-                ptm.setModelElement(temp_Feature);
-                factory.set(result,"f",convert(temp_Feature),false);
-                ptm.ruleFinished(temp_Feature);
-              } else {
-                ptm.destroyNode();
-              }
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:118:1: (temp_Feature= ruleFeature )*
+            loop1:
+            do {
+                int alt1=2;
+                int LA1_0 = input.LA(1);
 
-            }
+                if ( (LA1_0==10) ) {
+                    alt1=1;
+                }
 
-            }
+
+                switch (alt1) {
+            	case 1 :
+            	    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:118:2: temp_Feature= ruleFeature
+            	    {
+            	    if ( backtracking==0 ) {
+            	      ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(0)).eContents().get(1)));
+            	    }
+            	    pushFollow(FOLLOW_ruleFeature_in_ruleCucumber106);
+            	    temp_Feature=ruleFeature();
+            	    _fsp--;
+            	    if (failed) return result;
+            	    if ( backtracking==0 ) {
+            	      if (temp_Feature != null) {
+            	        hasContent = true;
+            	        ptm.setModelElement(temp_Feature);
+            	        factory.add(result,"f",convert(temp_Feature),false);
+            	        ptm.ruleFinished(temp_Feature);
+            	      } else {
+            	        ptm.destroyNode();
+            	      }
+
+            	    }
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop1;
+                }
+            } while (true);
 
             if ( backtracking==0 ) {
               if (!hasContent)
@@ -216,7 +228,7 @@ public class CucumberFeatureParser extends Parser {
 
 
     // $ANTLR start ruleFeature
-    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:136:1: ruleFeature returns [EObject result] : ( (temp_FeatureIdentifier= ruleFeatureIdentifier ) (temp_FeatureDescription= ruleFeatureDescription ) (temp_BusinessValueDefinition= ruleBusinessValueDefinition ) (temp_RoleDefinition= ruleRoleDefinition ) (temp_SomeActionDefinition= ruleSomeActionDefinition ) (temp_Scenario= ruleScenario )* ) ;
+    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:136:1: ruleFeature returns [EObject result] : ( (temp_FeatureIdentifier= ruleFeatureIdentifier ) (temp_FeatureDescription= ruleFeatureDescription ) (temp_FeatureBlock= ruleFeatureBlock ) (temp_Background= ruleBackground )? (temp_Scenario= ruleScenario )* ) ;
     public EObject ruleFeature() throws RecognitionException {
         EObject result = null;
         int ruleFeature_StartIndex = input.index();
@@ -224,11 +236,9 @@ public class CucumberFeatureParser extends Parser {
 
         EObject temp_FeatureDescription = null;
 
-        EObject temp_BusinessValueDefinition = null;
+        EObject temp_FeatureBlock = null;
 
-        EObject temp_RoleDefinition = null;
-
-        EObject temp_SomeActionDefinition = null;
+        EObject temp_Background = null;
 
         EObject temp_Scenario = null;
 
@@ -236,16 +246,16 @@ public class CucumberFeatureParser extends Parser {
         boolean hasContent = false;
         try {
             if ( backtracking>0 && alreadyParsedRule(input, 3) ) { return result; }
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:139:4: ( ( (temp_FeatureIdentifier= ruleFeatureIdentifier ) (temp_FeatureDescription= ruleFeatureDescription ) (temp_BusinessValueDefinition= ruleBusinessValueDefinition ) (temp_RoleDefinition= ruleRoleDefinition ) (temp_SomeActionDefinition= ruleSomeActionDefinition ) (temp_Scenario= ruleScenario )* ) )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:139:4: ( (temp_FeatureIdentifier= ruleFeatureIdentifier ) (temp_FeatureDescription= ruleFeatureDescription ) (temp_BusinessValueDefinition= ruleBusinessValueDefinition ) (temp_RoleDefinition= ruleRoleDefinition ) (temp_SomeActionDefinition= ruleSomeActionDefinition ) (temp_Scenario= ruleScenario )* )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:139:4: ( ( (temp_FeatureIdentifier= ruleFeatureIdentifier ) (temp_FeatureDescription= ruleFeatureDescription ) (temp_FeatureBlock= ruleFeatureBlock ) (temp_Background= ruleBackground )? (temp_Scenario= ruleScenario )* ) )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:139:4: ( (temp_FeatureIdentifier= ruleFeatureIdentifier ) (temp_FeatureDescription= ruleFeatureDescription ) (temp_FeatureBlock= ruleFeatureBlock ) (temp_Background= ruleBackground )? (temp_Scenario= ruleScenario )* )
             {
             if ( backtracking==0 ) {
 
               				result = factory.create("", "Feature");
               			 
             }
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:142:1: ( (temp_FeatureIdentifier= ruleFeatureIdentifier ) (temp_FeatureDescription= ruleFeatureDescription ) (temp_BusinessValueDefinition= ruleBusinessValueDefinition ) (temp_RoleDefinition= ruleRoleDefinition ) (temp_SomeActionDefinition= ruleSomeActionDefinition ) (temp_Scenario= ruleScenario )* )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:142:2: (temp_FeatureIdentifier= ruleFeatureIdentifier ) (temp_FeatureDescription= ruleFeatureDescription ) (temp_BusinessValueDefinition= ruleBusinessValueDefinition ) (temp_RoleDefinition= ruleRoleDefinition ) (temp_SomeActionDefinition= ruleSomeActionDefinition ) (temp_Scenario= ruleScenario )*
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:142:1: ( (temp_FeatureIdentifier= ruleFeatureIdentifier ) (temp_FeatureDescription= ruleFeatureDescription ) (temp_FeatureBlock= ruleFeatureBlock ) (temp_Background= ruleBackground )? (temp_Scenario= ruleScenario )* )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:142:2: (temp_FeatureIdentifier= ruleFeatureIdentifier ) (temp_FeatureDescription= ruleFeatureDescription ) (temp_FeatureBlock= ruleFeatureBlock ) (temp_Background= ruleBackground )? (temp_Scenario= ruleScenario )*
             {
             // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:142:2: (temp_FeatureIdentifier= ruleFeatureIdentifier )
             // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:142:3: temp_FeatureIdentifier= ruleFeatureIdentifier
@@ -253,7 +263,7 @@ public class CucumberFeatureParser extends Parser {
             if ( backtracking==0 ) {
               ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(1)).eContents().get(1)).eContents().get(0)));
             }
-            pushFollow(FOLLOW_ruleFeatureIdentifier_in_ruleFeature146);
+            pushFollow(FOLLOW_ruleFeatureIdentifier_in_ruleFeature147);
             temp_FeatureIdentifier=ruleFeatureIdentifier();
             _fsp--;
             if (failed) return result;
@@ -277,7 +287,7 @@ public class CucumberFeatureParser extends Parser {
             if ( backtracking==0 ) {
               ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(1)).eContents().get(1)).eContents().get(1)));
             }
-            pushFollow(FOLLOW_ruleFeatureDescription_in_ruleFeature157);
+            pushFollow(FOLLOW_ruleFeatureDescription_in_ruleFeature158);
             temp_FeatureDescription=ruleFeatureDescription();
             _fsp--;
             if (failed) return result;
@@ -295,22 +305,22 @@ public class CucumberFeatureParser extends Parser {
 
             }
 
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:166:1: (temp_BusinessValueDefinition= ruleBusinessValueDefinition )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:166:2: temp_BusinessValueDefinition= ruleBusinessValueDefinition
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:166:1: (temp_FeatureBlock= ruleFeatureBlock )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:166:2: temp_FeatureBlock= ruleFeatureBlock
             {
             if ( backtracking==0 ) {
               ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(1)).eContents().get(1)).eContents().get(2)));
             }
-            pushFollow(FOLLOW_ruleBusinessValueDefinition_in_ruleFeature168);
-            temp_BusinessValueDefinition=ruleBusinessValueDefinition();
+            pushFollow(FOLLOW_ruleFeatureBlock_in_ruleFeature169);
+            temp_FeatureBlock=ruleFeatureBlock();
             _fsp--;
             if (failed) return result;
             if ( backtracking==0 ) {
-              if (temp_BusinessValueDefinition != null) {
+              if (temp_FeatureBlock != null) {
                 hasContent = true;
-                ptm.setModelElement(temp_BusinessValueDefinition);
-                factory.set(result,"bvd",convert(temp_BusinessValueDefinition),false);
-                ptm.ruleFinished(temp_BusinessValueDefinition);
+                ptm.setModelElement(temp_FeatureBlock);
+                factory.set(result,"fb",convert(temp_FeatureBlock),false);
+                ptm.ruleFinished(temp_FeatureBlock);
               } else {
                 ptm.destroyNode();
               }
@@ -319,73 +329,60 @@ public class CucumberFeatureParser extends Parser {
 
             }
 
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:178:1: (temp_RoleDefinition= ruleRoleDefinition )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:178:2: temp_RoleDefinition= ruleRoleDefinition
-            {
-            if ( backtracking==0 ) {
-              ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(1)).eContents().get(1)).eContents().get(3)));
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:178:1: (temp_Background= ruleBackground )?
+            int alt2=2;
+            int LA2_0 = input.LA(1);
+
+            if ( (LA2_0==11) ) {
+                alt2=1;
             }
-            pushFollow(FOLLOW_ruleRoleDefinition_in_ruleFeature179);
-            temp_RoleDefinition=ruleRoleDefinition();
-            _fsp--;
-            if (failed) return result;
-            if ( backtracking==0 ) {
-              if (temp_RoleDefinition != null) {
-                hasContent = true;
-                ptm.setModelElement(temp_RoleDefinition);
-                factory.set(result,"rd",convert(temp_RoleDefinition),false);
-                ptm.ruleFinished(temp_RoleDefinition);
-              } else {
-                ptm.destroyNode();
-              }
+            switch (alt2) {
+                case 1 :
+                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:178:2: temp_Background= ruleBackground
+                    {
+                    if ( backtracking==0 ) {
+                      ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(1)).eContents().get(1)).eContents().get(3)));
+                    }
+                    pushFollow(FOLLOW_ruleBackground_in_ruleFeature180);
+                    temp_Background=ruleBackground();
+                    _fsp--;
+                    if (failed) return result;
+                    if ( backtracking==0 ) {
+                      if (temp_Background != null) {
+                        hasContent = true;
+                        ptm.setModelElement(temp_Background);
+                        factory.set(result,"b",convert(temp_Background),false);
+                        ptm.ruleFinished(temp_Background);
+                      } else {
+                        ptm.destroyNode();
+                      }
+
+                    }
+
+                    }
+                    break;
 
             }
 
-            }
-
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:190:1: (temp_SomeActionDefinition= ruleSomeActionDefinition )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:190:2: temp_SomeActionDefinition= ruleSomeActionDefinition
-            {
-            if ( backtracking==0 ) {
-              ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(1)).eContents().get(1)).eContents().get(4)));
-            }
-            pushFollow(FOLLOW_ruleSomeActionDefinition_in_ruleFeature190);
-            temp_SomeActionDefinition=ruleSomeActionDefinition();
-            _fsp--;
-            if (failed) return result;
-            if ( backtracking==0 ) {
-              if (temp_SomeActionDefinition != null) {
-                hasContent = true;
-                ptm.setModelElement(temp_SomeActionDefinition);
-                factory.set(result,"sad",convert(temp_SomeActionDefinition),false);
-                ptm.ruleFinished(temp_SomeActionDefinition);
-              } else {
-                ptm.destroyNode();
-              }
-
-            }
-
-            }
-
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:202:1: (temp_Scenario= ruleScenario )*
-            loop1:
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:190:1: (temp_Scenario= ruleScenario )*
+            loop3:
             do {
-                int alt1=2;
-                int LA1_0 = input.LA(1);
+                int alt3=2;
+                int LA3_0 = input.LA(1);
 
-                if ( (LA1_0==17) ) {
-                    alt1=1;
+                if ( (LA3_0==12||LA3_0==14) ) {
+                    alt3=1;
                 }
 
 
-                switch (alt1) {
+                switch (alt3) {
             	case 1 :
-            	    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:202:2: temp_Scenario= ruleScenario
+            	    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:190:2: temp_Scenario= ruleScenario
             	    {
             	    if ( backtracking==0 ) {
-            	      ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(1)).eContents().get(1)).eContents().get(5)));
+            	      ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(1)).eContents().get(1)).eContents().get(4)));
             	    }
-            	    pushFollow(FOLLOW_ruleScenario_in_ruleFeature201);
+            	    pushFollow(FOLLOW_ruleScenario_in_ruleFeature192);
             	    temp_Scenario=ruleScenario();
             	    _fsp--;
             	    if (failed) return result;
@@ -405,7 +402,7 @@ public class CucumberFeatureParser extends Parser {
             	    break;
 
             	default :
-            	    break loop1;
+            	    break loop3;
                 }
             } while (true);
 
@@ -434,33 +431,347 @@ public class CucumberFeatureParser extends Parser {
     // $ANTLR end ruleFeature
 
 
+    // $ANTLR start ruleFeatureBlock
+    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:209:1: ruleFeatureBlock returns [EObject result] : ( (temp_BusinessValueDefinition= ruleBusinessValueDefinition )? (temp_RoleDefinition= ruleRoleDefinition )? (temp_SomeActionDefinition= ruleSomeActionDefinition )? ) ;
+    public EObject ruleFeatureBlock() throws RecognitionException {
+        EObject result = null;
+        int ruleFeatureBlock_StartIndex = input.index();
+        EObject temp_BusinessValueDefinition = null;
+
+        EObject temp_RoleDefinition = null;
+
+        EObject temp_SomeActionDefinition = null;
+
+
+        boolean hasContent = false;
+        try {
+            if ( backtracking>0 && alreadyParsedRule(input, 4) ) { return result; }
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:212:4: ( ( (temp_BusinessValueDefinition= ruleBusinessValueDefinition )? (temp_RoleDefinition= ruleRoleDefinition )? (temp_SomeActionDefinition= ruleSomeActionDefinition )? ) )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:212:4: ( (temp_BusinessValueDefinition= ruleBusinessValueDefinition )? (temp_RoleDefinition= ruleRoleDefinition )? (temp_SomeActionDefinition= ruleSomeActionDefinition )? )
+            {
+            if ( backtracking==0 ) {
+
+              				result = factory.create("", "FeatureBlock");
+              			 
+            }
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:215:1: ( (temp_BusinessValueDefinition= ruleBusinessValueDefinition )? (temp_RoleDefinition= ruleRoleDefinition )? (temp_SomeActionDefinition= ruleSomeActionDefinition )? )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:215:2: (temp_BusinessValueDefinition= ruleBusinessValueDefinition )? (temp_RoleDefinition= ruleRoleDefinition )? (temp_SomeActionDefinition= ruleSomeActionDefinition )?
+            {
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:215:2: (temp_BusinessValueDefinition= ruleBusinessValueDefinition )?
+            int alt4=2;
+            switch ( input.LA(1) ) {
+                case RULE_ID:
+                    {
+                    int LA4_1 = input.LA(2);
+
+                    if ( (synpred4()) ) {
+                        alt4=1;
+                    }
+                    }
+                    break;
+                case RULE_STRING:
+                    {
+                    int LA4_2 = input.LA(2);
+
+                    if ( (synpred4()) ) {
+                        alt4=1;
+                    }
+                    }
+                    break;
+                case RULE_INT:
+                    {
+                    int LA4_3 = input.LA(2);
+
+                    if ( (synpred4()) ) {
+                        alt4=1;
+                    }
+                    }
+                    break;
+                case 19:
+                    {
+                    int LA4_4 = input.LA(2);
+
+                    if ( (synpred4()) ) {
+                        alt4=1;
+                    }
+                    }
+                    break;
+                case 20:
+                    {
+                    int LA4_5 = input.LA(2);
+
+                    if ( (synpred4()) ) {
+                        alt4=1;
+                    }
+                    }
+                    break;
+                case 21:
+                    {
+                    int LA4_6 = input.LA(2);
+
+                    if ( (synpred4()) ) {
+                        alt4=1;
+                    }
+                    }
+                    break;
+                case 22:
+                    {
+                    int LA4_7 = input.LA(2);
+
+                    if ( (synpred4()) ) {
+                        alt4=1;
+                    }
+                    }
+                    break;
+                case 23:
+                    {
+                    int LA4_8 = input.LA(2);
+
+                    if ( (synpred4()) ) {
+                        alt4=1;
+                    }
+                    }
+                    break;
+                case 24:
+                    {
+                    int LA4_9 = input.LA(2);
+
+                    if ( (synpred4()) ) {
+                        alt4=1;
+                    }
+                    }
+                    break;
+            }
+
+            switch (alt4) {
+                case 1 :
+                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:215:3: temp_BusinessValueDefinition= ruleBusinessValueDefinition
+                    {
+                    if ( backtracking==0 ) {
+                      ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(2)).eContents().get(1)).eContents().get(0)));
+                    }
+                    pushFollow(FOLLOW_ruleBusinessValueDefinition_in_ruleFeatureBlock235);
+                    temp_BusinessValueDefinition=ruleBusinessValueDefinition();
+                    _fsp--;
+                    if (failed) return result;
+                    if ( backtracking==0 ) {
+                      if (temp_BusinessValueDefinition != null) {
+                        hasContent = true;
+                        ptm.setModelElement(temp_BusinessValueDefinition);
+                        factory.set(result,"bvd",convert(temp_BusinessValueDefinition),false);
+                        ptm.ruleFinished(temp_BusinessValueDefinition);
+                      } else {
+                        ptm.destroyNode();
+                      }
+
+                    }
+
+                    }
+                    break;
+
+            }
+
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:227:1: (temp_RoleDefinition= ruleRoleDefinition )?
+            int alt5=2;
+            switch ( input.LA(1) ) {
+                case RULE_ID:
+                    {
+                    int LA5_1 = input.LA(2);
+
+                    if ( (synpred5()) ) {
+                        alt5=1;
+                    }
+                    }
+                    break;
+                case RULE_STRING:
+                    {
+                    int LA5_2 = input.LA(2);
+
+                    if ( (synpred5()) ) {
+                        alt5=1;
+                    }
+                    }
+                    break;
+                case RULE_INT:
+                    {
+                    int LA5_3 = input.LA(2);
+
+                    if ( (synpred5()) ) {
+                        alt5=1;
+                    }
+                    }
+                    break;
+                case 19:
+                    {
+                    int LA5_4 = input.LA(2);
+
+                    if ( (synpred5()) ) {
+                        alt5=1;
+                    }
+                    }
+                    break;
+                case 20:
+                    {
+                    int LA5_5 = input.LA(2);
+
+                    if ( (synpred5()) ) {
+                        alt5=1;
+                    }
+                    }
+                    break;
+                case 21:
+                    {
+                    int LA5_6 = input.LA(2);
+
+                    if ( (synpred5()) ) {
+                        alt5=1;
+                    }
+                    }
+                    break;
+                case 22:
+                    {
+                    int LA5_7 = input.LA(2);
+
+                    if ( (synpred5()) ) {
+                        alt5=1;
+                    }
+                    }
+                    break;
+                case 23:
+                    {
+                    int LA5_8 = input.LA(2);
+
+                    if ( (synpred5()) ) {
+                        alt5=1;
+                    }
+                    }
+                    break;
+                case 24:
+                    {
+                    int LA5_9 = input.LA(2);
+
+                    if ( (synpred5()) ) {
+                        alt5=1;
+                    }
+                    }
+                    break;
+            }
+
+            switch (alt5) {
+                case 1 :
+                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:227:2: temp_RoleDefinition= ruleRoleDefinition
+                    {
+                    if ( backtracking==0 ) {
+                      ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(2)).eContents().get(1)).eContents().get(1)));
+                    }
+                    pushFollow(FOLLOW_ruleRoleDefinition_in_ruleFeatureBlock247);
+                    temp_RoleDefinition=ruleRoleDefinition();
+                    _fsp--;
+                    if (failed) return result;
+                    if ( backtracking==0 ) {
+                      if (temp_RoleDefinition != null) {
+                        hasContent = true;
+                        ptm.setModelElement(temp_RoleDefinition);
+                        factory.set(result,"rd",convert(temp_RoleDefinition),false);
+                        ptm.ruleFinished(temp_RoleDefinition);
+                      } else {
+                        ptm.destroyNode();
+                      }
+
+                    }
+
+                    }
+                    break;
+
+            }
+
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:239:1: (temp_SomeActionDefinition= ruleSomeActionDefinition )?
+            int alt6=2;
+            int LA6_0 = input.LA(1);
+
+            if ( ((LA6_0>=RULE_ID && LA6_0<=RULE_INT)||(LA6_0>=19 && LA6_0<=24)) ) {
+                alt6=1;
+            }
+            switch (alt6) {
+                case 1 :
+                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:239:2: temp_SomeActionDefinition= ruleSomeActionDefinition
+                    {
+                    if ( backtracking==0 ) {
+                      ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(2)).eContents().get(1)).eContents().get(2)));
+                    }
+                    pushFollow(FOLLOW_ruleSomeActionDefinition_in_ruleFeatureBlock259);
+                    temp_SomeActionDefinition=ruleSomeActionDefinition();
+                    _fsp--;
+                    if (failed) return result;
+                    if ( backtracking==0 ) {
+                      if (temp_SomeActionDefinition != null) {
+                        hasContent = true;
+                        ptm.setModelElement(temp_SomeActionDefinition);
+                        factory.set(result,"sad",convert(temp_SomeActionDefinition),false);
+                        ptm.ruleFinished(temp_SomeActionDefinition);
+                      } else {
+                        ptm.destroyNode();
+                      }
+
+                    }
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+            if ( backtracking==0 ) {
+              if (!hasContent)
+                result = null;
+            }
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            if (!hasContent)
+                result = null;
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+            if ( backtracking>0 ) { memoize(input, 4, ruleFeatureBlock_StartIndex); }
+        }
+        return result;
+    }
+    // $ANTLR end ruleFeatureBlock
+
+
     // $ANTLR start ruleFeatureIdentifier
-    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:221:1: ruleFeatureIdentifier returns [EObject result] : ( 'Feature:' ) ;
+    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:258:1: ruleFeatureIdentifier returns [EObject result] : ( 'Feature:' ) ;
     public EObject ruleFeatureIdentifier() throws RecognitionException {
         EObject result = null;
         int ruleFeatureIdentifier_StartIndex = input.index();
         boolean hasContent = false;
         try {
-            if ( backtracking>0 && alreadyParsedRule(input, 4) ) { return result; }
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:224:4: ( ( 'Feature:' ) )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:224:4: ( 'Feature:' )
+            if ( backtracking>0 && alreadyParsedRule(input, 5) ) { return result; }
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:261:4: ( ( 'Feature:' ) )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:261:4: ( 'Feature:' )
             {
             if ( backtracking==0 ) {
 
               				result = factory.create("", "FeatureIdentifier");
               			 
             }
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:227:1: ( 'Feature:' )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:227:2: 'Feature:'
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:264:1: ( 'Feature:' )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:264:2: 'Feature:'
             {
             if ( backtracking==0 ) {
               skipCurrentToken = false;
             }
-            match(input,16,FOLLOW_16_in_ruleFeatureIdentifier240); if (failed) return result;
+            match(input,10,FOLLOW_10_in_ruleFeatureIdentifier298); if (failed) return result;
             if ( backtracking==0 ) {
               if (!skipCurrentToken) {
                 hasContent = true;
-                ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(2)).eContents().get(1)));
+                ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(3)).eContents().get(1)));
                 ptm.ruleFinished(getLastToken());
               }
             }
@@ -482,7 +793,7 @@ public class CucumberFeatureParser extends Parser {
             recover(input,re);
         }
         finally {
-            if ( backtracking>0 ) { memoize(input, 4, ruleFeatureIdentifier_StartIndex); }
+            if ( backtracking>0 ) { memoize(input, 5, ruleFeatureIdentifier_StartIndex); }
         }
         return result;
     }
@@ -490,7 +801,7 @@ public class CucumberFeatureParser extends Parser {
 
 
     // $ANTLR start ruleFeatureDescription
-    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:239:1: ruleFeatureDescription returns [EObject result] : (temp_Word= ruleWord )+ ;
+    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:276:1: ruleFeatureDescription returns [EObject result] : (temp_Word= ruleWord )+ ;
     public EObject ruleFeatureDescription() throws RecognitionException {
         EObject result = null;
         int ruleFeatureDescription_StartIndex = input.index();
@@ -499,35 +810,131 @@ public class CucumberFeatureParser extends Parser {
 
         boolean hasContent = false;
         try {
-            if ( backtracking>0 && alreadyParsedRule(input, 5) ) { return result; }
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:242:4: ( (temp_Word= ruleWord )+ )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:242:4: (temp_Word= ruleWord )+
+            if ( backtracking>0 && alreadyParsedRule(input, 6) ) { return result; }
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:279:4: ( (temp_Word= ruleWord )+ )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:279:4: (temp_Word= ruleWord )+
             {
             if ( backtracking==0 ) {
 
               				result = factory.create("", "FeatureDescription");
               			 
             }
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:245:1: (temp_Word= ruleWord )+
-            int cnt2=0;
-            loop2:
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:282:1: (temp_Word= ruleWord )+
+            int cnt7=0;
+            loop7:
             do {
-                int alt2=2;
-                int LA2_0 = input.LA(1);
+                int alt7=2;
+                switch ( input.LA(1) ) {
+                case RULE_ID:
+                    {
+                    int LA7_1 = input.LA(2);
 
-                if ( ((LA2_0>=RULE_ID && LA2_0<=RULE_NotIwantto)||LA2_0==22) ) {
-                    alt2=1;
+                    if ( (synpred7()) ) {
+                        alt7=1;
+                    }
+
+
+                    }
+                    break;
+                case RULE_STRING:
+                    {
+                    int LA7_2 = input.LA(2);
+
+                    if ( (synpred7()) ) {
+                        alt7=1;
+                    }
+
+
+                    }
+                    break;
+                case RULE_INT:
+                    {
+                    int LA7_3 = input.LA(2);
+
+                    if ( (synpred7()) ) {
+                        alt7=1;
+                    }
+
+
+                    }
+                    break;
+                case 19:
+                    {
+                    int LA7_4 = input.LA(2);
+
+                    if ( (synpred7()) ) {
+                        alt7=1;
+                    }
+
+
+                    }
+                    break;
+                case 20:
+                    {
+                    int LA7_5 = input.LA(2);
+
+                    if ( (synpred7()) ) {
+                        alt7=1;
+                    }
+
+
+                    }
+                    break;
+                case 21:
+                    {
+                    int LA7_6 = input.LA(2);
+
+                    if ( (synpred7()) ) {
+                        alt7=1;
+                    }
+
+
+                    }
+                    break;
+                case 22:
+                    {
+                    int LA7_7 = input.LA(2);
+
+                    if ( (synpred7()) ) {
+                        alt7=1;
+                    }
+
+
+                    }
+                    break;
+                case 23:
+                    {
+                    int LA7_8 = input.LA(2);
+
+                    if ( (synpred7()) ) {
+                        alt7=1;
+                    }
+
+
+                    }
+                    break;
+                case 24:
+                    {
+                    int LA7_9 = input.LA(2);
+
+                    if ( (synpred7()) ) {
+                        alt7=1;
+                    }
+
+
+                    }
+                    break;
+
                 }
 
-
-                switch (alt2) {
+                switch (alt7) {
             	case 1 :
-            	    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:245:2: temp_Word= ruleWord
+            	    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:282:2: temp_Word= ruleWord
             	    {
             	    if ( backtracking==0 ) {
-            	      ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(3)).eContents().get(1)));
+            	      ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(4)).eContents().get(1)));
             	    }
-            	    pushFollow(FOLLOW_ruleWord_in_ruleFeatureDescription278);
+            	    pushFollow(FOLLOW_ruleWord_in_ruleFeatureDescription336);
             	    temp_Word=ruleWord();
             	    _fsp--;
             	    if (failed) return result;
@@ -546,13 +953,13 @@ public class CucumberFeatureParser extends Parser {
             	    break;
 
             	default :
-            	    if ( cnt2 >= 1 ) break loop2;
+            	    if ( cnt7 >= 1 ) break loop7;
             	    if (backtracking>0) {failed=true; return result;}
                         EarlyExitException eee =
-                            new EarlyExitException(2, input);
+                            new EarlyExitException(7, input);
                         throw eee;
                 }
-                cnt2++;
+                cnt7++;
             } while (true);
 
             if ( backtracking==0 ) {
@@ -570,7 +977,7 @@ public class CucumberFeatureParser extends Parser {
             recover(input,re);
         }
         finally {
-            if ( backtracking>0 ) { memoize(input, 5, ruleFeatureDescription_StartIndex); }
+            if ( backtracking>0 ) { memoize(input, 6, ruleFeatureDescription_StartIndex); }
         }
         return result;
     }
@@ -578,134 +985,140 @@ public class CucumberFeatureParser extends Parser {
 
 
     // $ANTLR start ruleBusinessValueDefinition
-    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:262:1: ruleBusinessValueDefinition returns [EObject result] : ( ( RULE_BusinessValueIdentifier ) (temp_BusinessValueDescription= ruleBusinessValueDescription ) ) ;
+    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:299:1: ruleBusinessValueDefinition returns [EObject result] : (temp_Word= ruleWord )+ ;
     public EObject ruleBusinessValueDefinition() throws RecognitionException {
         EObject result = null;
         int ruleBusinessValueDefinition_StartIndex = input.index();
-        EObject temp_BusinessValueDescription = null;
-
-
-        boolean hasContent = false;
-        try {
-            if ( backtracking>0 && alreadyParsedRule(input, 6) ) { return result; }
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:265:4: ( ( ( RULE_BusinessValueIdentifier ) (temp_BusinessValueDescription= ruleBusinessValueDescription ) ) )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:265:4: ( ( RULE_BusinessValueIdentifier ) (temp_BusinessValueDescription= ruleBusinessValueDescription ) )
-            {
-            if ( backtracking==0 ) {
-
-              				result = factory.create("", "BusinessValueDefinition");
-              			 
-            }
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:268:1: ( ( RULE_BusinessValueIdentifier ) (temp_BusinessValueDescription= ruleBusinessValueDescription ) )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:268:2: ( RULE_BusinessValueIdentifier ) (temp_BusinessValueDescription= ruleBusinessValueDescription )
-            {
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:268:2: ( RULE_BusinessValueIdentifier )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:268:3: RULE_BusinessValueIdentifier
-            {
-            if ( backtracking==0 ) {
-              skipCurrentToken = false;
-            }
-            match(input,RULE_BusinessValueIdentifier,FOLLOW_RULE_BusinessValueIdentifier_in_ruleBusinessValueDefinition317); if (failed) return result;
-            if ( backtracking==0 ) {
-              if (!skipCurrentToken) {
-                hasContent = true;
-                Token temp = getLastToken();
-                ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(4)).eContents().get(1)).eContents().get(0)));
-                factory.set(result,"bv",convert(temp),false);
-                ptm.ruleFinished(temp);
-              }
-            }
-
-            }
-
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:278:1: (temp_BusinessValueDescription= ruleBusinessValueDescription )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:278:2: temp_BusinessValueDescription= ruleBusinessValueDescription
-            {
-            if ( backtracking==0 ) {
-              ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(4)).eContents().get(1)).eContents().get(1)));
-            }
-            pushFollow(FOLLOW_ruleBusinessValueDescription_in_ruleBusinessValueDefinition328);
-            temp_BusinessValueDescription=ruleBusinessValueDescription();
-            _fsp--;
-            if (failed) return result;
-            if ( backtracking==0 ) {
-              if (temp_BusinessValueDescription != null) {
-                hasContent = true;
-                ptm.setModelElement(temp_BusinessValueDescription);
-                factory.set(result,"bv_desc",convert(temp_BusinessValueDescription),false);
-                ptm.ruleFinished(temp_BusinessValueDescription);
-              } else {
-                ptm.destroyNode();
-              }
-
-            }
-
-            }
-
-
-            }
-
-            if ( backtracking==0 ) {
-              if (!hasContent)
-                result = null;
-            }
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            if (!hasContent)
-                result = null;
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-            if ( backtracking>0 ) { memoize(input, 6, ruleBusinessValueDefinition_StartIndex); }
-        }
-        return result;
-    }
-    // $ANTLR end ruleBusinessValueDefinition
-
-
-    // $ANTLR start ruleBusinessValueDescription
-    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:302:1: ruleBusinessValueDescription returns [EObject result] : (temp_Word= ruleWord )+ ;
-    public EObject ruleBusinessValueDescription() throws RecognitionException {
-        EObject result = null;
-        int ruleBusinessValueDescription_StartIndex = input.index();
         String temp_Word = null;
 
 
         boolean hasContent = false;
         try {
             if ( backtracking>0 && alreadyParsedRule(input, 7) ) { return result; }
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:305:4: ( (temp_Word= ruleWord )+ )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:305:4: (temp_Word= ruleWord )+
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:302:4: ( (temp_Word= ruleWord )+ )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:302:4: (temp_Word= ruleWord )+
             {
             if ( backtracking==0 ) {
 
-              				result = factory.create("", "BusinessValueDescription");
+              				result = factory.create("", "BusinessValueDefinition");
               			 
             }
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:308:1: (temp_Word= ruleWord )+
-            int cnt3=0;
-            loop3:
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:305:1: (temp_Word= ruleWord )+
+            int cnt8=0;
+            loop8:
             do {
-                int alt3=2;
-                int LA3_0 = input.LA(1);
+                int alt8=2;
+                switch ( input.LA(1) ) {
+                case RULE_ID:
+                    {
+                    int LA8_1 = input.LA(2);
 
-                if ( ((LA3_0>=RULE_ID && LA3_0<=RULE_NotIwantto)||LA3_0==22) ) {
-                    alt3=1;
+                    if ( (synpred8()) ) {
+                        alt8=1;
+                    }
+
+
+                    }
+                    break;
+                case RULE_STRING:
+                    {
+                    int LA8_2 = input.LA(2);
+
+                    if ( (synpred8()) ) {
+                        alt8=1;
+                    }
+
+
+                    }
+                    break;
+                case RULE_INT:
+                    {
+                    int LA8_3 = input.LA(2);
+
+                    if ( (synpred8()) ) {
+                        alt8=1;
+                    }
+
+
+                    }
+                    break;
+                case 19:
+                    {
+                    int LA8_4 = input.LA(2);
+
+                    if ( (synpred8()) ) {
+                        alt8=1;
+                    }
+
+
+                    }
+                    break;
+                case 20:
+                    {
+                    int LA8_5 = input.LA(2);
+
+                    if ( (synpred8()) ) {
+                        alt8=1;
+                    }
+
+
+                    }
+                    break;
+                case 21:
+                    {
+                    int LA8_6 = input.LA(2);
+
+                    if ( (synpred8()) ) {
+                        alt8=1;
+                    }
+
+
+                    }
+                    break;
+                case 22:
+                    {
+                    int LA8_7 = input.LA(2);
+
+                    if ( (synpred8()) ) {
+                        alt8=1;
+                    }
+
+
+                    }
+                    break;
+                case 23:
+                    {
+                    int LA8_8 = input.LA(2);
+
+                    if ( (synpred8()) ) {
+                        alt8=1;
+                    }
+
+
+                    }
+                    break;
+                case 24:
+                    {
+                    int LA8_9 = input.LA(2);
+
+                    if ( (synpred8()) ) {
+                        alt8=1;
+                    }
+
+
+                    }
+                    break;
+
                 }
 
-
-                switch (alt3) {
+                switch (alt8) {
             	case 1 :
-            	    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:308:2: temp_Word= ruleWord
+            	    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:305:2: temp_Word= ruleWord
             	    {
             	    if ( backtracking==0 ) {
-            	      ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(6)).eContents().get(1)));
+            	      ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(5)).eContents().get(1)));
             	    }
-            	    pushFollow(FOLLOW_ruleWord_in_ruleBusinessValueDescription381);
+            	    pushFollow(FOLLOW_ruleWord_in_ruleBusinessValueDefinition376);
             	    temp_Word=ruleWord();
             	    _fsp--;
             	    if (failed) return result;
@@ -724,13 +1137,13 @@ public class CucumberFeatureParser extends Parser {
             	    break;
 
             	default :
-            	    if ( cnt3 >= 1 ) break loop3;
+            	    if ( cnt8 >= 1 ) break loop8;
             	    if (backtracking>0) {failed=true; return result;}
                         EarlyExitException eee =
-                            new EarlyExitException(3, input);
+                            new EarlyExitException(8, input);
                         throw eee;
                 }
-                cnt3++;
+                cnt8++;
             } while (true);
 
             if ( backtracking==0 ) {
@@ -748,80 +1161,174 @@ public class CucumberFeatureParser extends Parser {
             recover(input,re);
         }
         finally {
-            if ( backtracking>0 ) { memoize(input, 7, ruleBusinessValueDescription_StartIndex); }
+            if ( backtracking>0 ) { memoize(input, 7, ruleBusinessValueDefinition_StartIndex); }
         }
         return result;
     }
-    // $ANTLR end ruleBusinessValueDescription
+    // $ANTLR end ruleBusinessValueDefinition
 
 
     // $ANTLR start ruleRoleDefinition
-    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:325:1: ruleRoleDefinition returns [EObject result] : ( ( RULE_RoleIdentifier ) (temp_RoleDescription= ruleRoleDescription ) ) ;
+    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:322:1: ruleRoleDefinition returns [EObject result] : (temp_Word= ruleWord )+ ;
     public EObject ruleRoleDefinition() throws RecognitionException {
         EObject result = null;
         int ruleRoleDefinition_StartIndex = input.index();
-        EObject temp_RoleDescription = null;
+        String temp_Word = null;
 
 
         boolean hasContent = false;
         try {
             if ( backtracking>0 && alreadyParsedRule(input, 8) ) { return result; }
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:328:4: ( ( ( RULE_RoleIdentifier ) (temp_RoleDescription= ruleRoleDescription ) ) )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:328:4: ( ( RULE_RoleIdentifier ) (temp_RoleDescription= ruleRoleDescription ) )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:325:4: ( (temp_Word= ruleWord )+ )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:325:4: (temp_Word= ruleWord )+
             {
             if ( backtracking==0 ) {
 
               				result = factory.create("", "RoleDefinition");
               			 
             }
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:331:1: ( ( RULE_RoleIdentifier ) (temp_RoleDescription= ruleRoleDescription ) )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:331:2: ( RULE_RoleIdentifier ) (temp_RoleDescription= ruleRoleDescription )
-            {
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:331:2: ( RULE_RoleIdentifier )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:331:3: RULE_RoleIdentifier
-            {
-            if ( backtracking==0 ) {
-              skipCurrentToken = false;
-            }
-            match(input,RULE_RoleIdentifier,FOLLOW_RULE_RoleIdentifier_in_ruleRoleDefinition420); if (failed) return result;
-            if ( backtracking==0 ) {
-              if (!skipCurrentToken) {
-                hasContent = true;
-                Token temp = getLastToken();
-                ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(7)).eContents().get(1)).eContents().get(0)));
-                factory.set(result,"ri",convert(temp),false);
-                ptm.ruleFinished(temp);
-              }
-            }
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:328:1: (temp_Word= ruleWord )+
+            int cnt9=0;
+            loop9:
+            do {
+                int alt9=2;
+                switch ( input.LA(1) ) {
+                case RULE_ID:
+                    {
+                    int LA9_1 = input.LA(2);
 
-            }
-
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:341:1: (temp_RoleDescription= ruleRoleDescription )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:341:2: temp_RoleDescription= ruleRoleDescription
-            {
-            if ( backtracking==0 ) {
-              ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(7)).eContents().get(1)).eContents().get(1)));
-            }
-            pushFollow(FOLLOW_ruleRoleDescription_in_ruleRoleDefinition431);
-            temp_RoleDescription=ruleRoleDescription();
-            _fsp--;
-            if (failed) return result;
-            if ( backtracking==0 ) {
-              if (temp_RoleDescription != null) {
-                hasContent = true;
-                ptm.setModelElement(temp_RoleDescription);
-                factory.set(result,"role_desc",convert(temp_RoleDescription),false);
-                ptm.ruleFinished(temp_RoleDescription);
-              } else {
-                ptm.destroyNode();
-              }
-
-            }
-
-            }
+                    if ( (synpred9()) ) {
+                        alt9=1;
+                    }
 
 
-            }
+                    }
+                    break;
+                case RULE_STRING:
+                    {
+                    int LA9_2 = input.LA(2);
+
+                    if ( (synpred9()) ) {
+                        alt9=1;
+                    }
+
+
+                    }
+                    break;
+                case RULE_INT:
+                    {
+                    int LA9_3 = input.LA(2);
+
+                    if ( (synpred9()) ) {
+                        alt9=1;
+                    }
+
+
+                    }
+                    break;
+                case 19:
+                    {
+                    int LA9_4 = input.LA(2);
+
+                    if ( (synpred9()) ) {
+                        alt9=1;
+                    }
+
+
+                    }
+                    break;
+                case 20:
+                    {
+                    int LA9_5 = input.LA(2);
+
+                    if ( (synpred9()) ) {
+                        alt9=1;
+                    }
+
+
+                    }
+                    break;
+                case 21:
+                    {
+                    int LA9_6 = input.LA(2);
+
+                    if ( (synpred9()) ) {
+                        alt9=1;
+                    }
+
+
+                    }
+                    break;
+                case 22:
+                    {
+                    int LA9_7 = input.LA(2);
+
+                    if ( (synpred9()) ) {
+                        alt9=1;
+                    }
+
+
+                    }
+                    break;
+                case 23:
+                    {
+                    int LA9_8 = input.LA(2);
+
+                    if ( (synpred9()) ) {
+                        alt9=1;
+                    }
+
+
+                    }
+                    break;
+                case 24:
+                    {
+                    int LA9_9 = input.LA(2);
+
+                    if ( (synpred9()) ) {
+                        alt9=1;
+                    }
+
+
+                    }
+                    break;
+
+                }
+
+                switch (alt9) {
+            	case 1 :
+            	    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:328:2: temp_Word= ruleWord
+            	    {
+            	    if ( backtracking==0 ) {
+            	      ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(6)).eContents().get(1)));
+            	    }
+            	    pushFollow(FOLLOW_ruleWord_in_ruleRoleDefinition416);
+            	    temp_Word=ruleWord();
+            	    _fsp--;
+            	    if (failed) return result;
+            	    if ( backtracking==0 ) {
+            	      if (temp_Word != null) {
+            	        hasContent = true;
+            	        factory.add(result,"text",convert(temp_Word),false);
+            	        ptm.ruleFinished(temp_Word);
+            	      } else {
+            	        ptm.destroyNode();
+            	      }
+
+            	    }
+
+            	    }
+            	    break;
+
+            	default :
+            	    if ( cnt9 >= 1 ) break loop9;
+            	    if (backtracking>0) {failed=true; return result;}
+                        EarlyExitException eee =
+                            new EarlyExitException(9, input);
+                        throw eee;
+                }
+                cnt9++;
+            } while (true);
 
             if ( backtracking==0 ) {
               if (!hasContent)
@@ -845,1369 +1352,45 @@ public class CucumberFeatureParser extends Parser {
     // $ANTLR end ruleRoleDefinition
 
 
-    // $ANTLR start ruleRoleDescription
-    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:365:1: ruleRoleDescription returns [EObject result] : (temp_Word= ruleWord )+ ;
-    public EObject ruleRoleDescription() throws RecognitionException {
+    // $ANTLR start ruleSomeActionDefinition
+    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:345:1: ruleSomeActionDefinition returns [EObject result] : (temp_Word= ruleWord )+ ;
+    public EObject ruleSomeActionDefinition() throws RecognitionException {
         EObject result = null;
-        int ruleRoleDescription_StartIndex = input.index();
+        int ruleSomeActionDefinition_StartIndex = input.index();
         String temp_Word = null;
 
 
         boolean hasContent = false;
         try {
             if ( backtracking>0 && alreadyParsedRule(input, 9) ) { return result; }
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:368:4: ( (temp_Word= ruleWord )+ )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:368:4: (temp_Word= ruleWord )+
-            {
-            if ( backtracking==0 ) {
-
-              				result = factory.create("", "RoleDescription");
-              			 
-            }
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:371:1: (temp_Word= ruleWord )+
-            int cnt4=0;
-            loop4:
-            do {
-                int alt4=2;
-                int LA4_0 = input.LA(1);
-
-                if ( ((LA4_0>=RULE_ID && LA4_0<=RULE_NotIwantto)||LA4_0==22) ) {
-                    alt4=1;
-                }
-
-
-                switch (alt4) {
-            	case 1 :
-            	    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:371:2: temp_Word= ruleWord
-            	    {
-            	    if ( backtracking==0 ) {
-            	      ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(9)).eContents().get(1)));
-            	    }
-            	    pushFollow(FOLLOW_ruleWord_in_ruleRoleDescription486);
-            	    temp_Word=ruleWord();
-            	    _fsp--;
-            	    if (failed) return result;
-            	    if ( backtracking==0 ) {
-            	      if (temp_Word != null) {
-            	        hasContent = true;
-            	        factory.add(result,"text",convert(temp_Word),false);
-            	        ptm.ruleFinished(temp_Word);
-            	      } else {
-            	        ptm.destroyNode();
-            	      }
-
-            	    }
-
-            	    }
-            	    break;
-
-            	default :
-            	    if ( cnt4 >= 1 ) break loop4;
-            	    if (backtracking>0) {failed=true; return result;}
-                        EarlyExitException eee =
-                            new EarlyExitException(4, input);
-                        throw eee;
-                }
-                cnt4++;
-            } while (true);
-
-            if ( backtracking==0 ) {
-              if (!hasContent)
-                result = null;
-            }
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            if (!hasContent)
-                result = null;
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-            if ( backtracking>0 ) { memoize(input, 9, ruleRoleDescription_StartIndex); }
-        }
-        return result;
-    }
-    // $ANTLR end ruleRoleDescription
-
-
-    // $ANTLR start ruleSomeActionDefinition
-    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:388:1: ruleSomeActionDefinition returns [EObject result] : ( ( RULE_SomeActionIdentifier ) (temp_SomeActionDescription= ruleSomeActionDescription ) ) ;
-    public EObject ruleSomeActionDefinition() throws RecognitionException {
-        EObject result = null;
-        int ruleSomeActionDefinition_StartIndex = input.index();
-        EObject temp_SomeActionDescription = null;
-
-
-        boolean hasContent = false;
-        try {
-            if ( backtracking>0 && alreadyParsedRule(input, 10) ) { return result; }
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:391:4: ( ( ( RULE_SomeActionIdentifier ) (temp_SomeActionDescription= ruleSomeActionDescription ) ) )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:391:4: ( ( RULE_SomeActionIdentifier ) (temp_SomeActionDescription= ruleSomeActionDescription ) )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:348:4: ( (temp_Word= ruleWord )+ )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:348:4: (temp_Word= ruleWord )+
             {
             if ( backtracking==0 ) {
 
               				result = factory.create("", "SomeActionDefinition");
               			 
             }
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:394:1: ( ( RULE_SomeActionIdentifier ) (temp_SomeActionDescription= ruleSomeActionDescription ) )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:394:2: ( RULE_SomeActionIdentifier ) (temp_SomeActionDescription= ruleSomeActionDescription )
-            {
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:394:2: ( RULE_SomeActionIdentifier )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:394:3: RULE_SomeActionIdentifier
-            {
-            if ( backtracking==0 ) {
-              skipCurrentToken = false;
-            }
-            match(input,RULE_SomeActionIdentifier,FOLLOW_RULE_SomeActionIdentifier_in_ruleSomeActionDefinition525); if (failed) return result;
-            if ( backtracking==0 ) {
-              if (!skipCurrentToken) {
-                hasContent = true;
-                Token temp = getLastToken();
-                ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(10)).eContents().get(1)).eContents().get(0)));
-                factory.set(result,"sa",convert(temp),false);
-                ptm.ruleFinished(temp);
-              }
-            }
-
-            }
-
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:404:1: (temp_SomeActionDescription= ruleSomeActionDescription )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:404:2: temp_SomeActionDescription= ruleSomeActionDescription
-            {
-            if ( backtracking==0 ) {
-              ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(10)).eContents().get(1)).eContents().get(1)));
-            }
-            pushFollow(FOLLOW_ruleSomeActionDescription_in_ruleSomeActionDefinition536);
-            temp_SomeActionDescription=ruleSomeActionDescription();
-            _fsp--;
-            if (failed) return result;
-            if ( backtracking==0 ) {
-              if (temp_SomeActionDescription != null) {
-                hasContent = true;
-                ptm.setModelElement(temp_SomeActionDescription);
-                factory.set(result,"sa_desc",convert(temp_SomeActionDescription),false);
-                ptm.ruleFinished(temp_SomeActionDescription);
-              } else {
-                ptm.destroyNode();
-              }
-
-            }
-
-            }
-
-
-            }
-
-            if ( backtracking==0 ) {
-              if (!hasContent)
-                result = null;
-            }
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            if (!hasContent)
-                result = null;
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-            if ( backtracking>0 ) { memoize(input, 10, ruleSomeActionDefinition_StartIndex); }
-        }
-        return result;
-    }
-    // $ANTLR end ruleSomeActionDefinition
-
-
-    // $ANTLR start ruleSomeActionDescription
-    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:428:1: ruleSomeActionDescription returns [EObject result] : (temp_Word= ruleWord )+ ;
-    public EObject ruleSomeActionDescription() throws RecognitionException {
-        EObject result = null;
-        int ruleSomeActionDescription_StartIndex = input.index();
-        String temp_Word = null;
-
-
-        boolean hasContent = false;
-        try {
-            if ( backtracking>0 && alreadyParsedRule(input, 11) ) { return result; }
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:431:4: ( (temp_Word= ruleWord )+ )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:431:4: (temp_Word= ruleWord )+
-            {
-            if ( backtracking==0 ) {
-
-              				result = factory.create("", "SomeActionDescription");
-              			 
-            }
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:434:1: (temp_Word= ruleWord )+
-            int cnt5=0;
-            loop5:
-            do {
-                int alt5=2;
-                int LA5_0 = input.LA(1);
-
-                if ( ((LA5_0>=RULE_ID && LA5_0<=RULE_NotIwantto)||LA5_0==22) ) {
-                    alt5=1;
-                }
-
-
-                switch (alt5) {
-            	case 1 :
-            	    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:434:2: temp_Word= ruleWord
-            	    {
-            	    if ( backtracking==0 ) {
-            	      ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(12)).eContents().get(1)));
-            	    }
-            	    pushFollow(FOLLOW_ruleWord_in_ruleSomeActionDescription589);
-            	    temp_Word=ruleWord();
-            	    _fsp--;
-            	    if (failed) return result;
-            	    if ( backtracking==0 ) {
-            	      if (temp_Word != null) {
-            	        hasContent = true;
-            	        factory.add(result,"text",convert(temp_Word),false);
-            	        ptm.ruleFinished(temp_Word);
-            	      } else {
-            	        ptm.destroyNode();
-            	      }
-
-            	    }
-
-            	    }
-            	    break;
-
-            	default :
-            	    if ( cnt5 >= 1 ) break loop5;
-            	    if (backtracking>0) {failed=true; return result;}
-                        EarlyExitException eee =
-                            new EarlyExitException(5, input);
-                        throw eee;
-                }
-                cnt5++;
-            } while (true);
-
-            if ( backtracking==0 ) {
-              if (!hasContent)
-                result = null;
-            }
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            if (!hasContent)
-                result = null;
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-            if ( backtracking>0 ) { memoize(input, 11, ruleSomeActionDescription_StartIndex); }
-        }
-        return result;
-    }
-    // $ANTLR end ruleSomeActionDescription
-
-
-    // $ANTLR start ruleScenario
-    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:451:1: ruleScenario returns [EObject result] : ( (temp_ScenarioIdentifier= ruleScenarioIdentifier ) (temp_ScenarioDescription= ruleScenarioDescription ) (temp_GivenBlock= ruleGivenBlock ) (temp_WhenBlock= ruleWhenBlock ) (temp_ThenBlock= ruleThenBlock ) ) ;
-    public EObject ruleScenario() throws RecognitionException {
-        EObject result = null;
-        int ruleScenario_StartIndex = input.index();
-        EObject temp_ScenarioIdentifier = null;
-
-        EObject temp_ScenarioDescription = null;
-
-        EObject temp_GivenBlock = null;
-
-        EObject temp_WhenBlock = null;
-
-        EObject temp_ThenBlock = null;
-
-
-        boolean hasContent = false;
-        try {
-            if ( backtracking>0 && alreadyParsedRule(input, 12) ) { return result; }
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:454:4: ( ( (temp_ScenarioIdentifier= ruleScenarioIdentifier ) (temp_ScenarioDescription= ruleScenarioDescription ) (temp_GivenBlock= ruleGivenBlock ) (temp_WhenBlock= ruleWhenBlock ) (temp_ThenBlock= ruleThenBlock ) ) )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:454:4: ( (temp_ScenarioIdentifier= ruleScenarioIdentifier ) (temp_ScenarioDescription= ruleScenarioDescription ) (temp_GivenBlock= ruleGivenBlock ) (temp_WhenBlock= ruleWhenBlock ) (temp_ThenBlock= ruleThenBlock ) )
-            {
-            if ( backtracking==0 ) {
-
-              				result = factory.create("", "Scenario");
-              			 
-            }
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:457:1: ( (temp_ScenarioIdentifier= ruleScenarioIdentifier ) (temp_ScenarioDescription= ruleScenarioDescription ) (temp_GivenBlock= ruleGivenBlock ) (temp_WhenBlock= ruleWhenBlock ) (temp_ThenBlock= ruleThenBlock ) )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:457:2: (temp_ScenarioIdentifier= ruleScenarioIdentifier ) (temp_ScenarioDescription= ruleScenarioDescription ) (temp_GivenBlock= ruleGivenBlock ) (temp_WhenBlock= ruleWhenBlock ) (temp_ThenBlock= ruleThenBlock )
-            {
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:457:2: (temp_ScenarioIdentifier= ruleScenarioIdentifier )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:457:3: temp_ScenarioIdentifier= ruleScenarioIdentifier
-            {
-            if ( backtracking==0 ) {
-              ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(13)).eContents().get(1)).eContents().get(0)));
-            }
-            pushFollow(FOLLOW_ruleScenarioIdentifier_in_ruleScenario630);
-            temp_ScenarioIdentifier=ruleScenarioIdentifier();
-            _fsp--;
-            if (failed) return result;
-            if ( backtracking==0 ) {
-              if (temp_ScenarioIdentifier != null) {
-                hasContent = true;
-                ptm.setModelElement(temp_ScenarioIdentifier);
-                factory.set(result,"si",convert(temp_ScenarioIdentifier),false);
-                ptm.ruleFinished(temp_ScenarioIdentifier);
-              } else {
-                ptm.destroyNode();
-              }
-
-            }
-
-            }
-
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:469:1: (temp_ScenarioDescription= ruleScenarioDescription )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:469:2: temp_ScenarioDescription= ruleScenarioDescription
-            {
-            if ( backtracking==0 ) {
-              ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(13)).eContents().get(1)).eContents().get(1)));
-            }
-            pushFollow(FOLLOW_ruleScenarioDescription_in_ruleScenario641);
-            temp_ScenarioDescription=ruleScenarioDescription();
-            _fsp--;
-            if (failed) return result;
-            if ( backtracking==0 ) {
-              if (temp_ScenarioDescription != null) {
-                hasContent = true;
-                ptm.setModelElement(temp_ScenarioDescription);
-                factory.set(result,"sd",convert(temp_ScenarioDescription),false);
-                ptm.ruleFinished(temp_ScenarioDescription);
-              } else {
-                ptm.destroyNode();
-              }
-
-            }
-
-            }
-
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:481:1: (temp_GivenBlock= ruleGivenBlock )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:481:2: temp_GivenBlock= ruleGivenBlock
-            {
-            if ( backtracking==0 ) {
-              ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(13)).eContents().get(1)).eContents().get(2)));
-            }
-            pushFollow(FOLLOW_ruleGivenBlock_in_ruleScenario652);
-            temp_GivenBlock=ruleGivenBlock();
-            _fsp--;
-            if (failed) return result;
-            if ( backtracking==0 ) {
-              if (temp_GivenBlock != null) {
-                hasContent = true;
-                ptm.setModelElement(temp_GivenBlock);
-                factory.set(result,"gb",convert(temp_GivenBlock),false);
-                ptm.ruleFinished(temp_GivenBlock);
-              } else {
-                ptm.destroyNode();
-              }
-
-            }
-
-            }
-
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:493:1: (temp_WhenBlock= ruleWhenBlock )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:493:2: temp_WhenBlock= ruleWhenBlock
-            {
-            if ( backtracking==0 ) {
-              ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(13)).eContents().get(1)).eContents().get(3)));
-            }
-            pushFollow(FOLLOW_ruleWhenBlock_in_ruleScenario663);
-            temp_WhenBlock=ruleWhenBlock();
-            _fsp--;
-            if (failed) return result;
-            if ( backtracking==0 ) {
-              if (temp_WhenBlock != null) {
-                hasContent = true;
-                ptm.setModelElement(temp_WhenBlock);
-                factory.set(result,"wb",convert(temp_WhenBlock),false);
-                ptm.ruleFinished(temp_WhenBlock);
-              } else {
-                ptm.destroyNode();
-              }
-
-            }
-
-            }
-
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:505:1: (temp_ThenBlock= ruleThenBlock )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:505:2: temp_ThenBlock= ruleThenBlock
-            {
-            if ( backtracking==0 ) {
-              ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(13)).eContents().get(1)).eContents().get(4)));
-            }
-            pushFollow(FOLLOW_ruleThenBlock_in_ruleScenario674);
-            temp_ThenBlock=ruleThenBlock();
-            _fsp--;
-            if (failed) return result;
-            if ( backtracking==0 ) {
-              if (temp_ThenBlock != null) {
-                hasContent = true;
-                ptm.setModelElement(temp_ThenBlock);
-                factory.set(result,"tb",convert(temp_ThenBlock),false);
-                ptm.ruleFinished(temp_ThenBlock);
-              } else {
-                ptm.destroyNode();
-              }
-
-            }
-
-            }
-
-
-            }
-
-            if ( backtracking==0 ) {
-              if (!hasContent)
-                result = null;
-            }
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            if (!hasContent)
-                result = null;
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-            if ( backtracking>0 ) { memoize(input, 12, ruleScenario_StartIndex); }
-        }
-        return result;
-    }
-    // $ANTLR end ruleScenario
-
-
-    // $ANTLR start ruleScenarioIdentifier
-    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:524:1: ruleScenarioIdentifier returns [EObject result] : ( 'Scenario:' ) ;
-    public EObject ruleScenarioIdentifier() throws RecognitionException {
-        EObject result = null;
-        int ruleScenarioIdentifier_StartIndex = input.index();
-        boolean hasContent = false;
-        try {
-            if ( backtracking>0 && alreadyParsedRule(input, 13) ) { return result; }
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:527:4: ( ( 'Scenario:' ) )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:527:4: ( 'Scenario:' )
-            {
-            if ( backtracking==0 ) {
-
-              				result = factory.create("", "ScenarioIdentifier");
-              			 
-            }
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:530:1: ( 'Scenario:' )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:530:2: 'Scenario:'
-            {
-            if ( backtracking==0 ) {
-              skipCurrentToken = false;
-            }
-            match(input,17,FOLLOW_17_in_ruleScenarioIdentifier712); if (failed) return result;
-            if ( backtracking==0 ) {
-              if (!skipCurrentToken) {
-                hasContent = true;
-                ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(14)).eContents().get(1)));
-                ptm.ruleFinished(getLastToken());
-              }
-            }
-
-            }
-
-            if ( backtracking==0 ) {
-              if (!hasContent)
-                result = null;
-            }
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            if (!hasContent)
-                result = null;
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-            if ( backtracking>0 ) { memoize(input, 13, ruleScenarioIdentifier_StartIndex); }
-        }
-        return result;
-    }
-    // $ANTLR end ruleScenarioIdentifier
-
-
-    // $ANTLR start ruleScenarioDescription
-    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:542:1: ruleScenarioDescription returns [EObject result] : (temp_Word= ruleWord )+ ;
-    public EObject ruleScenarioDescription() throws RecognitionException {
-        EObject result = null;
-        int ruleScenarioDescription_StartIndex = input.index();
-        String temp_Word = null;
-
-
-        boolean hasContent = false;
-        try {
-            if ( backtracking>0 && alreadyParsedRule(input, 14) ) { return result; }
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:545:4: ( (temp_Word= ruleWord )+ )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:545:4: (temp_Word= ruleWord )+
-            {
-            if ( backtracking==0 ) {
-
-              				result = factory.create("", "ScenarioDescription");
-              			 
-            }
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:548:1: (temp_Word= ruleWord )+
-            int cnt6=0;
-            loop6:
-            do {
-                int alt6=2;
-                int LA6_0 = input.LA(1);
-
-                if ( ((LA6_0>=RULE_ID && LA6_0<=RULE_NotIwantto)||LA6_0==22) ) {
-                    alt6=1;
-                }
-
-
-                switch (alt6) {
-            	case 1 :
-            	    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:548:2: temp_Word= ruleWord
-            	    {
-            	    if ( backtracking==0 ) {
-            	      ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(15)).eContents().get(1)));
-            	    }
-            	    pushFollow(FOLLOW_ruleWord_in_ruleScenarioDescription750);
-            	    temp_Word=ruleWord();
-            	    _fsp--;
-            	    if (failed) return result;
-            	    if ( backtracking==0 ) {
-            	      if (temp_Word != null) {
-            	        hasContent = true;
-            	        factory.add(result,"text",convert(temp_Word),false);
-            	        ptm.ruleFinished(temp_Word);
-            	      } else {
-            	        ptm.destroyNode();
-            	      }
-
-            	    }
-
-            	    }
-            	    break;
-
-            	default :
-            	    if ( cnt6 >= 1 ) break loop6;
-            	    if (backtracking>0) {failed=true; return result;}
-                        EarlyExitException eee =
-                            new EarlyExitException(6, input);
-                        throw eee;
-                }
-                cnt6++;
-            } while (true);
-
-            if ( backtracking==0 ) {
-              if (!hasContent)
-                result = null;
-            }
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            if (!hasContent)
-                result = null;
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-            if ( backtracking>0 ) { memoize(input, 14, ruleScenarioDescription_StartIndex); }
-        }
-        return result;
-    }
-    // $ANTLR end ruleScenarioDescription
-
-
-    // $ANTLR start ruleGivenBlock
-    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:565:1: ruleGivenBlock returns [EObject result] : ( (temp_GivenIdentifier= ruleGivenIdentifier ) (temp_GivenDefinition= ruleGivenDefinition ) (temp_AndBlock= ruleAndBlock )* ) ;
-    public EObject ruleGivenBlock() throws RecognitionException {
-        EObject result = null;
-        int ruleGivenBlock_StartIndex = input.index();
-        EObject temp_GivenIdentifier = null;
-
-        EObject temp_GivenDefinition = null;
-
-        EObject temp_AndBlock = null;
-
-
-        boolean hasContent = false;
-        try {
-            if ( backtracking>0 && alreadyParsedRule(input, 15) ) { return result; }
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:568:4: ( ( (temp_GivenIdentifier= ruleGivenIdentifier ) (temp_GivenDefinition= ruleGivenDefinition ) (temp_AndBlock= ruleAndBlock )* ) )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:568:4: ( (temp_GivenIdentifier= ruleGivenIdentifier ) (temp_GivenDefinition= ruleGivenDefinition ) (temp_AndBlock= ruleAndBlock )* )
-            {
-            if ( backtracking==0 ) {
-
-              				result = factory.create("", "GivenBlock");
-              			 
-            }
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:571:1: ( (temp_GivenIdentifier= ruleGivenIdentifier ) (temp_GivenDefinition= ruleGivenDefinition ) (temp_AndBlock= ruleAndBlock )* )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:571:2: (temp_GivenIdentifier= ruleGivenIdentifier ) (temp_GivenDefinition= ruleGivenDefinition ) (temp_AndBlock= ruleAndBlock )*
-            {
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:571:2: (temp_GivenIdentifier= ruleGivenIdentifier )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:571:3: temp_GivenIdentifier= ruleGivenIdentifier
-            {
-            if ( backtracking==0 ) {
-              ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(16)).eContents().get(1)).eContents().get(0)));
-            }
-            pushFollow(FOLLOW_ruleGivenIdentifier_in_ruleGivenBlock791);
-            temp_GivenIdentifier=ruleGivenIdentifier();
-            _fsp--;
-            if (failed) return result;
-            if ( backtracking==0 ) {
-              if (temp_GivenIdentifier != null) {
-                hasContent = true;
-                ptm.setModelElement(temp_GivenIdentifier);
-                factory.set(result,"gi",convert(temp_GivenIdentifier),false);
-                ptm.ruleFinished(temp_GivenIdentifier);
-              } else {
-                ptm.destroyNode();
-              }
-
-            }
-
-            }
-
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:583:1: (temp_GivenDefinition= ruleGivenDefinition )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:583:2: temp_GivenDefinition= ruleGivenDefinition
-            {
-            if ( backtracking==0 ) {
-              ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(16)).eContents().get(1)).eContents().get(1)));
-            }
-            pushFollow(FOLLOW_ruleGivenDefinition_in_ruleGivenBlock802);
-            temp_GivenDefinition=ruleGivenDefinition();
-            _fsp--;
-            if (failed) return result;
-            if ( backtracking==0 ) {
-              if (temp_GivenDefinition != null) {
-                hasContent = true;
-                ptm.setModelElement(temp_GivenDefinition);
-                factory.set(result,"given_def",convert(temp_GivenDefinition),false);
-                ptm.ruleFinished(temp_GivenDefinition);
-              } else {
-                ptm.destroyNode();
-              }
-
-            }
-
-            }
-
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:595:1: (temp_AndBlock= ruleAndBlock )*
-            loop7:
-            do {
-                int alt7=2;
-                int LA7_0 = input.LA(1);
-
-                if ( (LA7_0==21) ) {
-                    alt7=1;
-                }
-
-
-                switch (alt7) {
-            	case 1 :
-            	    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:595:2: temp_AndBlock= ruleAndBlock
-            	    {
-            	    if ( backtracking==0 ) {
-            	      ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(16)).eContents().get(1)).eContents().get(2)));
-            	    }
-            	    pushFollow(FOLLOW_ruleAndBlock_in_ruleGivenBlock813);
-            	    temp_AndBlock=ruleAndBlock();
-            	    _fsp--;
-            	    if (failed) return result;
-            	    if ( backtracking==0 ) {
-            	      if (temp_AndBlock != null) {
-            	        hasContent = true;
-            	        ptm.setModelElement(temp_AndBlock);
-            	        factory.add(result,"ab",convert(temp_AndBlock),false);
-            	        ptm.ruleFinished(temp_AndBlock);
-            	      } else {
-            	        ptm.destroyNode();
-            	      }
-
-            	    }
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop7;
-                }
-            } while (true);
-
-
-            }
-
-            if ( backtracking==0 ) {
-              if (!hasContent)
-                result = null;
-            }
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            if (!hasContent)
-                result = null;
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-            if ( backtracking>0 ) { memoize(input, 15, ruleGivenBlock_StartIndex); }
-        }
-        return result;
-    }
-    // $ANTLR end ruleGivenBlock
-
-
-    // $ANTLR start ruleGivenIdentifier
-    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:614:1: ruleGivenIdentifier returns [EObject result] : ( 'Given' ) ;
-    public EObject ruleGivenIdentifier() throws RecognitionException {
-        EObject result = null;
-        int ruleGivenIdentifier_StartIndex = input.index();
-        boolean hasContent = false;
-        try {
-            if ( backtracking>0 && alreadyParsedRule(input, 16) ) { return result; }
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:617:4: ( ( 'Given' ) )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:617:4: ( 'Given' )
-            {
-            if ( backtracking==0 ) {
-
-              				result = factory.create("", "GivenIdentifier");
-              			 
-            }
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:620:1: ( 'Given' )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:620:2: 'Given'
-            {
-            if ( backtracking==0 ) {
-              skipCurrentToken = false;
-            }
-            match(input,18,FOLLOW_18_in_ruleGivenIdentifier852); if (failed) return result;
-            if ( backtracking==0 ) {
-              if (!skipCurrentToken) {
-                hasContent = true;
-                ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(17)).eContents().get(1)));
-                ptm.ruleFinished(getLastToken());
-              }
-            }
-
-            }
-
-            if ( backtracking==0 ) {
-              if (!hasContent)
-                result = null;
-            }
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            if (!hasContent)
-                result = null;
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-            if ( backtracking>0 ) { memoize(input, 16, ruleGivenIdentifier_StartIndex); }
-        }
-        return result;
-    }
-    // $ANTLR end ruleGivenIdentifier
-
-
-    // $ANTLR start ruleWhenBlock
-    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:632:1: ruleWhenBlock returns [EObject result] : ( (temp_WhenIdentifier= ruleWhenIdentifier ) (temp_WhenDefinition= ruleWhenDefinition ) (temp_AndBlock= ruleAndBlock )* ) ;
-    public EObject ruleWhenBlock() throws RecognitionException {
-        EObject result = null;
-        int ruleWhenBlock_StartIndex = input.index();
-        EObject temp_WhenIdentifier = null;
-
-        EObject temp_WhenDefinition = null;
-
-        EObject temp_AndBlock = null;
-
-
-        boolean hasContent = false;
-        try {
-            if ( backtracking>0 && alreadyParsedRule(input, 17) ) { return result; }
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:635:4: ( ( (temp_WhenIdentifier= ruleWhenIdentifier ) (temp_WhenDefinition= ruleWhenDefinition ) (temp_AndBlock= ruleAndBlock )* ) )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:635:4: ( (temp_WhenIdentifier= ruleWhenIdentifier ) (temp_WhenDefinition= ruleWhenDefinition ) (temp_AndBlock= ruleAndBlock )* )
-            {
-            if ( backtracking==0 ) {
-
-              				result = factory.create("", "WhenBlock");
-              			 
-            }
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:638:1: ( (temp_WhenIdentifier= ruleWhenIdentifier ) (temp_WhenDefinition= ruleWhenDefinition ) (temp_AndBlock= ruleAndBlock )* )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:638:2: (temp_WhenIdentifier= ruleWhenIdentifier ) (temp_WhenDefinition= ruleWhenDefinition ) (temp_AndBlock= ruleAndBlock )*
-            {
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:638:2: (temp_WhenIdentifier= ruleWhenIdentifier )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:638:3: temp_WhenIdentifier= ruleWhenIdentifier
-            {
-            if ( backtracking==0 ) {
-              ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(18)).eContents().get(1)).eContents().get(0)));
-            }
-            pushFollow(FOLLOW_ruleWhenIdentifier_in_ruleWhenBlock891);
-            temp_WhenIdentifier=ruleWhenIdentifier();
-            _fsp--;
-            if (failed) return result;
-            if ( backtracking==0 ) {
-              if (temp_WhenIdentifier != null) {
-                hasContent = true;
-                ptm.setModelElement(temp_WhenIdentifier);
-                factory.set(result,"wi",convert(temp_WhenIdentifier),false);
-                ptm.ruleFinished(temp_WhenIdentifier);
-              } else {
-                ptm.destroyNode();
-              }
-
-            }
-
-            }
-
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:650:1: (temp_WhenDefinition= ruleWhenDefinition )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:650:2: temp_WhenDefinition= ruleWhenDefinition
-            {
-            if ( backtracking==0 ) {
-              ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(18)).eContents().get(1)).eContents().get(1)));
-            }
-            pushFollow(FOLLOW_ruleWhenDefinition_in_ruleWhenBlock902);
-            temp_WhenDefinition=ruleWhenDefinition();
-            _fsp--;
-            if (failed) return result;
-            if ( backtracking==0 ) {
-              if (temp_WhenDefinition != null) {
-                hasContent = true;
-                ptm.setModelElement(temp_WhenDefinition);
-                factory.set(result,"when_def",convert(temp_WhenDefinition),false);
-                ptm.ruleFinished(temp_WhenDefinition);
-              } else {
-                ptm.destroyNode();
-              }
-
-            }
-
-            }
-
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:662:1: (temp_AndBlock= ruleAndBlock )*
-            loop8:
-            do {
-                int alt8=2;
-                int LA8_0 = input.LA(1);
-
-                if ( (LA8_0==21) ) {
-                    alt8=1;
-                }
-
-
-                switch (alt8) {
-            	case 1 :
-            	    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:662:2: temp_AndBlock= ruleAndBlock
-            	    {
-            	    if ( backtracking==0 ) {
-            	      ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(18)).eContents().get(1)).eContents().get(2)));
-            	    }
-            	    pushFollow(FOLLOW_ruleAndBlock_in_ruleWhenBlock913);
-            	    temp_AndBlock=ruleAndBlock();
-            	    _fsp--;
-            	    if (failed) return result;
-            	    if ( backtracking==0 ) {
-            	      if (temp_AndBlock != null) {
-            	        hasContent = true;
-            	        ptm.setModelElement(temp_AndBlock);
-            	        factory.add(result,"ab",convert(temp_AndBlock),false);
-            	        ptm.ruleFinished(temp_AndBlock);
-            	      } else {
-            	        ptm.destroyNode();
-            	      }
-
-            	    }
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop8;
-                }
-            } while (true);
-
-
-            }
-
-            if ( backtracking==0 ) {
-              if (!hasContent)
-                result = null;
-            }
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            if (!hasContent)
-                result = null;
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-            if ( backtracking>0 ) { memoize(input, 17, ruleWhenBlock_StartIndex); }
-        }
-        return result;
-    }
-    // $ANTLR end ruleWhenBlock
-
-
-    // $ANTLR start ruleWhenIdentifier
-    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:681:1: ruleWhenIdentifier returns [EObject result] : ( 'When' ) ;
-    public EObject ruleWhenIdentifier() throws RecognitionException {
-        EObject result = null;
-        int ruleWhenIdentifier_StartIndex = input.index();
-        boolean hasContent = false;
-        try {
-            if ( backtracking>0 && alreadyParsedRule(input, 18) ) { return result; }
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:684:4: ( ( 'When' ) )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:684:4: ( 'When' )
-            {
-            if ( backtracking==0 ) {
-
-              				result = factory.create("", "WhenIdentifier");
-              			 
-            }
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:687:1: ( 'When' )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:687:2: 'When'
-            {
-            if ( backtracking==0 ) {
-              skipCurrentToken = false;
-            }
-            match(input,19,FOLLOW_19_in_ruleWhenIdentifier952); if (failed) return result;
-            if ( backtracking==0 ) {
-              if (!skipCurrentToken) {
-                hasContent = true;
-                ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(19)).eContents().get(1)));
-                ptm.ruleFinished(getLastToken());
-              }
-            }
-
-            }
-
-            if ( backtracking==0 ) {
-              if (!hasContent)
-                result = null;
-            }
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            if (!hasContent)
-                result = null;
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-            if ( backtracking>0 ) { memoize(input, 18, ruleWhenIdentifier_StartIndex); }
-        }
-        return result;
-    }
-    // $ANTLR end ruleWhenIdentifier
-
-
-    // $ANTLR start ruleThenBlock
-    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:699:1: ruleThenBlock returns [EObject result] : ( (temp_ThenIdentifier= ruleThenIdentifier ) (temp_ThenDefinition= ruleThenDefinition ) (temp_AndBlock= ruleAndBlock )* ) ;
-    public EObject ruleThenBlock() throws RecognitionException {
-        EObject result = null;
-        int ruleThenBlock_StartIndex = input.index();
-        EObject temp_ThenIdentifier = null;
-
-        EObject temp_ThenDefinition = null;
-
-        EObject temp_AndBlock = null;
-
-
-        boolean hasContent = false;
-        try {
-            if ( backtracking>0 && alreadyParsedRule(input, 19) ) { return result; }
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:702:4: ( ( (temp_ThenIdentifier= ruleThenIdentifier ) (temp_ThenDefinition= ruleThenDefinition ) (temp_AndBlock= ruleAndBlock )* ) )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:702:4: ( (temp_ThenIdentifier= ruleThenIdentifier ) (temp_ThenDefinition= ruleThenDefinition ) (temp_AndBlock= ruleAndBlock )* )
-            {
-            if ( backtracking==0 ) {
-
-              				result = factory.create("", "ThenBlock");
-              			 
-            }
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:705:1: ( (temp_ThenIdentifier= ruleThenIdentifier ) (temp_ThenDefinition= ruleThenDefinition ) (temp_AndBlock= ruleAndBlock )* )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:705:2: (temp_ThenIdentifier= ruleThenIdentifier ) (temp_ThenDefinition= ruleThenDefinition ) (temp_AndBlock= ruleAndBlock )*
-            {
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:705:2: (temp_ThenIdentifier= ruleThenIdentifier )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:705:3: temp_ThenIdentifier= ruleThenIdentifier
-            {
-            if ( backtracking==0 ) {
-              ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(20)).eContents().get(1)).eContents().get(0)));
-            }
-            pushFollow(FOLLOW_ruleThenIdentifier_in_ruleThenBlock991);
-            temp_ThenIdentifier=ruleThenIdentifier();
-            _fsp--;
-            if (failed) return result;
-            if ( backtracking==0 ) {
-              if (temp_ThenIdentifier != null) {
-                hasContent = true;
-                ptm.setModelElement(temp_ThenIdentifier);
-                factory.set(result,"ti",convert(temp_ThenIdentifier),false);
-                ptm.ruleFinished(temp_ThenIdentifier);
-              } else {
-                ptm.destroyNode();
-              }
-
-            }
-
-            }
-
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:717:1: (temp_ThenDefinition= ruleThenDefinition )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:717:2: temp_ThenDefinition= ruleThenDefinition
-            {
-            if ( backtracking==0 ) {
-              ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(20)).eContents().get(1)).eContents().get(1)));
-            }
-            pushFollow(FOLLOW_ruleThenDefinition_in_ruleThenBlock1002);
-            temp_ThenDefinition=ruleThenDefinition();
-            _fsp--;
-            if (failed) return result;
-            if ( backtracking==0 ) {
-              if (temp_ThenDefinition != null) {
-                hasContent = true;
-                ptm.setModelElement(temp_ThenDefinition);
-                factory.set(result,"then_def",convert(temp_ThenDefinition),false);
-                ptm.ruleFinished(temp_ThenDefinition);
-              } else {
-                ptm.destroyNode();
-              }
-
-            }
-
-            }
-
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:729:1: (temp_AndBlock= ruleAndBlock )*
-            loop9:
-            do {
-                int alt9=2;
-                int LA9_0 = input.LA(1);
-
-                if ( (LA9_0==21) ) {
-                    alt9=1;
-                }
-
-
-                switch (alt9) {
-            	case 1 :
-            	    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:729:2: temp_AndBlock= ruleAndBlock
-            	    {
-            	    if ( backtracking==0 ) {
-            	      ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(20)).eContents().get(1)).eContents().get(2)));
-            	    }
-            	    pushFollow(FOLLOW_ruleAndBlock_in_ruleThenBlock1013);
-            	    temp_AndBlock=ruleAndBlock();
-            	    _fsp--;
-            	    if (failed) return result;
-            	    if ( backtracking==0 ) {
-            	      if (temp_AndBlock != null) {
-            	        hasContent = true;
-            	        ptm.setModelElement(temp_AndBlock);
-            	        factory.add(result,"ab",convert(temp_AndBlock),false);
-            	        ptm.ruleFinished(temp_AndBlock);
-            	      } else {
-            	        ptm.destroyNode();
-            	      }
-
-            	    }
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop9;
-                }
-            } while (true);
-
-
-            }
-
-            if ( backtracking==0 ) {
-              if (!hasContent)
-                result = null;
-            }
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            if (!hasContent)
-                result = null;
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-            if ( backtracking>0 ) { memoize(input, 19, ruleThenBlock_StartIndex); }
-        }
-        return result;
-    }
-    // $ANTLR end ruleThenBlock
-
-
-    // $ANTLR start ruleThenIdentifier
-    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:748:1: ruleThenIdentifier returns [EObject result] : ( 'Then' ) ;
-    public EObject ruleThenIdentifier() throws RecognitionException {
-        EObject result = null;
-        int ruleThenIdentifier_StartIndex = input.index();
-        boolean hasContent = false;
-        try {
-            if ( backtracking>0 && alreadyParsedRule(input, 20) ) { return result; }
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:751:4: ( ( 'Then' ) )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:751:4: ( 'Then' )
-            {
-            if ( backtracking==0 ) {
-
-              				result = factory.create("", "ThenIdentifier");
-              			 
-            }
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:754:1: ( 'Then' )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:754:2: 'Then'
-            {
-            if ( backtracking==0 ) {
-              skipCurrentToken = false;
-            }
-            match(input,20,FOLLOW_20_in_ruleThenIdentifier1052); if (failed) return result;
-            if ( backtracking==0 ) {
-              if (!skipCurrentToken) {
-                hasContent = true;
-                ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(21)).eContents().get(1)));
-                ptm.ruleFinished(getLastToken());
-              }
-            }
-
-            }
-
-            if ( backtracking==0 ) {
-              if (!hasContent)
-                result = null;
-            }
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            if (!hasContent)
-                result = null;
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-            if ( backtracking>0 ) { memoize(input, 20, ruleThenIdentifier_StartIndex); }
-        }
-        return result;
-    }
-    // $ANTLR end ruleThenIdentifier
-
-
-    // $ANTLR start ruleAndBlock
-    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:766:1: ruleAndBlock returns [EObject result] : ( (temp_AndIdentifier= ruleAndIdentifier ) (temp_AndDefinition= ruleAndDefinition ) ) ;
-    public EObject ruleAndBlock() throws RecognitionException {
-        EObject result = null;
-        int ruleAndBlock_StartIndex = input.index();
-        EObject temp_AndIdentifier = null;
-
-        EObject temp_AndDefinition = null;
-
-
-        boolean hasContent = false;
-        try {
-            if ( backtracking>0 && alreadyParsedRule(input, 21) ) { return result; }
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:769:4: ( ( (temp_AndIdentifier= ruleAndIdentifier ) (temp_AndDefinition= ruleAndDefinition ) ) )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:769:4: ( (temp_AndIdentifier= ruleAndIdentifier ) (temp_AndDefinition= ruleAndDefinition ) )
-            {
-            if ( backtracking==0 ) {
-
-              				result = factory.create("", "AndBlock");
-              			 
-            }
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:772:1: ( (temp_AndIdentifier= ruleAndIdentifier ) (temp_AndDefinition= ruleAndDefinition ) )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:772:2: (temp_AndIdentifier= ruleAndIdentifier ) (temp_AndDefinition= ruleAndDefinition )
-            {
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:772:2: (temp_AndIdentifier= ruleAndIdentifier )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:772:3: temp_AndIdentifier= ruleAndIdentifier
-            {
-            if ( backtracking==0 ) {
-              ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(22)).eContents().get(1)).eContents().get(0)));
-            }
-            pushFollow(FOLLOW_ruleAndIdentifier_in_ruleAndBlock1091);
-            temp_AndIdentifier=ruleAndIdentifier();
-            _fsp--;
-            if (failed) return result;
-            if ( backtracking==0 ) {
-              if (temp_AndIdentifier != null) {
-                hasContent = true;
-                ptm.setModelElement(temp_AndIdentifier);
-                factory.set(result,"ai",convert(temp_AndIdentifier),false);
-                ptm.ruleFinished(temp_AndIdentifier);
-              } else {
-                ptm.destroyNode();
-              }
-
-            }
-
-            }
-
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:784:1: (temp_AndDefinition= ruleAndDefinition )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:784:2: temp_AndDefinition= ruleAndDefinition
-            {
-            if ( backtracking==0 ) {
-              ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(22)).eContents().get(1)).eContents().get(1)));
-            }
-            pushFollow(FOLLOW_ruleAndDefinition_in_ruleAndBlock1102);
-            temp_AndDefinition=ruleAndDefinition();
-            _fsp--;
-            if (failed) return result;
-            if ( backtracking==0 ) {
-              if (temp_AndDefinition != null) {
-                hasContent = true;
-                ptm.setModelElement(temp_AndDefinition);
-                factory.set(result,"and_def",convert(temp_AndDefinition),false);
-                ptm.ruleFinished(temp_AndDefinition);
-              } else {
-                ptm.destroyNode();
-              }
-
-            }
-
-            }
-
-
-            }
-
-            if ( backtracking==0 ) {
-              if (!hasContent)
-                result = null;
-            }
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            if (!hasContent)
-                result = null;
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-            if ( backtracking>0 ) { memoize(input, 21, ruleAndBlock_StartIndex); }
-        }
-        return result;
-    }
-    // $ANTLR end ruleAndBlock
-
-
-    // $ANTLR start ruleAndIdentifier
-    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:803:1: ruleAndIdentifier returns [EObject result] : ( 'And' ) ;
-    public EObject ruleAndIdentifier() throws RecognitionException {
-        EObject result = null;
-        int ruleAndIdentifier_StartIndex = input.index();
-        boolean hasContent = false;
-        try {
-            if ( backtracking>0 && alreadyParsedRule(input, 22) ) { return result; }
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:806:4: ( ( 'And' ) )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:806:4: ( 'And' )
-            {
-            if ( backtracking==0 ) {
-
-              				result = factory.create("", "AndIdentifier");
-              			 
-            }
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:809:1: ( 'And' )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:809:2: 'And'
-            {
-            if ( backtracking==0 ) {
-              skipCurrentToken = false;
-            }
-            match(input,21,FOLLOW_21_in_ruleAndIdentifier1140); if (failed) return result;
-            if ( backtracking==0 ) {
-              if (!skipCurrentToken) {
-                hasContent = true;
-                ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(23)).eContents().get(1)));
-                ptm.ruleFinished(getLastToken());
-              }
-            }
-
-            }
-
-            if ( backtracking==0 ) {
-              if (!hasContent)
-                result = null;
-            }
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            if (!hasContent)
-                result = null;
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-            if ( backtracking>0 ) { memoize(input, 22, ruleAndIdentifier_StartIndex); }
-        }
-        return result;
-    }
-    // $ANTLR end ruleAndIdentifier
-
-
-    // $ANTLR start ruleGivenDefinition
-    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:821:1: ruleGivenDefinition returns [EObject result] : (temp_Word= ruleWord )+ ;
-    public EObject ruleGivenDefinition() throws RecognitionException {
-        EObject result = null;
-        int ruleGivenDefinition_StartIndex = input.index();
-        String temp_Word = null;
-
-
-        boolean hasContent = false;
-        try {
-            if ( backtracking>0 && alreadyParsedRule(input, 23) ) { return result; }
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:824:4: ( (temp_Word= ruleWord )+ )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:824:4: (temp_Word= ruleWord )+
-            {
-            if ( backtracking==0 ) {
-
-              				result = factory.create("", "GivenDefinition");
-              			 
-            }
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:827:1: (temp_Word= ruleWord )+
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:351:1: (temp_Word= ruleWord )+
             int cnt10=0;
             loop10:
             do {
                 int alt10=2;
                 int LA10_0 = input.LA(1);
 
-                if ( ((LA10_0>=RULE_ID && LA10_0<=RULE_NotIwantto)||LA10_0==22) ) {
+                if ( ((LA10_0>=RULE_ID && LA10_0<=RULE_INT)||(LA10_0>=19 && LA10_0<=24)) ) {
                     alt10=1;
                 }
 
 
                 switch (alt10) {
             	case 1 :
-            	    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:827:2: temp_Word= ruleWord
+            	    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:351:2: temp_Word= ruleWord
             	    {
             	    if ( backtracking==0 ) {
-            	      ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(24)).eContents().get(1)));
+            	      ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(7)).eContents().get(1)));
             	    }
-            	    pushFollow(FOLLOW_ruleWord_in_ruleGivenDefinition1178);
+            	    pushFollow(FOLLOW_ruleWord_in_ruleSomeActionDefinition456);
             	    temp_Word=ruleWord();
             	    _fsp--;
             	    if (failed) return result;
@@ -2250,7 +1433,2347 @@ public class CucumberFeatureParser extends Parser {
             recover(input,re);
         }
         finally {
-            if ( backtracking>0 ) { memoize(input, 23, ruleGivenDefinition_StartIndex); }
+            if ( backtracking>0 ) { memoize(input, 9, ruleSomeActionDefinition_StartIndex); }
+        }
+        return result;
+    }
+    // $ANTLR end ruleSomeActionDefinition
+
+
+    // $ANTLR start ruleBackground
+    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:368:1: ruleBackground returns [EObject result] : ( (temp_BackgroundIdentifier= ruleBackgroundIdentifier ) (temp_GivenBlock= ruleGivenBlock )? (temp_WhenBlock= ruleWhenBlock )? (temp_ThenBlock= ruleThenBlock )? ) ;
+    public EObject ruleBackground() throws RecognitionException {
+        EObject result = null;
+        int ruleBackground_StartIndex = input.index();
+        EObject temp_BackgroundIdentifier = null;
+
+        EObject temp_GivenBlock = null;
+
+        EObject temp_WhenBlock = null;
+
+        EObject temp_ThenBlock = null;
+
+
+        boolean hasContent = false;
+        try {
+            if ( backtracking>0 && alreadyParsedRule(input, 10) ) { return result; }
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:371:4: ( ( (temp_BackgroundIdentifier= ruleBackgroundIdentifier ) (temp_GivenBlock= ruleGivenBlock )? (temp_WhenBlock= ruleWhenBlock )? (temp_ThenBlock= ruleThenBlock )? ) )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:371:4: ( (temp_BackgroundIdentifier= ruleBackgroundIdentifier ) (temp_GivenBlock= ruleGivenBlock )? (temp_WhenBlock= ruleWhenBlock )? (temp_ThenBlock= ruleThenBlock )? )
+            {
+            if ( backtracking==0 ) {
+
+              				result = factory.create("", "Background");
+              			 
+            }
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:374:1: ( (temp_BackgroundIdentifier= ruleBackgroundIdentifier ) (temp_GivenBlock= ruleGivenBlock )? (temp_WhenBlock= ruleWhenBlock )? (temp_ThenBlock= ruleThenBlock )? )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:374:2: (temp_BackgroundIdentifier= ruleBackgroundIdentifier ) (temp_GivenBlock= ruleGivenBlock )? (temp_WhenBlock= ruleWhenBlock )? (temp_ThenBlock= ruleThenBlock )?
+            {
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:374:2: (temp_BackgroundIdentifier= ruleBackgroundIdentifier )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:374:3: temp_BackgroundIdentifier= ruleBackgroundIdentifier
+            {
+            if ( backtracking==0 ) {
+              ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(8)).eContents().get(1)).eContents().get(0)));
+            }
+            pushFollow(FOLLOW_ruleBackgroundIdentifier_in_ruleBackground497);
+            temp_BackgroundIdentifier=ruleBackgroundIdentifier();
+            _fsp--;
+            if (failed) return result;
+            if ( backtracking==0 ) {
+              if (temp_BackgroundIdentifier != null) {
+                hasContent = true;
+                ptm.setModelElement(temp_BackgroundIdentifier);
+                factory.set(result,"bi",convert(temp_BackgroundIdentifier),false);
+                ptm.ruleFinished(temp_BackgroundIdentifier);
+              } else {
+                ptm.destroyNode();
+              }
+
+            }
+
+            }
+
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:386:1: (temp_GivenBlock= ruleGivenBlock )?
+            int alt11=2;
+            int LA11_0 = input.LA(1);
+
+            if ( (LA11_0==15) ) {
+                alt11=1;
+            }
+            switch (alt11) {
+                case 1 :
+                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:386:2: temp_GivenBlock= ruleGivenBlock
+                    {
+                    if ( backtracking==0 ) {
+                      ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(8)).eContents().get(1)).eContents().get(1)));
+                    }
+                    pushFollow(FOLLOW_ruleGivenBlock_in_ruleBackground508);
+                    temp_GivenBlock=ruleGivenBlock();
+                    _fsp--;
+                    if (failed) return result;
+                    if ( backtracking==0 ) {
+                      if (temp_GivenBlock != null) {
+                        hasContent = true;
+                        ptm.setModelElement(temp_GivenBlock);
+                        factory.set(result,"gb",convert(temp_GivenBlock),false);
+                        ptm.ruleFinished(temp_GivenBlock);
+                      } else {
+                        ptm.destroyNode();
+                      }
+
+                    }
+
+                    }
+                    break;
+
+            }
+
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:398:1: (temp_WhenBlock= ruleWhenBlock )?
+            int alt12=2;
+            int LA12_0 = input.LA(1);
+
+            if ( (LA12_0==16) ) {
+                alt12=1;
+            }
+            switch (alt12) {
+                case 1 :
+                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:398:2: temp_WhenBlock= ruleWhenBlock
+                    {
+                    if ( backtracking==0 ) {
+                      ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(8)).eContents().get(1)).eContents().get(2)));
+                    }
+                    pushFollow(FOLLOW_ruleWhenBlock_in_ruleBackground520);
+                    temp_WhenBlock=ruleWhenBlock();
+                    _fsp--;
+                    if (failed) return result;
+                    if ( backtracking==0 ) {
+                      if (temp_WhenBlock != null) {
+                        hasContent = true;
+                        ptm.setModelElement(temp_WhenBlock);
+                        factory.set(result,"wb",convert(temp_WhenBlock),false);
+                        ptm.ruleFinished(temp_WhenBlock);
+                      } else {
+                        ptm.destroyNode();
+                      }
+
+                    }
+
+                    }
+                    break;
+
+            }
+
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:410:1: (temp_ThenBlock= ruleThenBlock )?
+            int alt13=2;
+            int LA13_0 = input.LA(1);
+
+            if ( (LA13_0==17) ) {
+                alt13=1;
+            }
+            switch (alt13) {
+                case 1 :
+                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:410:2: temp_ThenBlock= ruleThenBlock
+                    {
+                    if ( backtracking==0 ) {
+                      ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(8)).eContents().get(1)).eContents().get(3)));
+                    }
+                    pushFollow(FOLLOW_ruleThenBlock_in_ruleBackground532);
+                    temp_ThenBlock=ruleThenBlock();
+                    _fsp--;
+                    if (failed) return result;
+                    if ( backtracking==0 ) {
+                      if (temp_ThenBlock != null) {
+                        hasContent = true;
+                        ptm.setModelElement(temp_ThenBlock);
+                        factory.set(result,"tb",convert(temp_ThenBlock),false);
+                        ptm.ruleFinished(temp_ThenBlock);
+                      } else {
+                        ptm.destroyNode();
+                      }
+
+                    }
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+            if ( backtracking==0 ) {
+              if (!hasContent)
+                result = null;
+            }
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            if (!hasContent)
+                result = null;
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+            if ( backtracking>0 ) { memoize(input, 10, ruleBackground_StartIndex); }
+        }
+        return result;
+    }
+    // $ANTLR end ruleBackground
+
+
+    // $ANTLR start ruleBackgroundIdentifier
+    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:429:1: ruleBackgroundIdentifier returns [EObject result] : ( 'Background:' ) ;
+    public EObject ruleBackgroundIdentifier() throws RecognitionException {
+        EObject result = null;
+        int ruleBackgroundIdentifier_StartIndex = input.index();
+        boolean hasContent = false;
+        try {
+            if ( backtracking>0 && alreadyParsedRule(input, 11) ) { return result; }
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:432:4: ( ( 'Background:' ) )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:432:4: ( 'Background:' )
+            {
+            if ( backtracking==0 ) {
+
+              				result = factory.create("", "BackgroundIdentifier");
+              			 
+            }
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:435:1: ( 'Background:' )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:435:2: 'Background:'
+            {
+            if ( backtracking==0 ) {
+              skipCurrentToken = false;
+            }
+            match(input,11,FOLLOW_11_in_ruleBackgroundIdentifier571); if (failed) return result;
+            if ( backtracking==0 ) {
+              if (!skipCurrentToken) {
+                hasContent = true;
+                ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(9)).eContents().get(1)));
+                ptm.ruleFinished(getLastToken());
+              }
+            }
+
+            }
+
+            if ( backtracking==0 ) {
+              if (!hasContent)
+                result = null;
+            }
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            if (!hasContent)
+                result = null;
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+            if ( backtracking>0 ) { memoize(input, 11, ruleBackgroundIdentifier_StartIndex); }
+        }
+        return result;
+    }
+    // $ANTLR end ruleBackgroundIdentifier
+
+
+    // $ANTLR start ruleScenario
+    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:447:1: ruleScenario returns [EObject result] : (temp_basicscenario= ruleBasicScenario | temp_tablescenario= ruleTableScenario );
+    public EObject ruleScenario() throws RecognitionException {
+        EObject result = null;
+        int ruleScenario_StartIndex = input.index();
+        EObject temp_basicscenario = null;
+
+        EObject temp_tablescenario = null;
+
+
+        try {
+            if ( backtracking>0 && alreadyParsedRule(input, 12) ) { return result; }
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:449:9: (temp_basicscenario= ruleBasicScenario | temp_tablescenario= ruleTableScenario )
+            int alt14=2;
+            int LA14_0 = input.LA(1);
+
+            if ( (LA14_0==14) ) {
+                alt14=1;
+            }
+            else if ( (LA14_0==12) ) {
+                alt14=2;
+            }
+            else {
+                if (backtracking>0) {failed=true; return result;}
+                NoViableAltException nvae =
+                    new NoViableAltException("447:1: ruleScenario returns [EObject result] : (temp_basicscenario= ruleBasicScenario | temp_tablescenario= ruleTableScenario );", 14, 0, input);
+
+                throw nvae;
+            }
+            switch (alt14) {
+                case 1 :
+                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:449:9: temp_basicscenario= ruleBasicScenario
+                    {
+                    pushFollow(FOLLOW_ruleBasicScenario_in_ruleScenario604);
+                    temp_basicscenario=ruleBasicScenario();
+                    _fsp--;
+                    if (failed) return result;
+                    if ( backtracking==0 ) {
+                      result =temp_basicscenario;
+                    }
+
+                    }
+                    break;
+                case 2 :
+                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:449:85: temp_tablescenario= ruleTableScenario
+                    {
+                    pushFollow(FOLLOW_ruleTableScenario_in_ruleScenario619);
+                    temp_tablescenario=ruleTableScenario();
+                    _fsp--;
+                    if (failed) return result;
+                    if ( backtracking==0 ) {
+                      result =temp_tablescenario;
+                    }
+
+                    }
+                    break;
+
+            }
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+            if ( backtracking>0 ) { memoize(input, 12, ruleScenario_StartIndex); }
+        }
+        return result;
+    }
+    // $ANTLR end ruleScenario
+
+
+    // $ANTLR start ruleBasicScenario
+    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:451:1: ruleBasicScenario returns [EObject result] : ( (temp_ScenarioIdentifier= ruleScenarioIdentifier ) (temp_ScenarioDescription= ruleScenarioDescription ) (temp_GivenBlock= ruleGivenBlock )? (temp_WhenBlock= ruleWhenBlock )? (temp_ThenBlock= ruleThenBlock )? ) ;
+    public EObject ruleBasicScenario() throws RecognitionException {
+        EObject result = null;
+        int ruleBasicScenario_StartIndex = input.index();
+        EObject temp_ScenarioIdentifier = null;
+
+        EObject temp_ScenarioDescription = null;
+
+        EObject temp_GivenBlock = null;
+
+        EObject temp_WhenBlock = null;
+
+        EObject temp_ThenBlock = null;
+
+
+        boolean hasContent = false;
+        try {
+            if ( backtracking>0 && alreadyParsedRule(input, 13) ) { return result; }
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:454:4: ( ( (temp_ScenarioIdentifier= ruleScenarioIdentifier ) (temp_ScenarioDescription= ruleScenarioDescription ) (temp_GivenBlock= ruleGivenBlock )? (temp_WhenBlock= ruleWhenBlock )? (temp_ThenBlock= ruleThenBlock )? ) )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:454:4: ( (temp_ScenarioIdentifier= ruleScenarioIdentifier ) (temp_ScenarioDescription= ruleScenarioDescription ) (temp_GivenBlock= ruleGivenBlock )? (temp_WhenBlock= ruleWhenBlock )? (temp_ThenBlock= ruleThenBlock )? )
+            {
+            if ( backtracking==0 ) {
+
+              				result = factory.create("", "BasicScenario");
+              			 
+            }
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:457:1: ( (temp_ScenarioIdentifier= ruleScenarioIdentifier ) (temp_ScenarioDescription= ruleScenarioDescription ) (temp_GivenBlock= ruleGivenBlock )? (temp_WhenBlock= ruleWhenBlock )? (temp_ThenBlock= ruleThenBlock )? )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:457:2: (temp_ScenarioIdentifier= ruleScenarioIdentifier ) (temp_ScenarioDescription= ruleScenarioDescription ) (temp_GivenBlock= ruleGivenBlock )? (temp_WhenBlock= ruleWhenBlock )? (temp_ThenBlock= ruleThenBlock )?
+            {
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:457:2: (temp_ScenarioIdentifier= ruleScenarioIdentifier )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:457:3: temp_ScenarioIdentifier= ruleScenarioIdentifier
+            {
+            if ( backtracking==0 ) {
+              ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(11)).eContents().get(1)).eContents().get(0)));
+            }
+            pushFollow(FOLLOW_ruleScenarioIdentifier_in_ruleBasicScenario650);
+            temp_ScenarioIdentifier=ruleScenarioIdentifier();
+            _fsp--;
+            if (failed) return result;
+            if ( backtracking==0 ) {
+              if (temp_ScenarioIdentifier != null) {
+                hasContent = true;
+                ptm.setModelElement(temp_ScenarioIdentifier);
+                factory.set(result,"si",convert(temp_ScenarioIdentifier),false);
+                ptm.ruleFinished(temp_ScenarioIdentifier);
+              } else {
+                ptm.destroyNode();
+              }
+
+            }
+
+            }
+
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:469:1: (temp_ScenarioDescription= ruleScenarioDescription )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:469:2: temp_ScenarioDescription= ruleScenarioDescription
+            {
+            if ( backtracking==0 ) {
+              ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(11)).eContents().get(1)).eContents().get(1)));
+            }
+            pushFollow(FOLLOW_ruleScenarioDescription_in_ruleBasicScenario661);
+            temp_ScenarioDescription=ruleScenarioDescription();
+            _fsp--;
+            if (failed) return result;
+            if ( backtracking==0 ) {
+              if (temp_ScenarioDescription != null) {
+                hasContent = true;
+                ptm.setModelElement(temp_ScenarioDescription);
+                factory.set(result,"sd",convert(temp_ScenarioDescription),false);
+                ptm.ruleFinished(temp_ScenarioDescription);
+              } else {
+                ptm.destroyNode();
+              }
+
+            }
+
+            }
+
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:481:1: (temp_GivenBlock= ruleGivenBlock )?
+            int alt15=2;
+            int LA15_0 = input.LA(1);
+
+            if ( (LA15_0==15) ) {
+                alt15=1;
+            }
+            switch (alt15) {
+                case 1 :
+                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:481:2: temp_GivenBlock= ruleGivenBlock
+                    {
+                    if ( backtracking==0 ) {
+                      ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(11)).eContents().get(1)).eContents().get(2)));
+                    }
+                    pushFollow(FOLLOW_ruleGivenBlock_in_ruleBasicScenario672);
+                    temp_GivenBlock=ruleGivenBlock();
+                    _fsp--;
+                    if (failed) return result;
+                    if ( backtracking==0 ) {
+                      if (temp_GivenBlock != null) {
+                        hasContent = true;
+                        ptm.setModelElement(temp_GivenBlock);
+                        factory.set(result,"gb",convert(temp_GivenBlock),false);
+                        ptm.ruleFinished(temp_GivenBlock);
+                      } else {
+                        ptm.destroyNode();
+                      }
+
+                    }
+
+                    }
+                    break;
+
+            }
+
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:493:1: (temp_WhenBlock= ruleWhenBlock )?
+            int alt16=2;
+            int LA16_0 = input.LA(1);
+
+            if ( (LA16_0==16) ) {
+                alt16=1;
+            }
+            switch (alt16) {
+                case 1 :
+                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:493:2: temp_WhenBlock= ruleWhenBlock
+                    {
+                    if ( backtracking==0 ) {
+                      ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(11)).eContents().get(1)).eContents().get(3)));
+                    }
+                    pushFollow(FOLLOW_ruleWhenBlock_in_ruleBasicScenario684);
+                    temp_WhenBlock=ruleWhenBlock();
+                    _fsp--;
+                    if (failed) return result;
+                    if ( backtracking==0 ) {
+                      if (temp_WhenBlock != null) {
+                        hasContent = true;
+                        ptm.setModelElement(temp_WhenBlock);
+                        factory.set(result,"wb",convert(temp_WhenBlock),false);
+                        ptm.ruleFinished(temp_WhenBlock);
+                      } else {
+                        ptm.destroyNode();
+                      }
+
+                    }
+
+                    }
+                    break;
+
+            }
+
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:505:1: (temp_ThenBlock= ruleThenBlock )?
+            int alt17=2;
+            int LA17_0 = input.LA(1);
+
+            if ( (LA17_0==17) ) {
+                alt17=1;
+            }
+            switch (alt17) {
+                case 1 :
+                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:505:2: temp_ThenBlock= ruleThenBlock
+                    {
+                    if ( backtracking==0 ) {
+                      ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(11)).eContents().get(1)).eContents().get(4)));
+                    }
+                    pushFollow(FOLLOW_ruleThenBlock_in_ruleBasicScenario696);
+                    temp_ThenBlock=ruleThenBlock();
+                    _fsp--;
+                    if (failed) return result;
+                    if ( backtracking==0 ) {
+                      if (temp_ThenBlock != null) {
+                        hasContent = true;
+                        ptm.setModelElement(temp_ThenBlock);
+                        factory.set(result,"tb",convert(temp_ThenBlock),false);
+                        ptm.ruleFinished(temp_ThenBlock);
+                      } else {
+                        ptm.destroyNode();
+                      }
+
+                    }
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+            if ( backtracking==0 ) {
+              if (!hasContent)
+                result = null;
+            }
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            if (!hasContent)
+                result = null;
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+            if ( backtracking>0 ) { memoize(input, 13, ruleBasicScenario_StartIndex); }
+        }
+        return result;
+    }
+    // $ANTLR end ruleBasicScenario
+
+
+    // $ANTLR start ruleTableScenario
+    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:524:1: ruleTableScenario returns [EObject result] : ( (temp_TableScenarioIdentifier= ruleTableScenarioIdentifier ) (temp_ScenarioDescription= ruleScenarioDescription ) (temp_GivenBlock= ruleGivenBlock )? (temp_WhenBlock= ruleWhenBlock )? (temp_ThenBlock= ruleThenBlock )? (temp_TableBlock= ruleTableBlock ) ) ;
+    public EObject ruleTableScenario() throws RecognitionException {
+        EObject result = null;
+        int ruleTableScenario_StartIndex = input.index();
+        EObject temp_TableScenarioIdentifier = null;
+
+        EObject temp_ScenarioDescription = null;
+
+        EObject temp_GivenBlock = null;
+
+        EObject temp_WhenBlock = null;
+
+        EObject temp_ThenBlock = null;
+
+        EObject temp_TableBlock = null;
+
+
+        boolean hasContent = false;
+        try {
+            if ( backtracking>0 && alreadyParsedRule(input, 14) ) { return result; }
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:527:4: ( ( (temp_TableScenarioIdentifier= ruleTableScenarioIdentifier ) (temp_ScenarioDescription= ruleScenarioDescription ) (temp_GivenBlock= ruleGivenBlock )? (temp_WhenBlock= ruleWhenBlock )? (temp_ThenBlock= ruleThenBlock )? (temp_TableBlock= ruleTableBlock ) ) )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:527:4: ( (temp_TableScenarioIdentifier= ruleTableScenarioIdentifier ) (temp_ScenarioDescription= ruleScenarioDescription ) (temp_GivenBlock= ruleGivenBlock )? (temp_WhenBlock= ruleWhenBlock )? (temp_ThenBlock= ruleThenBlock )? (temp_TableBlock= ruleTableBlock ) )
+            {
+            if ( backtracking==0 ) {
+
+              				result = factory.create("", "TableScenario");
+              			 
+            }
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:530:1: ( (temp_TableScenarioIdentifier= ruleTableScenarioIdentifier ) (temp_ScenarioDescription= ruleScenarioDescription ) (temp_GivenBlock= ruleGivenBlock )? (temp_WhenBlock= ruleWhenBlock )? (temp_ThenBlock= ruleThenBlock )? (temp_TableBlock= ruleTableBlock ) )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:530:2: (temp_TableScenarioIdentifier= ruleTableScenarioIdentifier ) (temp_ScenarioDescription= ruleScenarioDescription ) (temp_GivenBlock= ruleGivenBlock )? (temp_WhenBlock= ruleWhenBlock )? (temp_ThenBlock= ruleThenBlock )? (temp_TableBlock= ruleTableBlock )
+            {
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:530:2: (temp_TableScenarioIdentifier= ruleTableScenarioIdentifier )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:530:3: temp_TableScenarioIdentifier= ruleTableScenarioIdentifier
+            {
+            if ( backtracking==0 ) {
+              ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(12)).eContents().get(1)).eContents().get(0)));
+            }
+            pushFollow(FOLLOW_ruleTableScenarioIdentifier_in_ruleTableScenario739);
+            temp_TableScenarioIdentifier=ruleTableScenarioIdentifier();
+            _fsp--;
+            if (failed) return result;
+            if ( backtracking==0 ) {
+              if (temp_TableScenarioIdentifier != null) {
+                hasContent = true;
+                ptm.setModelElement(temp_TableScenarioIdentifier);
+                factory.set(result,"tsi",convert(temp_TableScenarioIdentifier),false);
+                ptm.ruleFinished(temp_TableScenarioIdentifier);
+              } else {
+                ptm.destroyNode();
+              }
+
+            }
+
+            }
+
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:542:1: (temp_ScenarioDescription= ruleScenarioDescription )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:542:2: temp_ScenarioDescription= ruleScenarioDescription
+            {
+            if ( backtracking==0 ) {
+              ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(12)).eContents().get(1)).eContents().get(1)));
+            }
+            pushFollow(FOLLOW_ruleScenarioDescription_in_ruleTableScenario750);
+            temp_ScenarioDescription=ruleScenarioDescription();
+            _fsp--;
+            if (failed) return result;
+            if ( backtracking==0 ) {
+              if (temp_ScenarioDescription != null) {
+                hasContent = true;
+                ptm.setModelElement(temp_ScenarioDescription);
+                factory.set(result,"sd",convert(temp_ScenarioDescription),false);
+                ptm.ruleFinished(temp_ScenarioDescription);
+              } else {
+                ptm.destroyNode();
+              }
+
+            }
+
+            }
+
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:554:1: (temp_GivenBlock= ruleGivenBlock )?
+            int alt18=2;
+            int LA18_0 = input.LA(1);
+
+            if ( (LA18_0==15) ) {
+                alt18=1;
+            }
+            switch (alt18) {
+                case 1 :
+                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:554:2: temp_GivenBlock= ruleGivenBlock
+                    {
+                    if ( backtracking==0 ) {
+                      ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(12)).eContents().get(1)).eContents().get(2)));
+                    }
+                    pushFollow(FOLLOW_ruleGivenBlock_in_ruleTableScenario761);
+                    temp_GivenBlock=ruleGivenBlock();
+                    _fsp--;
+                    if (failed) return result;
+                    if ( backtracking==0 ) {
+                      if (temp_GivenBlock != null) {
+                        hasContent = true;
+                        ptm.setModelElement(temp_GivenBlock);
+                        factory.set(result,"gb",convert(temp_GivenBlock),false);
+                        ptm.ruleFinished(temp_GivenBlock);
+                      } else {
+                        ptm.destroyNode();
+                      }
+
+                    }
+
+                    }
+                    break;
+
+            }
+
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:566:1: (temp_WhenBlock= ruleWhenBlock )?
+            int alt19=2;
+            int LA19_0 = input.LA(1);
+
+            if ( (LA19_0==16) ) {
+                alt19=1;
+            }
+            switch (alt19) {
+                case 1 :
+                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:566:2: temp_WhenBlock= ruleWhenBlock
+                    {
+                    if ( backtracking==0 ) {
+                      ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(12)).eContents().get(1)).eContents().get(3)));
+                    }
+                    pushFollow(FOLLOW_ruleWhenBlock_in_ruleTableScenario773);
+                    temp_WhenBlock=ruleWhenBlock();
+                    _fsp--;
+                    if (failed) return result;
+                    if ( backtracking==0 ) {
+                      if (temp_WhenBlock != null) {
+                        hasContent = true;
+                        ptm.setModelElement(temp_WhenBlock);
+                        factory.set(result,"wb",convert(temp_WhenBlock),false);
+                        ptm.ruleFinished(temp_WhenBlock);
+                      } else {
+                        ptm.destroyNode();
+                      }
+
+                    }
+
+                    }
+                    break;
+
+            }
+
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:578:1: (temp_ThenBlock= ruleThenBlock )?
+            int alt20=2;
+            int LA20_0 = input.LA(1);
+
+            if ( (LA20_0==17) ) {
+                alt20=1;
+            }
+            switch (alt20) {
+                case 1 :
+                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:578:2: temp_ThenBlock= ruleThenBlock
+                    {
+                    if ( backtracking==0 ) {
+                      ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(12)).eContents().get(1)).eContents().get(4)));
+                    }
+                    pushFollow(FOLLOW_ruleThenBlock_in_ruleTableScenario785);
+                    temp_ThenBlock=ruleThenBlock();
+                    _fsp--;
+                    if (failed) return result;
+                    if ( backtracking==0 ) {
+                      if (temp_ThenBlock != null) {
+                        hasContent = true;
+                        ptm.setModelElement(temp_ThenBlock);
+                        factory.set(result,"tb",convert(temp_ThenBlock),false);
+                        ptm.ruleFinished(temp_ThenBlock);
+                      } else {
+                        ptm.destroyNode();
+                      }
+
+                    }
+
+                    }
+                    break;
+
+            }
+
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:590:1: (temp_TableBlock= ruleTableBlock )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:590:2: temp_TableBlock= ruleTableBlock
+            {
+            if ( backtracking==0 ) {
+              ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(12)).eContents().get(1)).eContents().get(5)));
+            }
+            pushFollow(FOLLOW_ruleTableBlock_in_ruleTableScenario797);
+            temp_TableBlock=ruleTableBlock();
+            _fsp--;
+            if (failed) return result;
+            if ( backtracking==0 ) {
+              if (temp_TableBlock != null) {
+                hasContent = true;
+                ptm.setModelElement(temp_TableBlock);
+                factory.set(result,"table_block",convert(temp_TableBlock),false);
+                ptm.ruleFinished(temp_TableBlock);
+              } else {
+                ptm.destroyNode();
+              }
+
+            }
+
+            }
+
+
+            }
+
+            if ( backtracking==0 ) {
+              if (!hasContent)
+                result = null;
+            }
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            if (!hasContent)
+                result = null;
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+            if ( backtracking>0 ) { memoize(input, 14, ruleTableScenario_StartIndex); }
+        }
+        return result;
+    }
+    // $ANTLR end ruleTableScenario
+
+
+    // $ANTLR start ruleTableScenarioIdentifier
+    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:609:1: ruleTableScenarioIdentifier returns [EObject result] : ( 'Scenario Outline:' ) ;
+    public EObject ruleTableScenarioIdentifier() throws RecognitionException {
+        EObject result = null;
+        int ruleTableScenarioIdentifier_StartIndex = input.index();
+        boolean hasContent = false;
+        try {
+            if ( backtracking>0 && alreadyParsedRule(input, 15) ) { return result; }
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:612:4: ( ( 'Scenario Outline:' ) )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:612:4: ( 'Scenario Outline:' )
+            {
+            if ( backtracking==0 ) {
+
+              				result = factory.create("", "TableScenarioIdentifier");
+              			 
+            }
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:615:1: ( 'Scenario Outline:' )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:615:2: 'Scenario Outline:'
+            {
+            if ( backtracking==0 ) {
+              skipCurrentToken = false;
+            }
+            match(input,12,FOLLOW_12_in_ruleTableScenarioIdentifier835); if (failed) return result;
+            if ( backtracking==0 ) {
+              if (!skipCurrentToken) {
+                hasContent = true;
+                ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(13)).eContents().get(1)));
+                ptm.ruleFinished(getLastToken());
+              }
+            }
+
+            }
+
+            if ( backtracking==0 ) {
+              if (!hasContent)
+                result = null;
+            }
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            if (!hasContent)
+                result = null;
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+            if ( backtracking>0 ) { memoize(input, 15, ruleTableScenarioIdentifier_StartIndex); }
+        }
+        return result;
+    }
+    // $ANTLR end ruleTableScenarioIdentifier
+
+
+    // $ANTLR start ruleTableBlock
+    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:627:1: ruleTableBlock returns [EObject result] : ( (temp_TableIdentifier= ruleTableIdentifier ) (temp_TableHeader= ruleTableHeader ) (temp_TableRow= ruleTableRow )* ) ;
+    public EObject ruleTableBlock() throws RecognitionException {
+        EObject result = null;
+        int ruleTableBlock_StartIndex = input.index();
+        EObject temp_TableIdentifier = null;
+
+        EObject temp_TableHeader = null;
+
+        EObject temp_TableRow = null;
+
+
+        boolean hasContent = false;
+        try {
+            if ( backtracking>0 && alreadyParsedRule(input, 16) ) { return result; }
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:630:4: ( ( (temp_TableIdentifier= ruleTableIdentifier ) (temp_TableHeader= ruleTableHeader ) (temp_TableRow= ruleTableRow )* ) )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:630:4: ( (temp_TableIdentifier= ruleTableIdentifier ) (temp_TableHeader= ruleTableHeader ) (temp_TableRow= ruleTableRow )* )
+            {
+            if ( backtracking==0 ) {
+
+              				result = factory.create("", "TableBlock");
+              			 
+            }
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:633:1: ( (temp_TableIdentifier= ruleTableIdentifier ) (temp_TableHeader= ruleTableHeader ) (temp_TableRow= ruleTableRow )* )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:633:2: (temp_TableIdentifier= ruleTableIdentifier ) (temp_TableHeader= ruleTableHeader ) (temp_TableRow= ruleTableRow )*
+            {
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:633:2: (temp_TableIdentifier= ruleTableIdentifier )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:633:3: temp_TableIdentifier= ruleTableIdentifier
+            {
+            if ( backtracking==0 ) {
+              ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(14)).eContents().get(1)).eContents().get(0)));
+            }
+            pushFollow(FOLLOW_ruleTableIdentifier_in_ruleTableBlock874);
+            temp_TableIdentifier=ruleTableIdentifier();
+            _fsp--;
+            if (failed) return result;
+            if ( backtracking==0 ) {
+              if (temp_TableIdentifier != null) {
+                hasContent = true;
+                ptm.setModelElement(temp_TableIdentifier);
+                factory.set(result,"ti",convert(temp_TableIdentifier),false);
+                ptm.ruleFinished(temp_TableIdentifier);
+              } else {
+                ptm.destroyNode();
+              }
+
+            }
+
+            }
+
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:645:1: (temp_TableHeader= ruleTableHeader )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:645:2: temp_TableHeader= ruleTableHeader
+            {
+            if ( backtracking==0 ) {
+              ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(14)).eContents().get(1)).eContents().get(1)));
+            }
+            pushFollow(FOLLOW_ruleTableHeader_in_ruleTableBlock885);
+            temp_TableHeader=ruleTableHeader();
+            _fsp--;
+            if (failed) return result;
+            if ( backtracking==0 ) {
+              if (temp_TableHeader != null) {
+                hasContent = true;
+                ptm.setModelElement(temp_TableHeader);
+                factory.set(result,"th",convert(temp_TableHeader),false);
+                ptm.ruleFinished(temp_TableHeader);
+              } else {
+                ptm.destroyNode();
+              }
+
+            }
+
+            }
+
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:657:1: (temp_TableRow= ruleTableRow )*
+            loop21:
+            do {
+                int alt21=2;
+                int LA21_0 = input.LA(1);
+
+                if ( ((LA21_0>=RULE_ID && LA21_0<=RULE_INT)||(LA21_0>=19 && LA21_0<=24)) ) {
+                    alt21=1;
+                }
+
+
+                switch (alt21) {
+            	case 1 :
+            	    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:657:2: temp_TableRow= ruleTableRow
+            	    {
+            	    if ( backtracking==0 ) {
+            	      ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(14)).eContents().get(1)).eContents().get(2)));
+            	    }
+            	    pushFollow(FOLLOW_ruleTableRow_in_ruleTableBlock896);
+            	    temp_TableRow=ruleTableRow();
+            	    _fsp--;
+            	    if (failed) return result;
+            	    if ( backtracking==0 ) {
+            	      if (temp_TableRow != null) {
+            	        hasContent = true;
+            	        ptm.setModelElement(temp_TableRow);
+            	        factory.add(result,"tr",convert(temp_TableRow),false);
+            	        ptm.ruleFinished(temp_TableRow);
+            	      } else {
+            	        ptm.destroyNode();
+            	      }
+
+            	    }
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop21;
+                }
+            } while (true);
+
+
+            }
+
+            if ( backtracking==0 ) {
+              if (!hasContent)
+                result = null;
+            }
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            if (!hasContent)
+                result = null;
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+            if ( backtracking>0 ) { memoize(input, 16, ruleTableBlock_StartIndex); }
+        }
+        return result;
+    }
+    // $ANTLR end ruleTableBlock
+
+
+    // $ANTLR start ruleTableIdentifier
+    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:676:1: ruleTableIdentifier returns [EObject result] : ( 'Examples:' ) ;
+    public EObject ruleTableIdentifier() throws RecognitionException {
+        EObject result = null;
+        int ruleTableIdentifier_StartIndex = input.index();
+        boolean hasContent = false;
+        try {
+            if ( backtracking>0 && alreadyParsedRule(input, 17) ) { return result; }
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:679:4: ( ( 'Examples:' ) )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:679:4: ( 'Examples:' )
+            {
+            if ( backtracking==0 ) {
+
+              				result = factory.create("", "TableIdentifier");
+              			 
+            }
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:682:1: ( 'Examples:' )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:682:2: 'Examples:'
+            {
+            if ( backtracking==0 ) {
+              skipCurrentToken = false;
+            }
+            match(input,13,FOLLOW_13_in_ruleTableIdentifier935); if (failed) return result;
+            if ( backtracking==0 ) {
+              if (!skipCurrentToken) {
+                hasContent = true;
+                ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(15)).eContents().get(1)));
+                ptm.ruleFinished(getLastToken());
+              }
+            }
+
+            }
+
+            if ( backtracking==0 ) {
+              if (!hasContent)
+                result = null;
+            }
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            if (!hasContent)
+                result = null;
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+            if ( backtracking>0 ) { memoize(input, 17, ruleTableIdentifier_StartIndex); }
+        }
+        return result;
+    }
+    // $ANTLR end ruleTableIdentifier
+
+
+    // $ANTLR start ruleTableHeader
+    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:694:1: ruleTableHeader returns [EObject result] : (temp_Word= ruleWord )+ ;
+    public EObject ruleTableHeader() throws RecognitionException {
+        EObject result = null;
+        int ruleTableHeader_StartIndex = input.index();
+        String temp_Word = null;
+
+
+        boolean hasContent = false;
+        try {
+            if ( backtracking>0 && alreadyParsedRule(input, 18) ) { return result; }
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:697:4: ( (temp_Word= ruleWord )+ )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:697:4: (temp_Word= ruleWord )+
+            {
+            if ( backtracking==0 ) {
+
+              				result = factory.create("", "TableHeader");
+              			 
+            }
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:700:1: (temp_Word= ruleWord )+
+            int cnt22=0;
+            loop22:
+            do {
+                int alt22=2;
+                switch ( input.LA(1) ) {
+                case RULE_ID:
+                    {
+                    int LA22_1 = input.LA(2);
+
+                    if ( (synpred22()) ) {
+                        alt22=1;
+                    }
+
+
+                    }
+                    break;
+                case RULE_STRING:
+                    {
+                    int LA22_2 = input.LA(2);
+
+                    if ( (synpred22()) ) {
+                        alt22=1;
+                    }
+
+
+                    }
+                    break;
+                case RULE_INT:
+                    {
+                    int LA22_3 = input.LA(2);
+
+                    if ( (synpred22()) ) {
+                        alt22=1;
+                    }
+
+
+                    }
+                    break;
+                case 19:
+                    {
+                    int LA22_4 = input.LA(2);
+
+                    if ( (synpred22()) ) {
+                        alt22=1;
+                    }
+
+
+                    }
+                    break;
+                case 20:
+                    {
+                    int LA22_5 = input.LA(2);
+
+                    if ( (synpred22()) ) {
+                        alt22=1;
+                    }
+
+
+                    }
+                    break;
+                case 21:
+                    {
+                    int LA22_6 = input.LA(2);
+
+                    if ( (synpred22()) ) {
+                        alt22=1;
+                    }
+
+
+                    }
+                    break;
+                case 22:
+                    {
+                    int LA22_7 = input.LA(2);
+
+                    if ( (synpred22()) ) {
+                        alt22=1;
+                    }
+
+
+                    }
+                    break;
+                case 23:
+                    {
+                    int LA22_8 = input.LA(2);
+
+                    if ( (synpred22()) ) {
+                        alt22=1;
+                    }
+
+
+                    }
+                    break;
+                case 24:
+                    {
+                    int LA22_9 = input.LA(2);
+
+                    if ( (synpred22()) ) {
+                        alt22=1;
+                    }
+
+
+                    }
+                    break;
+
+                }
+
+                switch (alt22) {
+            	case 1 :
+            	    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:700:2: temp_Word= ruleWord
+            	    {
+            	    if ( backtracking==0 ) {
+            	      ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(16)).eContents().get(1)));
+            	    }
+            	    pushFollow(FOLLOW_ruleWord_in_ruleTableHeader973);
+            	    temp_Word=ruleWord();
+            	    _fsp--;
+            	    if (failed) return result;
+            	    if ( backtracking==0 ) {
+            	      if (temp_Word != null) {
+            	        hasContent = true;
+            	        factory.add(result,"text",convert(temp_Word),false);
+            	        ptm.ruleFinished(temp_Word);
+            	      } else {
+            	        ptm.destroyNode();
+            	      }
+
+            	    }
+
+            	    }
+            	    break;
+
+            	default :
+            	    if ( cnt22 >= 1 ) break loop22;
+            	    if (backtracking>0) {failed=true; return result;}
+                        EarlyExitException eee =
+                            new EarlyExitException(22, input);
+                        throw eee;
+                }
+                cnt22++;
+            } while (true);
+
+            if ( backtracking==0 ) {
+              if (!hasContent)
+                result = null;
+            }
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            if (!hasContent)
+                result = null;
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+            if ( backtracking>0 ) { memoize(input, 18, ruleTableHeader_StartIndex); }
+        }
+        return result;
+    }
+    // $ANTLR end ruleTableHeader
+
+
+    // $ANTLR start ruleTableRow
+    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:717:1: ruleTableRow returns [EObject result] : (temp_Word= ruleWord )+ ;
+    public EObject ruleTableRow() throws RecognitionException {
+        EObject result = null;
+        int ruleTableRow_StartIndex = input.index();
+        String temp_Word = null;
+
+
+        boolean hasContent = false;
+        try {
+            if ( backtracking>0 && alreadyParsedRule(input, 19) ) { return result; }
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:720:4: ( (temp_Word= ruleWord )+ )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:720:4: (temp_Word= ruleWord )+
+            {
+            if ( backtracking==0 ) {
+
+              				result = factory.create("", "TableRow");
+              			 
+            }
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:723:1: (temp_Word= ruleWord )+
+            int cnt23=0;
+            loop23:
+            do {
+                int alt23=2;
+                switch ( input.LA(1) ) {
+                case RULE_ID:
+                    {
+                    int LA23_2 = input.LA(2);
+
+                    if ( (synpred23()) ) {
+                        alt23=1;
+                    }
+
+
+                    }
+                    break;
+                case RULE_STRING:
+                    {
+                    int LA23_3 = input.LA(2);
+
+                    if ( (synpred23()) ) {
+                        alt23=1;
+                    }
+
+
+                    }
+                    break;
+                case RULE_INT:
+                    {
+                    int LA23_4 = input.LA(2);
+
+                    if ( (synpred23()) ) {
+                        alt23=1;
+                    }
+
+
+                    }
+                    break;
+                case 19:
+                    {
+                    int LA23_5 = input.LA(2);
+
+                    if ( (synpred23()) ) {
+                        alt23=1;
+                    }
+
+
+                    }
+                    break;
+                case 20:
+                    {
+                    int LA23_6 = input.LA(2);
+
+                    if ( (synpred23()) ) {
+                        alt23=1;
+                    }
+
+
+                    }
+                    break;
+                case 21:
+                    {
+                    int LA23_7 = input.LA(2);
+
+                    if ( (synpred23()) ) {
+                        alt23=1;
+                    }
+
+
+                    }
+                    break;
+                case 22:
+                    {
+                    int LA23_8 = input.LA(2);
+
+                    if ( (synpred23()) ) {
+                        alt23=1;
+                    }
+
+
+                    }
+                    break;
+                case 23:
+                    {
+                    int LA23_9 = input.LA(2);
+
+                    if ( (synpred23()) ) {
+                        alt23=1;
+                    }
+
+
+                    }
+                    break;
+                case 24:
+                    {
+                    int LA23_10 = input.LA(2);
+
+                    if ( (synpred23()) ) {
+                        alt23=1;
+                    }
+
+
+                    }
+                    break;
+
+                }
+
+                switch (alt23) {
+            	case 1 :
+            	    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:723:2: temp_Word= ruleWord
+            	    {
+            	    if ( backtracking==0 ) {
+            	      ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(17)).eContents().get(1)));
+            	    }
+            	    pushFollow(FOLLOW_ruleWord_in_ruleTableRow1013);
+            	    temp_Word=ruleWord();
+            	    _fsp--;
+            	    if (failed) return result;
+            	    if ( backtracking==0 ) {
+            	      if (temp_Word != null) {
+            	        hasContent = true;
+            	        factory.add(result,"text",convert(temp_Word),false);
+            	        ptm.ruleFinished(temp_Word);
+            	      } else {
+            	        ptm.destroyNode();
+            	      }
+
+            	    }
+
+            	    }
+            	    break;
+
+            	default :
+            	    if ( cnt23 >= 1 ) break loop23;
+            	    if (backtracking>0) {failed=true; return result;}
+                        EarlyExitException eee =
+                            new EarlyExitException(23, input);
+                        throw eee;
+                }
+                cnt23++;
+            } while (true);
+
+            if ( backtracking==0 ) {
+              if (!hasContent)
+                result = null;
+            }
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            if (!hasContent)
+                result = null;
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+            if ( backtracking>0 ) { memoize(input, 19, ruleTableRow_StartIndex); }
+        }
+        return result;
+    }
+    // $ANTLR end ruleTableRow
+
+
+    // $ANTLR start ruleScenarioIdentifier
+    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:740:1: ruleScenarioIdentifier returns [EObject result] : ( 'Scenario:' ) ;
+    public EObject ruleScenarioIdentifier() throws RecognitionException {
+        EObject result = null;
+        int ruleScenarioIdentifier_StartIndex = input.index();
+        boolean hasContent = false;
+        try {
+            if ( backtracking>0 && alreadyParsedRule(input, 20) ) { return result; }
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:743:4: ( ( 'Scenario:' ) )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:743:4: ( 'Scenario:' )
+            {
+            if ( backtracking==0 ) {
+
+              				result = factory.create("", "ScenarioIdentifier");
+              			 
+            }
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:746:1: ( 'Scenario:' )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:746:2: 'Scenario:'
+            {
+            if ( backtracking==0 ) {
+              skipCurrentToken = false;
+            }
+            match(input,14,FOLLOW_14_in_ruleScenarioIdentifier1050); if (failed) return result;
+            if ( backtracking==0 ) {
+              if (!skipCurrentToken) {
+                hasContent = true;
+                ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(18)).eContents().get(1)));
+                ptm.ruleFinished(getLastToken());
+              }
+            }
+
+            }
+
+            if ( backtracking==0 ) {
+              if (!hasContent)
+                result = null;
+            }
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            if (!hasContent)
+                result = null;
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+            if ( backtracking>0 ) { memoize(input, 20, ruleScenarioIdentifier_StartIndex); }
+        }
+        return result;
+    }
+    // $ANTLR end ruleScenarioIdentifier
+
+
+    // $ANTLR start ruleScenarioDescription
+    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:758:1: ruleScenarioDescription returns [EObject result] : (temp_Word= ruleWord )+ ;
+    public EObject ruleScenarioDescription() throws RecognitionException {
+        EObject result = null;
+        int ruleScenarioDescription_StartIndex = input.index();
+        String temp_Word = null;
+
+
+        boolean hasContent = false;
+        try {
+            if ( backtracking>0 && alreadyParsedRule(input, 21) ) { return result; }
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:761:4: ( (temp_Word= ruleWord )+ )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:761:4: (temp_Word= ruleWord )+
+            {
+            if ( backtracking==0 ) {
+
+              				result = factory.create("", "ScenarioDescription");
+              			 
+            }
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:764:1: (temp_Word= ruleWord )+
+            int cnt24=0;
+            loop24:
+            do {
+                int alt24=2;
+                int LA24_0 = input.LA(1);
+
+                if ( ((LA24_0>=RULE_ID && LA24_0<=RULE_INT)||(LA24_0>=19 && LA24_0<=24)) ) {
+                    alt24=1;
+                }
+
+
+                switch (alt24) {
+            	case 1 :
+            	    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:764:2: temp_Word= ruleWord
+            	    {
+            	    if ( backtracking==0 ) {
+            	      ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(19)).eContents().get(1)));
+            	    }
+            	    pushFollow(FOLLOW_ruleWord_in_ruleScenarioDescription1088);
+            	    temp_Word=ruleWord();
+            	    _fsp--;
+            	    if (failed) return result;
+            	    if ( backtracking==0 ) {
+            	      if (temp_Word != null) {
+            	        hasContent = true;
+            	        factory.add(result,"text",convert(temp_Word),false);
+            	        ptm.ruleFinished(temp_Word);
+            	      } else {
+            	        ptm.destroyNode();
+            	      }
+
+            	    }
+
+            	    }
+            	    break;
+
+            	default :
+            	    if ( cnt24 >= 1 ) break loop24;
+            	    if (backtracking>0) {failed=true; return result;}
+                        EarlyExitException eee =
+                            new EarlyExitException(24, input);
+                        throw eee;
+                }
+                cnt24++;
+            } while (true);
+
+            if ( backtracking==0 ) {
+              if (!hasContent)
+                result = null;
+            }
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            if (!hasContent)
+                result = null;
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+            if ( backtracking>0 ) { memoize(input, 21, ruleScenarioDescription_StartIndex); }
+        }
+        return result;
+    }
+    // $ANTLR end ruleScenarioDescription
+
+
+    // $ANTLR start ruleGivenBlock
+    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:781:1: ruleGivenBlock returns [EObject result] : ( (temp_GivenIdentifier= ruleGivenIdentifier ) (temp_GivenDefinition= ruleGivenDefinition ) (temp_AndBlock= ruleAndBlock )* ) ;
+    public EObject ruleGivenBlock() throws RecognitionException {
+        EObject result = null;
+        int ruleGivenBlock_StartIndex = input.index();
+        EObject temp_GivenIdentifier = null;
+
+        EObject temp_GivenDefinition = null;
+
+        EObject temp_AndBlock = null;
+
+
+        boolean hasContent = false;
+        try {
+            if ( backtracking>0 && alreadyParsedRule(input, 22) ) { return result; }
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:784:4: ( ( (temp_GivenIdentifier= ruleGivenIdentifier ) (temp_GivenDefinition= ruleGivenDefinition ) (temp_AndBlock= ruleAndBlock )* ) )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:784:4: ( (temp_GivenIdentifier= ruleGivenIdentifier ) (temp_GivenDefinition= ruleGivenDefinition ) (temp_AndBlock= ruleAndBlock )* )
+            {
+            if ( backtracking==0 ) {
+
+              				result = factory.create("", "GivenBlock");
+              			 
+            }
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:787:1: ( (temp_GivenIdentifier= ruleGivenIdentifier ) (temp_GivenDefinition= ruleGivenDefinition ) (temp_AndBlock= ruleAndBlock )* )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:787:2: (temp_GivenIdentifier= ruleGivenIdentifier ) (temp_GivenDefinition= ruleGivenDefinition ) (temp_AndBlock= ruleAndBlock )*
+            {
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:787:2: (temp_GivenIdentifier= ruleGivenIdentifier )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:787:3: temp_GivenIdentifier= ruleGivenIdentifier
+            {
+            if ( backtracking==0 ) {
+              ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(20)).eContents().get(1)).eContents().get(0)));
+            }
+            pushFollow(FOLLOW_ruleGivenIdentifier_in_ruleGivenBlock1129);
+            temp_GivenIdentifier=ruleGivenIdentifier();
+            _fsp--;
+            if (failed) return result;
+            if ( backtracking==0 ) {
+              if (temp_GivenIdentifier != null) {
+                hasContent = true;
+                ptm.setModelElement(temp_GivenIdentifier);
+                factory.set(result,"gi",convert(temp_GivenIdentifier),false);
+                ptm.ruleFinished(temp_GivenIdentifier);
+              } else {
+                ptm.destroyNode();
+              }
+
+            }
+
+            }
+
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:799:1: (temp_GivenDefinition= ruleGivenDefinition )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:799:2: temp_GivenDefinition= ruleGivenDefinition
+            {
+            if ( backtracking==0 ) {
+              ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(20)).eContents().get(1)).eContents().get(1)));
+            }
+            pushFollow(FOLLOW_ruleGivenDefinition_in_ruleGivenBlock1140);
+            temp_GivenDefinition=ruleGivenDefinition();
+            _fsp--;
+            if (failed) return result;
+            if ( backtracking==0 ) {
+              if (temp_GivenDefinition != null) {
+                hasContent = true;
+                ptm.setModelElement(temp_GivenDefinition);
+                factory.set(result,"given_def",convert(temp_GivenDefinition),false);
+                ptm.ruleFinished(temp_GivenDefinition);
+              } else {
+                ptm.destroyNode();
+              }
+
+            }
+
+            }
+
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:811:1: (temp_AndBlock= ruleAndBlock )*
+            loop25:
+            do {
+                int alt25=2;
+                int LA25_0 = input.LA(1);
+
+                if ( (LA25_0==18) ) {
+                    alt25=1;
+                }
+
+
+                switch (alt25) {
+            	case 1 :
+            	    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:811:2: temp_AndBlock= ruleAndBlock
+            	    {
+            	    if ( backtracking==0 ) {
+            	      ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(20)).eContents().get(1)).eContents().get(2)));
+            	    }
+            	    pushFollow(FOLLOW_ruleAndBlock_in_ruleGivenBlock1151);
+            	    temp_AndBlock=ruleAndBlock();
+            	    _fsp--;
+            	    if (failed) return result;
+            	    if ( backtracking==0 ) {
+            	      if (temp_AndBlock != null) {
+            	        hasContent = true;
+            	        ptm.setModelElement(temp_AndBlock);
+            	        factory.add(result,"ab",convert(temp_AndBlock),false);
+            	        ptm.ruleFinished(temp_AndBlock);
+            	      } else {
+            	        ptm.destroyNode();
+            	      }
+
+            	    }
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop25;
+                }
+            } while (true);
+
+
+            }
+
+            if ( backtracking==0 ) {
+              if (!hasContent)
+                result = null;
+            }
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            if (!hasContent)
+                result = null;
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+            if ( backtracking>0 ) { memoize(input, 22, ruleGivenBlock_StartIndex); }
+        }
+        return result;
+    }
+    // $ANTLR end ruleGivenBlock
+
+
+    // $ANTLR start ruleGivenIdentifier
+    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:830:1: ruleGivenIdentifier returns [EObject result] : ( 'Given' ) ;
+    public EObject ruleGivenIdentifier() throws RecognitionException {
+        EObject result = null;
+        int ruleGivenIdentifier_StartIndex = input.index();
+        boolean hasContent = false;
+        try {
+            if ( backtracking>0 && alreadyParsedRule(input, 23) ) { return result; }
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:833:4: ( ( 'Given' ) )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:833:4: ( 'Given' )
+            {
+            if ( backtracking==0 ) {
+
+              				result = factory.create("", "GivenIdentifier");
+              			 
+            }
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:836:1: ( 'Given' )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:836:2: 'Given'
+            {
+            if ( backtracking==0 ) {
+              skipCurrentToken = false;
+            }
+            match(input,15,FOLLOW_15_in_ruleGivenIdentifier1190); if (failed) return result;
+            if ( backtracking==0 ) {
+              if (!skipCurrentToken) {
+                hasContent = true;
+                ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(21)).eContents().get(1)));
+                ptm.ruleFinished(getLastToken());
+              }
+            }
+
+            }
+
+            if ( backtracking==0 ) {
+              if (!hasContent)
+                result = null;
+            }
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            if (!hasContent)
+                result = null;
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+            if ( backtracking>0 ) { memoize(input, 23, ruleGivenIdentifier_StartIndex); }
+        }
+        return result;
+    }
+    // $ANTLR end ruleGivenIdentifier
+
+
+    // $ANTLR start ruleWhenBlock
+    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:848:1: ruleWhenBlock returns [EObject result] : ( (temp_WhenIdentifier= ruleWhenIdentifier ) (temp_WhenDefinition= ruleWhenDefinition ) (temp_AndBlock= ruleAndBlock )* ) ;
+    public EObject ruleWhenBlock() throws RecognitionException {
+        EObject result = null;
+        int ruleWhenBlock_StartIndex = input.index();
+        EObject temp_WhenIdentifier = null;
+
+        EObject temp_WhenDefinition = null;
+
+        EObject temp_AndBlock = null;
+
+
+        boolean hasContent = false;
+        try {
+            if ( backtracking>0 && alreadyParsedRule(input, 24) ) { return result; }
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:851:4: ( ( (temp_WhenIdentifier= ruleWhenIdentifier ) (temp_WhenDefinition= ruleWhenDefinition ) (temp_AndBlock= ruleAndBlock )* ) )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:851:4: ( (temp_WhenIdentifier= ruleWhenIdentifier ) (temp_WhenDefinition= ruleWhenDefinition ) (temp_AndBlock= ruleAndBlock )* )
+            {
+            if ( backtracking==0 ) {
+
+              				result = factory.create("", "WhenBlock");
+              			 
+            }
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:854:1: ( (temp_WhenIdentifier= ruleWhenIdentifier ) (temp_WhenDefinition= ruleWhenDefinition ) (temp_AndBlock= ruleAndBlock )* )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:854:2: (temp_WhenIdentifier= ruleWhenIdentifier ) (temp_WhenDefinition= ruleWhenDefinition ) (temp_AndBlock= ruleAndBlock )*
+            {
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:854:2: (temp_WhenIdentifier= ruleWhenIdentifier )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:854:3: temp_WhenIdentifier= ruleWhenIdentifier
+            {
+            if ( backtracking==0 ) {
+              ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(22)).eContents().get(1)).eContents().get(0)));
+            }
+            pushFollow(FOLLOW_ruleWhenIdentifier_in_ruleWhenBlock1229);
+            temp_WhenIdentifier=ruleWhenIdentifier();
+            _fsp--;
+            if (failed) return result;
+            if ( backtracking==0 ) {
+              if (temp_WhenIdentifier != null) {
+                hasContent = true;
+                ptm.setModelElement(temp_WhenIdentifier);
+                factory.set(result,"wi",convert(temp_WhenIdentifier),false);
+                ptm.ruleFinished(temp_WhenIdentifier);
+              } else {
+                ptm.destroyNode();
+              }
+
+            }
+
+            }
+
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:866:1: (temp_WhenDefinition= ruleWhenDefinition )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:866:2: temp_WhenDefinition= ruleWhenDefinition
+            {
+            if ( backtracking==0 ) {
+              ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(22)).eContents().get(1)).eContents().get(1)));
+            }
+            pushFollow(FOLLOW_ruleWhenDefinition_in_ruleWhenBlock1240);
+            temp_WhenDefinition=ruleWhenDefinition();
+            _fsp--;
+            if (failed) return result;
+            if ( backtracking==0 ) {
+              if (temp_WhenDefinition != null) {
+                hasContent = true;
+                ptm.setModelElement(temp_WhenDefinition);
+                factory.set(result,"when_def",convert(temp_WhenDefinition),false);
+                ptm.ruleFinished(temp_WhenDefinition);
+              } else {
+                ptm.destroyNode();
+              }
+
+            }
+
+            }
+
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:878:1: (temp_AndBlock= ruleAndBlock )*
+            loop26:
+            do {
+                int alt26=2;
+                int LA26_0 = input.LA(1);
+
+                if ( (LA26_0==18) ) {
+                    alt26=1;
+                }
+
+
+                switch (alt26) {
+            	case 1 :
+            	    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:878:2: temp_AndBlock= ruleAndBlock
+            	    {
+            	    if ( backtracking==0 ) {
+            	      ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(22)).eContents().get(1)).eContents().get(2)));
+            	    }
+            	    pushFollow(FOLLOW_ruleAndBlock_in_ruleWhenBlock1251);
+            	    temp_AndBlock=ruleAndBlock();
+            	    _fsp--;
+            	    if (failed) return result;
+            	    if ( backtracking==0 ) {
+            	      if (temp_AndBlock != null) {
+            	        hasContent = true;
+            	        ptm.setModelElement(temp_AndBlock);
+            	        factory.add(result,"ab",convert(temp_AndBlock),false);
+            	        ptm.ruleFinished(temp_AndBlock);
+            	      } else {
+            	        ptm.destroyNode();
+            	      }
+
+            	    }
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop26;
+                }
+            } while (true);
+
+
+            }
+
+            if ( backtracking==0 ) {
+              if (!hasContent)
+                result = null;
+            }
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            if (!hasContent)
+                result = null;
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+            if ( backtracking>0 ) { memoize(input, 24, ruleWhenBlock_StartIndex); }
+        }
+        return result;
+    }
+    // $ANTLR end ruleWhenBlock
+
+
+    // $ANTLR start ruleWhenIdentifier
+    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:897:1: ruleWhenIdentifier returns [EObject result] : ( 'When' ) ;
+    public EObject ruleWhenIdentifier() throws RecognitionException {
+        EObject result = null;
+        int ruleWhenIdentifier_StartIndex = input.index();
+        boolean hasContent = false;
+        try {
+            if ( backtracking>0 && alreadyParsedRule(input, 25) ) { return result; }
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:900:4: ( ( 'When' ) )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:900:4: ( 'When' )
+            {
+            if ( backtracking==0 ) {
+
+              				result = factory.create("", "WhenIdentifier");
+              			 
+            }
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:903:1: ( 'When' )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:903:2: 'When'
+            {
+            if ( backtracking==0 ) {
+              skipCurrentToken = false;
+            }
+            match(input,16,FOLLOW_16_in_ruleWhenIdentifier1290); if (failed) return result;
+            if ( backtracking==0 ) {
+              if (!skipCurrentToken) {
+                hasContent = true;
+                ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(23)).eContents().get(1)));
+                ptm.ruleFinished(getLastToken());
+              }
+            }
+
+            }
+
+            if ( backtracking==0 ) {
+              if (!hasContent)
+                result = null;
+            }
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            if (!hasContent)
+                result = null;
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+            if ( backtracking>0 ) { memoize(input, 25, ruleWhenIdentifier_StartIndex); }
+        }
+        return result;
+    }
+    // $ANTLR end ruleWhenIdentifier
+
+
+    // $ANTLR start ruleThenBlock
+    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:915:1: ruleThenBlock returns [EObject result] : ( (temp_ThenIdentifier= ruleThenIdentifier ) (temp_ThenDefinition= ruleThenDefinition ) (temp_AndBlock= ruleAndBlock )* ) ;
+    public EObject ruleThenBlock() throws RecognitionException {
+        EObject result = null;
+        int ruleThenBlock_StartIndex = input.index();
+        EObject temp_ThenIdentifier = null;
+
+        EObject temp_ThenDefinition = null;
+
+        EObject temp_AndBlock = null;
+
+
+        boolean hasContent = false;
+        try {
+            if ( backtracking>0 && alreadyParsedRule(input, 26) ) { return result; }
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:918:4: ( ( (temp_ThenIdentifier= ruleThenIdentifier ) (temp_ThenDefinition= ruleThenDefinition ) (temp_AndBlock= ruleAndBlock )* ) )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:918:4: ( (temp_ThenIdentifier= ruleThenIdentifier ) (temp_ThenDefinition= ruleThenDefinition ) (temp_AndBlock= ruleAndBlock )* )
+            {
+            if ( backtracking==0 ) {
+
+              				result = factory.create("", "ThenBlock");
+              			 
+            }
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:921:1: ( (temp_ThenIdentifier= ruleThenIdentifier ) (temp_ThenDefinition= ruleThenDefinition ) (temp_AndBlock= ruleAndBlock )* )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:921:2: (temp_ThenIdentifier= ruleThenIdentifier ) (temp_ThenDefinition= ruleThenDefinition ) (temp_AndBlock= ruleAndBlock )*
+            {
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:921:2: (temp_ThenIdentifier= ruleThenIdentifier )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:921:3: temp_ThenIdentifier= ruleThenIdentifier
+            {
+            if ( backtracking==0 ) {
+              ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(24)).eContents().get(1)).eContents().get(0)));
+            }
+            pushFollow(FOLLOW_ruleThenIdentifier_in_ruleThenBlock1329);
+            temp_ThenIdentifier=ruleThenIdentifier();
+            _fsp--;
+            if (failed) return result;
+            if ( backtracking==0 ) {
+              if (temp_ThenIdentifier != null) {
+                hasContent = true;
+                ptm.setModelElement(temp_ThenIdentifier);
+                factory.set(result,"ti",convert(temp_ThenIdentifier),false);
+                ptm.ruleFinished(temp_ThenIdentifier);
+              } else {
+                ptm.destroyNode();
+              }
+
+            }
+
+            }
+
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:933:1: (temp_ThenDefinition= ruleThenDefinition )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:933:2: temp_ThenDefinition= ruleThenDefinition
+            {
+            if ( backtracking==0 ) {
+              ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(24)).eContents().get(1)).eContents().get(1)));
+            }
+            pushFollow(FOLLOW_ruleThenDefinition_in_ruleThenBlock1340);
+            temp_ThenDefinition=ruleThenDefinition();
+            _fsp--;
+            if (failed) return result;
+            if ( backtracking==0 ) {
+              if (temp_ThenDefinition != null) {
+                hasContent = true;
+                ptm.setModelElement(temp_ThenDefinition);
+                factory.set(result,"then_def",convert(temp_ThenDefinition),false);
+                ptm.ruleFinished(temp_ThenDefinition);
+              } else {
+                ptm.destroyNode();
+              }
+
+            }
+
+            }
+
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:945:1: (temp_AndBlock= ruleAndBlock )*
+            loop27:
+            do {
+                int alt27=2;
+                int LA27_0 = input.LA(1);
+
+                if ( (LA27_0==18) ) {
+                    alt27=1;
+                }
+
+
+                switch (alt27) {
+            	case 1 :
+            	    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:945:2: temp_AndBlock= ruleAndBlock
+            	    {
+            	    if ( backtracking==0 ) {
+            	      ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(24)).eContents().get(1)).eContents().get(2)));
+            	    }
+            	    pushFollow(FOLLOW_ruleAndBlock_in_ruleThenBlock1351);
+            	    temp_AndBlock=ruleAndBlock();
+            	    _fsp--;
+            	    if (failed) return result;
+            	    if ( backtracking==0 ) {
+            	      if (temp_AndBlock != null) {
+            	        hasContent = true;
+            	        ptm.setModelElement(temp_AndBlock);
+            	        factory.add(result,"ab",convert(temp_AndBlock),false);
+            	        ptm.ruleFinished(temp_AndBlock);
+            	      } else {
+            	        ptm.destroyNode();
+            	      }
+
+            	    }
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop27;
+                }
+            } while (true);
+
+
+            }
+
+            if ( backtracking==0 ) {
+              if (!hasContent)
+                result = null;
+            }
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            if (!hasContent)
+                result = null;
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+            if ( backtracking>0 ) { memoize(input, 26, ruleThenBlock_StartIndex); }
+        }
+        return result;
+    }
+    // $ANTLR end ruleThenBlock
+
+
+    // $ANTLR start ruleThenIdentifier
+    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:964:1: ruleThenIdentifier returns [EObject result] : ( 'Then' ) ;
+    public EObject ruleThenIdentifier() throws RecognitionException {
+        EObject result = null;
+        int ruleThenIdentifier_StartIndex = input.index();
+        boolean hasContent = false;
+        try {
+            if ( backtracking>0 && alreadyParsedRule(input, 27) ) { return result; }
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:967:4: ( ( 'Then' ) )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:967:4: ( 'Then' )
+            {
+            if ( backtracking==0 ) {
+
+              				result = factory.create("", "ThenIdentifier");
+              			 
+            }
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:970:1: ( 'Then' )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:970:2: 'Then'
+            {
+            if ( backtracking==0 ) {
+              skipCurrentToken = false;
+            }
+            match(input,17,FOLLOW_17_in_ruleThenIdentifier1390); if (failed) return result;
+            if ( backtracking==0 ) {
+              if (!skipCurrentToken) {
+                hasContent = true;
+                ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(25)).eContents().get(1)));
+                ptm.ruleFinished(getLastToken());
+              }
+            }
+
+            }
+
+            if ( backtracking==0 ) {
+              if (!hasContent)
+                result = null;
+            }
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            if (!hasContent)
+                result = null;
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+            if ( backtracking>0 ) { memoize(input, 27, ruleThenIdentifier_StartIndex); }
+        }
+        return result;
+    }
+    // $ANTLR end ruleThenIdentifier
+
+
+    // $ANTLR start ruleAndBlock
+    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:982:1: ruleAndBlock returns [EObject result] : ( (temp_AndIdentifier= ruleAndIdentifier ) (temp_AndDefinition= ruleAndDefinition ) ) ;
+    public EObject ruleAndBlock() throws RecognitionException {
+        EObject result = null;
+        int ruleAndBlock_StartIndex = input.index();
+        EObject temp_AndIdentifier = null;
+
+        EObject temp_AndDefinition = null;
+
+
+        boolean hasContent = false;
+        try {
+            if ( backtracking>0 && alreadyParsedRule(input, 28) ) { return result; }
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:985:4: ( ( (temp_AndIdentifier= ruleAndIdentifier ) (temp_AndDefinition= ruleAndDefinition ) ) )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:985:4: ( (temp_AndIdentifier= ruleAndIdentifier ) (temp_AndDefinition= ruleAndDefinition ) )
+            {
+            if ( backtracking==0 ) {
+
+              				result = factory.create("", "AndBlock");
+              			 
+            }
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:988:1: ( (temp_AndIdentifier= ruleAndIdentifier ) (temp_AndDefinition= ruleAndDefinition ) )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:988:2: (temp_AndIdentifier= ruleAndIdentifier ) (temp_AndDefinition= ruleAndDefinition )
+            {
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:988:2: (temp_AndIdentifier= ruleAndIdentifier )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:988:3: temp_AndIdentifier= ruleAndIdentifier
+            {
+            if ( backtracking==0 ) {
+              ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(26)).eContents().get(1)).eContents().get(0)));
+            }
+            pushFollow(FOLLOW_ruleAndIdentifier_in_ruleAndBlock1429);
+            temp_AndIdentifier=ruleAndIdentifier();
+            _fsp--;
+            if (failed) return result;
+            if ( backtracking==0 ) {
+              if (temp_AndIdentifier != null) {
+                hasContent = true;
+                ptm.setModelElement(temp_AndIdentifier);
+                factory.set(result,"ai",convert(temp_AndIdentifier),false);
+                ptm.ruleFinished(temp_AndIdentifier);
+              } else {
+                ptm.destroyNode();
+              }
+
+            }
+
+            }
+
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:1000:1: (temp_AndDefinition= ruleAndDefinition )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:1000:2: temp_AndDefinition= ruleAndDefinition
+            {
+            if ( backtracking==0 ) {
+              ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(26)).eContents().get(1)).eContents().get(1)));
+            }
+            pushFollow(FOLLOW_ruleAndDefinition_in_ruleAndBlock1440);
+            temp_AndDefinition=ruleAndDefinition();
+            _fsp--;
+            if (failed) return result;
+            if ( backtracking==0 ) {
+              if (temp_AndDefinition != null) {
+                hasContent = true;
+                ptm.setModelElement(temp_AndDefinition);
+                factory.set(result,"and_def",convert(temp_AndDefinition),false);
+                ptm.ruleFinished(temp_AndDefinition);
+              } else {
+                ptm.destroyNode();
+              }
+
+            }
+
+            }
+
+
+            }
+
+            if ( backtracking==0 ) {
+              if (!hasContent)
+                result = null;
+            }
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            if (!hasContent)
+                result = null;
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+            if ( backtracking>0 ) { memoize(input, 28, ruleAndBlock_StartIndex); }
+        }
+        return result;
+    }
+    // $ANTLR end ruleAndBlock
+
+
+    // $ANTLR start ruleAndIdentifier
+    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:1019:1: ruleAndIdentifier returns [EObject result] : ( 'And' ) ;
+    public EObject ruleAndIdentifier() throws RecognitionException {
+        EObject result = null;
+        int ruleAndIdentifier_StartIndex = input.index();
+        boolean hasContent = false;
+        try {
+            if ( backtracking>0 && alreadyParsedRule(input, 29) ) { return result; }
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:1022:4: ( ( 'And' ) )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:1022:4: ( 'And' )
+            {
+            if ( backtracking==0 ) {
+
+              				result = factory.create("", "AndIdentifier");
+              			 
+            }
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:1025:1: ( 'And' )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:1025:2: 'And'
+            {
+            if ( backtracking==0 ) {
+              skipCurrentToken = false;
+            }
+            match(input,18,FOLLOW_18_in_ruleAndIdentifier1478); if (failed) return result;
+            if ( backtracking==0 ) {
+              if (!skipCurrentToken) {
+                hasContent = true;
+                ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(27)).eContents().get(1)));
+                ptm.ruleFinished(getLastToken());
+              }
+            }
+
+            }
+
+            if ( backtracking==0 ) {
+              if (!hasContent)
+                result = null;
+            }
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            if (!hasContent)
+                result = null;
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+            if ( backtracking>0 ) { memoize(input, 29, ruleAndIdentifier_StartIndex); }
+        }
+        return result;
+    }
+    // $ANTLR end ruleAndIdentifier
+
+
+    // $ANTLR start ruleGivenDefinition
+    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:1037:1: ruleGivenDefinition returns [EObject result] : (temp_Word= ruleWord )+ ;
+    public EObject ruleGivenDefinition() throws RecognitionException {
+        EObject result = null;
+        int ruleGivenDefinition_StartIndex = input.index();
+        String temp_Word = null;
+
+
+        boolean hasContent = false;
+        try {
+            if ( backtracking>0 && alreadyParsedRule(input, 30) ) { return result; }
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:1040:4: ( (temp_Word= ruleWord )+ )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:1040:4: (temp_Word= ruleWord )+
+            {
+            if ( backtracking==0 ) {
+
+              				result = factory.create("", "GivenDefinition");
+              			 
+            }
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:1043:1: (temp_Word= ruleWord )+
+            int cnt28=0;
+            loop28:
+            do {
+                int alt28=2;
+                int LA28_0 = input.LA(1);
+
+                if ( ((LA28_0>=RULE_ID && LA28_0<=RULE_INT)||(LA28_0>=19 && LA28_0<=24)) ) {
+                    alt28=1;
+                }
+
+
+                switch (alt28) {
+            	case 1 :
+            	    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:1043:2: temp_Word= ruleWord
+            	    {
+            	    if ( backtracking==0 ) {
+            	      ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(28)).eContents().get(1)));
+            	    }
+            	    pushFollow(FOLLOW_ruleWord_in_ruleGivenDefinition1516);
+            	    temp_Word=ruleWord();
+            	    _fsp--;
+            	    if (failed) return result;
+            	    if ( backtracking==0 ) {
+            	      if (temp_Word != null) {
+            	        hasContent = true;
+            	        factory.add(result,"text",convert(temp_Word),false);
+            	        ptm.ruleFinished(temp_Word);
+            	      } else {
+            	        ptm.destroyNode();
+            	      }
+
+            	    }
+
+            	    }
+            	    break;
+
+            	default :
+            	    if ( cnt28 >= 1 ) break loop28;
+            	    if (backtracking>0) {failed=true; return result;}
+                        EarlyExitException eee =
+                            new EarlyExitException(28, input);
+                        throw eee;
+                }
+                cnt28++;
+            } while (true);
+
+            if ( backtracking==0 ) {
+              if (!hasContent)
+                result = null;
+            }
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            if (!hasContent)
+                result = null;
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+            if ( backtracking>0 ) { memoize(input, 30, ruleGivenDefinition_StartIndex); }
         }
         return result;
     }
@@ -2258,7 +3781,7 @@ public class CucumberFeatureParser extends Parser {
 
 
     // $ANTLR start ruleWhenDefinition
-    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:844:1: ruleWhenDefinition returns [EObject result] : (temp_Word= ruleWord )+ ;
+    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:1060:1: ruleWhenDefinition returns [EObject result] : (temp_Word= ruleWord )+ ;
     public EObject ruleWhenDefinition() throws RecognitionException {
         EObject result = null;
         int ruleWhenDefinition_StartIndex = input.index();
@@ -2267,35 +3790,35 @@ public class CucumberFeatureParser extends Parser {
 
         boolean hasContent = false;
         try {
-            if ( backtracking>0 && alreadyParsedRule(input, 24) ) { return result; }
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:847:4: ( (temp_Word= ruleWord )+ )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:847:4: (temp_Word= ruleWord )+
+            if ( backtracking>0 && alreadyParsedRule(input, 31) ) { return result; }
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:1063:4: ( (temp_Word= ruleWord )+ )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:1063:4: (temp_Word= ruleWord )+
             {
             if ( backtracking==0 ) {
 
               				result = factory.create("", "WhenDefinition");
               			 
             }
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:850:1: (temp_Word= ruleWord )+
-            int cnt11=0;
-            loop11:
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:1066:1: (temp_Word= ruleWord )+
+            int cnt29=0;
+            loop29:
             do {
-                int alt11=2;
-                int LA11_0 = input.LA(1);
+                int alt29=2;
+                int LA29_0 = input.LA(1);
 
-                if ( ((LA11_0>=RULE_ID && LA11_0<=RULE_NotIwantto)||LA11_0==22) ) {
-                    alt11=1;
+                if ( ((LA29_0>=RULE_ID && LA29_0<=RULE_INT)||(LA29_0>=19 && LA29_0<=24)) ) {
+                    alt29=1;
                 }
 
 
-                switch (alt11) {
+                switch (alt29) {
             	case 1 :
-            	    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:850:2: temp_Word= ruleWord
+            	    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:1066:2: temp_Word= ruleWord
             	    {
             	    if ( backtracking==0 ) {
-            	      ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(25)).eContents().get(1)));
+            	      ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(29)).eContents().get(1)));
             	    }
-            	    pushFollow(FOLLOW_ruleWord_in_ruleWhenDefinition1218);
+            	    pushFollow(FOLLOW_ruleWord_in_ruleWhenDefinition1556);
             	    temp_Word=ruleWord();
             	    _fsp--;
             	    if (failed) return result;
@@ -2314,13 +3837,13 @@ public class CucumberFeatureParser extends Parser {
             	    break;
 
             	default :
-            	    if ( cnt11 >= 1 ) break loop11;
+            	    if ( cnt29 >= 1 ) break loop29;
             	    if (backtracking>0) {failed=true; return result;}
                         EarlyExitException eee =
-                            new EarlyExitException(11, input);
+                            new EarlyExitException(29, input);
                         throw eee;
                 }
-                cnt11++;
+                cnt29++;
             } while (true);
 
             if ( backtracking==0 ) {
@@ -2338,7 +3861,7 @@ public class CucumberFeatureParser extends Parser {
             recover(input,re);
         }
         finally {
-            if ( backtracking>0 ) { memoize(input, 24, ruleWhenDefinition_StartIndex); }
+            if ( backtracking>0 ) { memoize(input, 31, ruleWhenDefinition_StartIndex); }
         }
         return result;
     }
@@ -2346,7 +3869,7 @@ public class CucumberFeatureParser extends Parser {
 
 
     // $ANTLR start ruleThenDefinition
-    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:867:1: ruleThenDefinition returns [EObject result] : (temp_Word= ruleWord )+ ;
+    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:1083:1: ruleThenDefinition returns [EObject result] : (temp_Word= ruleWord )+ ;
     public EObject ruleThenDefinition() throws RecognitionException {
         EObject result = null;
         int ruleThenDefinition_StartIndex = input.index();
@@ -2355,35 +3878,35 @@ public class CucumberFeatureParser extends Parser {
 
         boolean hasContent = false;
         try {
-            if ( backtracking>0 && alreadyParsedRule(input, 25) ) { return result; }
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:870:4: ( (temp_Word= ruleWord )+ )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:870:4: (temp_Word= ruleWord )+
+            if ( backtracking>0 && alreadyParsedRule(input, 32) ) { return result; }
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:1086:4: ( (temp_Word= ruleWord )+ )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:1086:4: (temp_Word= ruleWord )+
             {
             if ( backtracking==0 ) {
 
               				result = factory.create("", "ThenDefinition");
               			 
             }
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:873:1: (temp_Word= ruleWord )+
-            int cnt12=0;
-            loop12:
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:1089:1: (temp_Word= ruleWord )+
+            int cnt30=0;
+            loop30:
             do {
-                int alt12=2;
-                int LA12_0 = input.LA(1);
+                int alt30=2;
+                int LA30_0 = input.LA(1);
 
-                if ( ((LA12_0>=RULE_ID && LA12_0<=RULE_NotIwantto)||LA12_0==22) ) {
-                    alt12=1;
+                if ( ((LA30_0>=RULE_ID && LA30_0<=RULE_INT)||(LA30_0>=19 && LA30_0<=24)) ) {
+                    alt30=1;
                 }
 
 
-                switch (alt12) {
+                switch (alt30) {
             	case 1 :
-            	    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:873:2: temp_Word= ruleWord
+            	    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:1089:2: temp_Word= ruleWord
             	    {
             	    if ( backtracking==0 ) {
-            	      ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(26)).eContents().get(1)));
+            	      ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(30)).eContents().get(1)));
             	    }
-            	    pushFollow(FOLLOW_ruleWord_in_ruleThenDefinition1258);
+            	    pushFollow(FOLLOW_ruleWord_in_ruleThenDefinition1596);
             	    temp_Word=ruleWord();
             	    _fsp--;
             	    if (failed) return result;
@@ -2402,13 +3925,13 @@ public class CucumberFeatureParser extends Parser {
             	    break;
 
             	default :
-            	    if ( cnt12 >= 1 ) break loop12;
+            	    if ( cnt30 >= 1 ) break loop30;
             	    if (backtracking>0) {failed=true; return result;}
                         EarlyExitException eee =
-                            new EarlyExitException(12, input);
+                            new EarlyExitException(30, input);
                         throw eee;
                 }
-                cnt12++;
+                cnt30++;
             } while (true);
 
             if ( backtracking==0 ) {
@@ -2426,7 +3949,7 @@ public class CucumberFeatureParser extends Parser {
             recover(input,re);
         }
         finally {
-            if ( backtracking>0 ) { memoize(input, 25, ruleThenDefinition_StartIndex); }
+            if ( backtracking>0 ) { memoize(input, 32, ruleThenDefinition_StartIndex); }
         }
         return result;
     }
@@ -2434,7 +3957,7 @@ public class CucumberFeatureParser extends Parser {
 
 
     // $ANTLR start ruleAndDefinition
-    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:890:1: ruleAndDefinition returns [EObject result] : (temp_Word= ruleWord )+ ;
+    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:1106:1: ruleAndDefinition returns [EObject result] : (temp_Word= ruleWord )+ ;
     public EObject ruleAndDefinition() throws RecognitionException {
         EObject result = null;
         int ruleAndDefinition_StartIndex = input.index();
@@ -2443,35 +3966,35 @@ public class CucumberFeatureParser extends Parser {
 
         boolean hasContent = false;
         try {
-            if ( backtracking>0 && alreadyParsedRule(input, 26) ) { return result; }
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:893:4: ( (temp_Word= ruleWord )+ )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:893:4: (temp_Word= ruleWord )+
+            if ( backtracking>0 && alreadyParsedRule(input, 33) ) { return result; }
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:1109:4: ( (temp_Word= ruleWord )+ )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:1109:4: (temp_Word= ruleWord )+
             {
             if ( backtracking==0 ) {
 
               				result = factory.create("", "AndDefinition");
               			 
             }
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:896:1: (temp_Word= ruleWord )+
-            int cnt13=0;
-            loop13:
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:1112:1: (temp_Word= ruleWord )+
+            int cnt31=0;
+            loop31:
             do {
-                int alt13=2;
-                int LA13_0 = input.LA(1);
+                int alt31=2;
+                int LA31_0 = input.LA(1);
 
-                if ( ((LA13_0>=RULE_ID && LA13_0<=RULE_NotIwantto)||LA13_0==22) ) {
-                    alt13=1;
+                if ( ((LA31_0>=RULE_ID && LA31_0<=RULE_INT)||(LA31_0>=19 && LA31_0<=24)) ) {
+                    alt31=1;
                 }
 
 
-                switch (alt13) {
+                switch (alt31) {
             	case 1 :
-            	    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:896:2: temp_Word= ruleWord
+            	    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:1112:2: temp_Word= ruleWord
             	    {
             	    if ( backtracking==0 ) {
-            	      ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(27)).eContents().get(1)));
+            	      ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(31)).eContents().get(1)));
             	    }
-            	    pushFollow(FOLLOW_ruleWord_in_ruleAndDefinition1298);
+            	    pushFollow(FOLLOW_ruleWord_in_ruleAndDefinition1636);
             	    temp_Word=ruleWord();
             	    _fsp--;
             	    if (failed) return result;
@@ -2490,13 +4013,13 @@ public class CucumberFeatureParser extends Parser {
             	    break;
 
             	default :
-            	    if ( cnt13 >= 1 ) break loop13;
+            	    if ( cnt31 >= 1 ) break loop31;
             	    if (backtracking>0) {failed=true; return result;}
                         EarlyExitException eee =
-                            new EarlyExitException(13, input);
+                            new EarlyExitException(31, input);
                         throw eee;
                 }
-                cnt13++;
+                cnt31++;
             } while (true);
 
             if ( backtracking==0 ) {
@@ -2514,7 +4037,7 @@ public class CucumberFeatureParser extends Parser {
             recover(input,re);
         }
         finally {
-            if ( backtracking>0 ) { memoize(input, 26, ruleAndDefinition_StartIndex); }
+            if ( backtracking>0 ) { memoize(input, 33, ruleAndDefinition_StartIndex); }
         }
         return result;
     }
@@ -2522,78 +4045,88 @@ public class CucumberFeatureParser extends Parser {
 
 
     // $ANTLR start ruleWord
-    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:913:1: ruleWord returns [String s] : ( ( RULE_ID ) | ( RULE_STRING ) | ( RULE_INT ) | ( RULE_NotInorderto ) | ( RULE_NotAsa ) | ( RULE_NotIwantto ) | ( '.' ) ) ;
+    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:1129:1: ruleWord returns [String s] : ( ( RULE_ID ) | ( RULE_STRING ) | ( RULE_INT ) | ( '.' ) | ( ':' ) | ( ',' ) | ( '|' ) | ( '<' ) | ( '>' ) ) ;
     public String ruleWord() throws RecognitionException {
         String s = null;
         int ruleWord_StartIndex = input.index();
         StringBuffer buff = new StringBuffer(); boolean hasContent = false;
         try {
-            if ( backtracking>0 && alreadyParsedRule(input, 27) ) { return s; }
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:916:1: ( ( ( RULE_ID ) | ( RULE_STRING ) | ( RULE_INT ) | ( RULE_NotInorderto ) | ( RULE_NotAsa ) | ( RULE_NotIwantto ) | ( '.' ) ) )
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:916:1: ( ( RULE_ID ) | ( RULE_STRING ) | ( RULE_INT ) | ( RULE_NotInorderto ) | ( RULE_NotAsa ) | ( RULE_NotIwantto ) | ( '.' ) )
+            if ( backtracking>0 && alreadyParsedRule(input, 34) ) { return s; }
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:1132:1: ( ( ( RULE_ID ) | ( RULE_STRING ) | ( RULE_INT ) | ( '.' ) | ( ':' ) | ( ',' ) | ( '|' ) | ( '<' ) | ( '>' ) ) )
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:1132:1: ( ( RULE_ID ) | ( RULE_STRING ) | ( RULE_INT ) | ( '.' ) | ( ':' ) | ( ',' ) | ( '|' ) | ( '<' ) | ( '>' ) )
             {
-            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:916:1: ( ( RULE_ID ) | ( RULE_STRING ) | ( RULE_INT ) | ( RULE_NotInorderto ) | ( RULE_NotAsa ) | ( RULE_NotIwantto ) | ( '.' ) )
-            int alt14=7;
+            // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:1132:1: ( ( RULE_ID ) | ( RULE_STRING ) | ( RULE_INT ) | ( '.' ) | ( ':' ) | ( ',' ) | ( '|' ) | ( '<' ) | ( '>' ) )
+            int alt32=9;
             switch ( input.LA(1) ) {
             case RULE_ID:
                 {
-                alt14=1;
+                alt32=1;
                 }
                 break;
             case RULE_STRING:
                 {
-                alt14=2;
+                alt32=2;
                 }
                 break;
             case RULE_INT:
                 {
-                alt14=3;
+                alt32=3;
                 }
                 break;
-            case RULE_NotInorderto:
+            case 19:
                 {
-                alt14=4;
+                alt32=4;
                 }
                 break;
-            case RULE_NotAsa:
+            case 20:
                 {
-                alt14=5;
+                alt32=5;
                 }
                 break;
-            case RULE_NotIwantto:
+            case 21:
                 {
-                alt14=6;
+                alt32=6;
                 }
                 break;
             case 22:
                 {
-                alt14=7;
+                alt32=7;
+                }
+                break;
+            case 23:
+                {
+                alt32=8;
+                }
+                break;
+            case 24:
+                {
+                alt32=9;
                 }
                 break;
             default:
                 if (backtracking>0) {failed=true; return s;}
                 NoViableAltException nvae =
-                    new NoViableAltException("916:1: ( ( RULE_ID ) | ( RULE_STRING ) | ( RULE_INT ) | ( RULE_NotInorderto ) | ( RULE_NotAsa ) | ( RULE_NotIwantto ) | ( '.' ) )", 14, 0, input);
+                    new NoViableAltException("1132:1: ( ( RULE_ID ) | ( RULE_STRING ) | ( RULE_INT ) | ( '.' ) | ( ':' ) | ( ',' ) | ( '|' ) | ( '<' ) | ( '>' ) )", 32, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt14) {
+            switch (alt32) {
                 case 1 :
-                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:916:2: ( RULE_ID )
+                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:1132:2: ( RULE_ID )
                     {
-                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:916:2: ( RULE_ID )
-                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:916:3: RULE_ID
+                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:1132:2: ( RULE_ID )
+                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:1132:3: RULE_ID
                     {
                     if ( backtracking==0 ) {
                       skipCurrentToken = false;
                     }
-                    match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleWord1336); if (failed) return s;
+                    match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleWord1674); if (failed) return s;
                     if ( backtracking==0 ) {
                       if (!skipCurrentToken) {
                         hasContent = true;
                         Token temp = getLastToken();
-                        ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(28)).eContents().get(0)).eContents().get(0)));
+                        ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(32)).eContents().get(0)).eContents().get(0)));
                         ptm.ruleFinished(temp);
                         if (temp.getType() == CucumberFeatureLexer.RULE_ID)
                           temp.setText((String) convert(temp));
@@ -2607,20 +4140,20 @@ public class CucumberFeatureParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:927:1: ( RULE_STRING )
+                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:1143:1: ( RULE_STRING )
                     {
-                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:927:1: ( RULE_STRING )
-                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:927:2: RULE_STRING
+                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:1143:1: ( RULE_STRING )
+                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:1143:2: RULE_STRING
                     {
                     if ( backtracking==0 ) {
                       skipCurrentToken = false;
                     }
-                    match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleWord1346); if (failed) return s;
+                    match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleWord1684); if (failed) return s;
                     if ( backtracking==0 ) {
                       if (!skipCurrentToken) {
                         hasContent = true;
                         Token temp = getLastToken();
-                        ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(28)).eContents().get(0)).eContents().get(1)));
+                        ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(32)).eContents().get(0)).eContents().get(1)));
                         ptm.ruleFinished(temp);
                         if (temp.getType() == CucumberFeatureLexer.RULE_ID)
                           temp.setText((String) convert(temp));
@@ -2634,20 +4167,20 @@ public class CucumberFeatureParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:938:1: ( RULE_INT )
+                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:1154:1: ( RULE_INT )
                     {
-                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:938:1: ( RULE_INT )
-                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:938:2: RULE_INT
+                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:1154:1: ( RULE_INT )
+                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:1154:2: RULE_INT
                     {
                     if ( backtracking==0 ) {
                       skipCurrentToken = false;
                     }
-                    match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleWord1356); if (failed) return s;
+                    match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleWord1694); if (failed) return s;
                     if ( backtracking==0 ) {
                       if (!skipCurrentToken) {
                         hasContent = true;
                         Token temp = getLastToken();
-                        ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(28)).eContents().get(0)).eContents().get(2)));
+                        ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(32)).eContents().get(0)).eContents().get(2)));
                         ptm.ruleFinished(temp);
                         if (temp.getType() == CucumberFeatureLexer.RULE_ID)
                           temp.setText((String) convert(temp));
@@ -2661,23 +4194,21 @@ public class CucumberFeatureParser extends Parser {
                     }
                     break;
                 case 4 :
-                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:949:1: ( RULE_NotInorderto )
+                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:1165:1: ( '.' )
                     {
-                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:949:1: ( RULE_NotInorderto )
-                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:949:2: RULE_NotInorderto
+                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:1165:1: ( '.' )
+                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:1165:3: '.'
                     {
                     if ( backtracking==0 ) {
                       skipCurrentToken = false;
                     }
-                    match(input,RULE_NotInorderto,FOLLOW_RULE_NotInorderto_in_ruleWord1366); if (failed) return s;
+                    match(input,19,FOLLOW_19_in_ruleWord1705); if (failed) return s;
                     if ( backtracking==0 ) {
                       if (!skipCurrentToken) {
                         hasContent = true;
                         Token temp = getLastToken();
-                        ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(28)).eContents().get(0)).eContents().get(3)));
+                        ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(32)).eContents().get(0)).eContents().get(3)));
                         ptm.ruleFinished(temp);
-                        if (temp.getType() == CucumberFeatureLexer.RULE_ID)
-                          temp.setText((String) convert(temp));
                         buff.append(temp.getText());
                       }
                     }
@@ -2688,23 +4219,21 @@ public class CucumberFeatureParser extends Parser {
                     }
                     break;
                 case 5 :
-                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:960:1: ( RULE_NotAsa )
+                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:1173:1: ( ':' )
                     {
-                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:960:1: ( RULE_NotAsa )
-                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:960:2: RULE_NotAsa
+                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:1173:1: ( ':' )
+                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:1173:3: ':'
                     {
                     if ( backtracking==0 ) {
                       skipCurrentToken = false;
                     }
-                    match(input,RULE_NotAsa,FOLLOW_RULE_NotAsa_in_ruleWord1376); if (failed) return s;
+                    match(input,20,FOLLOW_20_in_ruleWord1717); if (failed) return s;
                     if ( backtracking==0 ) {
                       if (!skipCurrentToken) {
                         hasContent = true;
                         Token temp = getLastToken();
-                        ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(28)).eContents().get(0)).eContents().get(4)));
+                        ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(32)).eContents().get(0)).eContents().get(4)));
                         ptm.ruleFinished(temp);
-                        if (temp.getType() == CucumberFeatureLexer.RULE_ID)
-                          temp.setText((String) convert(temp));
                         buff.append(temp.getText());
                       }
                     }
@@ -2715,23 +4244,21 @@ public class CucumberFeatureParser extends Parser {
                     }
                     break;
                 case 6 :
-                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:971:1: ( RULE_NotIwantto )
+                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:1181:1: ( ',' )
                     {
-                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:971:1: ( RULE_NotIwantto )
-                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:971:2: RULE_NotIwantto
+                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:1181:1: ( ',' )
+                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:1181:3: ','
                     {
                     if ( backtracking==0 ) {
                       skipCurrentToken = false;
                     }
-                    match(input,RULE_NotIwantto,FOLLOW_RULE_NotIwantto_in_ruleWord1386); if (failed) return s;
+                    match(input,21,FOLLOW_21_in_ruleWord1729); if (failed) return s;
                     if ( backtracking==0 ) {
                       if (!skipCurrentToken) {
                         hasContent = true;
                         Token temp = getLastToken();
-                        ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(28)).eContents().get(0)).eContents().get(5)));
+                        ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(32)).eContents().get(0)).eContents().get(5)));
                         ptm.ruleFinished(temp);
-                        if (temp.getType() == CucumberFeatureLexer.RULE_ID)
-                          temp.setText((String) convert(temp));
                         buff.append(temp.getText());
                       }
                     }
@@ -2742,20 +4269,70 @@ public class CucumberFeatureParser extends Parser {
                     }
                     break;
                 case 7 :
-                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:982:1: ( '.' )
+                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:1189:1: ( '|' )
                     {
-                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:982:1: ( '.' )
-                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:982:3: '.'
+                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:1189:1: ( '|' )
+                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:1189:3: '|'
                     {
                     if ( backtracking==0 ) {
                       skipCurrentToken = false;
                     }
-                    match(input,22,FOLLOW_22_in_ruleWord1397); if (failed) return s;
+                    match(input,22,FOLLOW_22_in_ruleWord1741); if (failed) return s;
                     if ( backtracking==0 ) {
                       if (!skipCurrentToken) {
                         hasContent = true;
                         Token temp = getLastToken();
-                        ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(28)).eContents().get(0)).eContents().get(6)));
+                        ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(32)).eContents().get(0)).eContents().get(6)));
+                        ptm.ruleFinished(temp);
+                        buff.append(temp.getText());
+                      }
+                    }
+
+                    }
+
+
+                    }
+                    break;
+                case 8 :
+                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:1197:1: ( '<' )
+                    {
+                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:1197:1: ( '<' )
+                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:1197:3: '<'
+                    {
+                    if ( backtracking==0 ) {
+                      skipCurrentToken = false;
+                    }
+                    match(input,23,FOLLOW_23_in_ruleWord1753); if (failed) return s;
+                    if ( backtracking==0 ) {
+                      if (!skipCurrentToken) {
+                        hasContent = true;
+                        Token temp = getLastToken();
+                        ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(32)).eContents().get(0)).eContents().get(7)));
+                        ptm.ruleFinished(temp);
+                        buff.append(temp.getText());
+                      }
+                    }
+
+                    }
+
+
+                    }
+                    break;
+                case 9 :
+                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:1205:1: ( '>' )
+                    {
+                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:1205:1: ( '>' )
+                    // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:1205:3: '>'
+                    {
+                    if ( backtracking==0 ) {
+                      skipCurrentToken = false;
+                    }
+                    match(input,24,FOLLOW_24_in_ruleWord1765); if (failed) return s;
+                    if ( backtracking==0 ) {
+                      if (!skipCurrentToken) {
+                        hasContent = true;
+                        Token temp = getLastToken();
+                        ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(32)).eContents().get(0)).eContents().get(8)));
                         ptm.ruleFinished(temp);
                         buff.append(temp.getText());
                       }
@@ -2784,67 +4361,310 @@ public class CucumberFeatureParser extends Parser {
             recover(input,re);
         }
         finally {
-            if ( backtracking>0 ) { memoize(input, 27, ruleWord_StartIndex); }
+            if ( backtracking>0 ) { memoize(input, 34, ruleWord_StartIndex); }
         }
         return s;
     }
     // $ANTLR end ruleWord
+
+    // $ANTLR start synpred4
+    public void synpred4_fragment() throws RecognitionException {   
+        // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:215:3: ( ruleBusinessValueDefinition )
+        // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:215:3: ruleBusinessValueDefinition
+        {
+        if ( backtracking==0 ) {
+          ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(2)).eContents().get(1)).eContents().get(0)));
+        }
+        pushFollow(FOLLOW_ruleBusinessValueDefinition_in_synpred4235);
+        ruleBusinessValueDefinition();
+        _fsp--;
+        if (failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred4
+
+    // $ANTLR start synpred5
+    public void synpred5_fragment() throws RecognitionException {   
+        // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:227:2: ( ruleRoleDefinition )
+        // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:227:2: ruleRoleDefinition
+        {
+        if ( backtracking==0 ) {
+          ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(2)).eContents().get(1)).eContents().get(1)));
+        }
+        pushFollow(FOLLOW_ruleRoleDefinition_in_synpred5247);
+        ruleRoleDefinition();
+        _fsp--;
+        if (failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred5
+
+    // $ANTLR start synpred7
+    public void synpred7_fragment() throws RecognitionException {   
+        // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:282:2: ( ruleWord )
+        // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:282:2: ruleWord
+        {
+        if ( backtracking==0 ) {
+          ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(4)).eContents().get(1)));
+        }
+        pushFollow(FOLLOW_ruleWord_in_synpred7336);
+        ruleWord();
+        _fsp--;
+        if (failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred7
+
+    // $ANTLR start synpred8
+    public void synpred8_fragment() throws RecognitionException {   
+        // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:305:2: ( ruleWord )
+        // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:305:2: ruleWord
+        {
+        if ( backtracking==0 ) {
+          ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(5)).eContents().get(1)));
+        }
+        pushFollow(FOLLOW_ruleWord_in_synpred8376);
+        ruleWord();
+        _fsp--;
+        if (failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred8
+
+    // $ANTLR start synpred9
+    public void synpred9_fragment() throws RecognitionException {   
+        // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:328:2: ( ruleWord )
+        // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:328:2: ruleWord
+        {
+        if ( backtracking==0 ) {
+          ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(6)).eContents().get(1)));
+        }
+        pushFollow(FOLLOW_ruleWord_in_synpred9416);
+        ruleWord();
+        _fsp--;
+        if (failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred9
+
+    // $ANTLR start synpred22
+    public void synpred22_fragment() throws RecognitionException {   
+        // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:700:2: ( ruleWord )
+        // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:700:2: ruleWord
+        {
+        if ( backtracking==0 ) {
+          ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(16)).eContents().get(1)));
+        }
+        pushFollow(FOLLOW_ruleWord_in_synpred22973);
+        ruleWord();
+        _fsp--;
+        if (failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred22
+
+    // $ANTLR start synpred23
+    public void synpred23_fragment() throws RecognitionException {   
+        // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:723:2: ( ruleWord )
+        // ..//info.cukes.feature/src-gen/info/cukes/feature/parser/CucumberFeature.g:723:2: ruleWord
+        {
+        if ( backtracking==0 ) {
+          ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(17)).eContents().get(1)));
+        }
+        pushFollow(FOLLOW_ruleWord_in_synpred231013);
+        ruleWord();
+        _fsp--;
+        if (failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred23
+
+    public final boolean synpred9() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred9_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred5() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred5_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred7() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred7_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred8() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred8_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred23() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred23_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred22() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred22_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred4() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred4_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
 
 
  
 
     public static final BitSet FOLLOW_ruleCucumber_in_parse67 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_parse78 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFeature_in_ruleCucumber106 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFeatureIdentifier_in_ruleFeature146 = new BitSet(new long[]{0x0000000000401F80L});
-    public static final BitSet FOLLOW_ruleFeatureDescription_in_ruleFeature157 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleBusinessValueDefinition_in_ruleFeature168 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_ruleRoleDefinition_in_ruleFeature179 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_ruleSomeActionDefinition_in_ruleFeature190 = new BitSet(new long[]{0x0000000000020002L});
-    public static final BitSet FOLLOW_ruleScenario_in_ruleFeature201 = new BitSet(new long[]{0x0000000000020002L});
-    public static final BitSet FOLLOW_16_in_ruleFeatureIdentifier240 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleWord_in_ruleFeatureDescription278 = new BitSet(new long[]{0x0000000000401F82L});
-    public static final BitSet FOLLOW_RULE_BusinessValueIdentifier_in_ruleBusinessValueDefinition317 = new BitSet(new long[]{0x0000000000401F80L});
-    public static final BitSet FOLLOW_ruleBusinessValueDescription_in_ruleBusinessValueDefinition328 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleWord_in_ruleBusinessValueDescription381 = new BitSet(new long[]{0x0000000000401F82L});
-    public static final BitSet FOLLOW_RULE_RoleIdentifier_in_ruleRoleDefinition420 = new BitSet(new long[]{0x0000000000401F80L});
-    public static final BitSet FOLLOW_ruleRoleDescription_in_ruleRoleDefinition431 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleWord_in_ruleRoleDescription486 = new BitSet(new long[]{0x0000000000401F82L});
-    public static final BitSet FOLLOW_RULE_SomeActionIdentifier_in_ruleSomeActionDefinition525 = new BitSet(new long[]{0x0000000000401F80L});
-    public static final BitSet FOLLOW_ruleSomeActionDescription_in_ruleSomeActionDefinition536 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleWord_in_ruleSomeActionDescription589 = new BitSet(new long[]{0x0000000000401F82L});
-    public static final BitSet FOLLOW_ruleScenarioIdentifier_in_ruleScenario630 = new BitSet(new long[]{0x0000000000401F80L});
-    public static final BitSet FOLLOW_ruleScenarioDescription_in_ruleScenario641 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_ruleGivenBlock_in_ruleScenario652 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_ruleWhenBlock_in_ruleScenario663 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_ruleThenBlock_in_ruleScenario674 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_ruleScenarioIdentifier712 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleWord_in_ruleScenarioDescription750 = new BitSet(new long[]{0x0000000000401F82L});
-    public static final BitSet FOLLOW_ruleGivenIdentifier_in_ruleGivenBlock791 = new BitSet(new long[]{0x0000000000401F80L});
-    public static final BitSet FOLLOW_ruleGivenDefinition_in_ruleGivenBlock802 = new BitSet(new long[]{0x0000000000200002L});
-    public static final BitSet FOLLOW_ruleAndBlock_in_ruleGivenBlock813 = new BitSet(new long[]{0x0000000000200002L});
-    public static final BitSet FOLLOW_18_in_ruleGivenIdentifier852 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleWhenIdentifier_in_ruleWhenBlock891 = new BitSet(new long[]{0x0000000000401F80L});
-    public static final BitSet FOLLOW_ruleWhenDefinition_in_ruleWhenBlock902 = new BitSet(new long[]{0x0000000000200002L});
-    public static final BitSet FOLLOW_ruleAndBlock_in_ruleWhenBlock913 = new BitSet(new long[]{0x0000000000200002L});
-    public static final BitSet FOLLOW_19_in_ruleWhenIdentifier952 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleThenIdentifier_in_ruleThenBlock991 = new BitSet(new long[]{0x0000000000401F80L});
-    public static final BitSet FOLLOW_ruleThenDefinition_in_ruleThenBlock1002 = new BitSet(new long[]{0x0000000000200002L});
-    public static final BitSet FOLLOW_ruleAndBlock_in_ruleThenBlock1013 = new BitSet(new long[]{0x0000000000200002L});
-    public static final BitSet FOLLOW_20_in_ruleThenIdentifier1052 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAndIdentifier_in_ruleAndBlock1091 = new BitSet(new long[]{0x0000000000401F80L});
-    public static final BitSet FOLLOW_ruleAndDefinition_in_ruleAndBlock1102 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_21_in_ruleAndIdentifier1140 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleWord_in_ruleGivenDefinition1178 = new BitSet(new long[]{0x0000000000401F82L});
-    public static final BitSet FOLLOW_ruleWord_in_ruleWhenDefinition1218 = new BitSet(new long[]{0x0000000000401F82L});
-    public static final BitSet FOLLOW_ruleWord_in_ruleThenDefinition1258 = new BitSet(new long[]{0x0000000000401F82L});
-    public static final BitSet FOLLOW_ruleWord_in_ruleAndDefinition1298 = new BitSet(new long[]{0x0000000000401F82L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleWord1336 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleWord1346 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleWord1356 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_NotInorderto_in_ruleWord1366 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_NotAsa_in_ruleWord1376 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_NotIwantto_in_ruleWord1386 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_22_in_ruleWord1397 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFeature_in_ruleCucumber106 = new BitSet(new long[]{0x0000000000000402L});
+    public static final BitSet FOLLOW_ruleFeatureIdentifier_in_ruleFeature147 = new BitSet(new long[]{0x0000000001F80070L});
+    public static final BitSet FOLLOW_ruleFeatureDescription_in_ruleFeature158 = new BitSet(new long[]{0x0000000001F85872L});
+    public static final BitSet FOLLOW_ruleFeatureBlock_in_ruleFeature169 = new BitSet(new long[]{0x0000000000005802L});
+    public static final BitSet FOLLOW_ruleBackground_in_ruleFeature180 = new BitSet(new long[]{0x0000000000005002L});
+    public static final BitSet FOLLOW_ruleScenario_in_ruleFeature192 = new BitSet(new long[]{0x0000000000005002L});
+    public static final BitSet FOLLOW_ruleBusinessValueDefinition_in_ruleFeatureBlock235 = new BitSet(new long[]{0x0000000001F80072L});
+    public static final BitSet FOLLOW_ruleRoleDefinition_in_ruleFeatureBlock247 = new BitSet(new long[]{0x0000000001F80072L});
+    public static final BitSet FOLLOW_ruleSomeActionDefinition_in_ruleFeatureBlock259 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_10_in_ruleFeatureIdentifier298 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleWord_in_ruleFeatureDescription336 = new BitSet(new long[]{0x0000000001F80072L});
+    public static final BitSet FOLLOW_ruleWord_in_ruleBusinessValueDefinition376 = new BitSet(new long[]{0x0000000001F80072L});
+    public static final BitSet FOLLOW_ruleWord_in_ruleRoleDefinition416 = new BitSet(new long[]{0x0000000001F80072L});
+    public static final BitSet FOLLOW_ruleWord_in_ruleSomeActionDefinition456 = new BitSet(new long[]{0x0000000001F80072L});
+    public static final BitSet FOLLOW_ruleBackgroundIdentifier_in_ruleBackground497 = new BitSet(new long[]{0x0000000000038002L});
+    public static final BitSet FOLLOW_ruleGivenBlock_in_ruleBackground508 = new BitSet(new long[]{0x0000000000030002L});
+    public static final BitSet FOLLOW_ruleWhenBlock_in_ruleBackground520 = new BitSet(new long[]{0x0000000000020002L});
+    public static final BitSet FOLLOW_ruleThenBlock_in_ruleBackground532 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_11_in_ruleBackgroundIdentifier571 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBasicScenario_in_ruleScenario604 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTableScenario_in_ruleScenario619 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleScenarioIdentifier_in_ruleBasicScenario650 = new BitSet(new long[]{0x0000000001F80070L});
+    public static final BitSet FOLLOW_ruleScenarioDescription_in_ruleBasicScenario661 = new BitSet(new long[]{0x0000000000038002L});
+    public static final BitSet FOLLOW_ruleGivenBlock_in_ruleBasicScenario672 = new BitSet(new long[]{0x0000000000030002L});
+    public static final BitSet FOLLOW_ruleWhenBlock_in_ruleBasicScenario684 = new BitSet(new long[]{0x0000000000020002L});
+    public static final BitSet FOLLOW_ruleThenBlock_in_ruleBasicScenario696 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTableScenarioIdentifier_in_ruleTableScenario739 = new BitSet(new long[]{0x0000000001F80070L});
+    public static final BitSet FOLLOW_ruleScenarioDescription_in_ruleTableScenario750 = new BitSet(new long[]{0x000000000003A000L});
+    public static final BitSet FOLLOW_ruleGivenBlock_in_ruleTableScenario761 = new BitSet(new long[]{0x0000000000032000L});
+    public static final BitSet FOLLOW_ruleWhenBlock_in_ruleTableScenario773 = new BitSet(new long[]{0x0000000000022000L});
+    public static final BitSet FOLLOW_ruleThenBlock_in_ruleTableScenario785 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_ruleTableBlock_in_ruleTableScenario797 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_12_in_ruleTableScenarioIdentifier835 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTableIdentifier_in_ruleTableBlock874 = new BitSet(new long[]{0x0000000001F80070L});
+    public static final BitSet FOLLOW_ruleTableHeader_in_ruleTableBlock885 = new BitSet(new long[]{0x0000000001F80072L});
+    public static final BitSet FOLLOW_ruleTableRow_in_ruleTableBlock896 = new BitSet(new long[]{0x0000000001F80072L});
+    public static final BitSet FOLLOW_13_in_ruleTableIdentifier935 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleWord_in_ruleTableHeader973 = new BitSet(new long[]{0x0000000001F80072L});
+    public static final BitSet FOLLOW_ruleWord_in_ruleTableRow1013 = new BitSet(new long[]{0x0000000001F80072L});
+    public static final BitSet FOLLOW_14_in_ruleScenarioIdentifier1050 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleWord_in_ruleScenarioDescription1088 = new BitSet(new long[]{0x0000000001F80072L});
+    public static final BitSet FOLLOW_ruleGivenIdentifier_in_ruleGivenBlock1129 = new BitSet(new long[]{0x0000000001F80070L});
+    public static final BitSet FOLLOW_ruleGivenDefinition_in_ruleGivenBlock1140 = new BitSet(new long[]{0x0000000000040002L});
+    public static final BitSet FOLLOW_ruleAndBlock_in_ruleGivenBlock1151 = new BitSet(new long[]{0x0000000000040002L});
+    public static final BitSet FOLLOW_15_in_ruleGivenIdentifier1190 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleWhenIdentifier_in_ruleWhenBlock1229 = new BitSet(new long[]{0x0000000001F80070L});
+    public static final BitSet FOLLOW_ruleWhenDefinition_in_ruleWhenBlock1240 = new BitSet(new long[]{0x0000000000040002L});
+    public static final BitSet FOLLOW_ruleAndBlock_in_ruleWhenBlock1251 = new BitSet(new long[]{0x0000000000040002L});
+    public static final BitSet FOLLOW_16_in_ruleWhenIdentifier1290 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleThenIdentifier_in_ruleThenBlock1329 = new BitSet(new long[]{0x0000000001F80070L});
+    public static final BitSet FOLLOW_ruleThenDefinition_in_ruleThenBlock1340 = new BitSet(new long[]{0x0000000000040002L});
+    public static final BitSet FOLLOW_ruleAndBlock_in_ruleThenBlock1351 = new BitSet(new long[]{0x0000000000040002L});
+    public static final BitSet FOLLOW_17_in_ruleThenIdentifier1390 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAndIdentifier_in_ruleAndBlock1429 = new BitSet(new long[]{0x0000000001F80070L});
+    public static final BitSet FOLLOW_ruleAndDefinition_in_ruleAndBlock1440 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_18_in_ruleAndIdentifier1478 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleWord_in_ruleGivenDefinition1516 = new BitSet(new long[]{0x0000000001F80072L});
+    public static final BitSet FOLLOW_ruleWord_in_ruleWhenDefinition1556 = new BitSet(new long[]{0x0000000001F80072L});
+    public static final BitSet FOLLOW_ruleWord_in_ruleThenDefinition1596 = new BitSet(new long[]{0x0000000001F80072L});
+    public static final BitSet FOLLOW_ruleWord_in_ruleAndDefinition1636 = new BitSet(new long[]{0x0000000001F80072L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleWord1674 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleWord1684 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleWord1694 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_19_in_ruleWord1705 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_20_in_ruleWord1717 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_21_in_ruleWord1729 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_22_in_ruleWord1741 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_ruleWord1753 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_ruleWord1765 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBusinessValueDefinition_in_synpred4235 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRoleDefinition_in_synpred5247 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleWord_in_synpred7336 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleWord_in_synpred8376 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleWord_in_synpred9416 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleWord_in_synpred22973 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleWord_in_synpred231013 = new BitSet(new long[]{0x0000000000000002L});
 
 }

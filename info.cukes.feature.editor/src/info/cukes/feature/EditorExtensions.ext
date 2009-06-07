@@ -10,10 +10,23 @@ extension info::cukes::feature::GenEditorExtensions reexport;
 
 label(Object this)		:	metaType.getProperty("name")!=null ? metaType.getProperty("name") : "Object";
 label(Feature this)		:	"Feature: "+fd.text;
+
 //label(FeatureDescription this) :	this.text; // does not work.
-label(BusinessValueDefinition this)	:	"In order to "+bv_desc.text;
-label(RoleDefinition this)	:	"As a "+role_desc.text;
-label(SomeActionDefinition this)	:	"I want to "+sa_desc.text;
+//label(BusinessValueDefinition this)	:	"In order to "+bv_desc.text;
+//label(RoleDefinition this)	:	"As a "+role_desc.text;
+//label(SomeActionDefinition this)	:	"I want to "+sa_desc.text;
+
+image(Background this)	:	"background.png";
+label(Background this)	:	"Background";
+label(BackgroundIdentifier this) : null;
+
+image(TableBlock this) :	"limwire.png";
+label(TableBlock this) :	"Examples";
+label(TableIdentifier this) : null;
+
+label(TableScenarioIdentifier this) : null;
+label(TableHeader this) 	: null;
+//label(TableRow this)	 	: null;
 
 image(Scenario this)	:	"scenario.png";
 label(Scenario this)	:	"Scenario: "+sd.text;
@@ -23,7 +36,7 @@ label(ScenarioIdentifier this)	:	null;
 label(FeatureDescription this)	:	null;
 label(ScenarioDescription this)	:	null;
 
-label(GivenBlock this)		:	"Given "+given_def.text;
+label(GivenBlock this)		:	"Given "+given_def.text.toString();
 label(GivenIdentifier this) :	null;
 label(GivenDefinition this) :	null; //this.text;
 
@@ -43,15 +56,15 @@ label(AndDefinition this)	:	null; //this.text;
 image(Feature this)			:	"cucumber.png";
 image(FeatureDescription this)	:	"build_var_obj.gif";
 
-image(BusinessValueDefinition this)		:	"progress_ok.gif";
-image(BusinessValueDescription this)	:	"build_var_obj.gif";
-label(BusinessValueDescription this)	:	null;
+//image(BusinessValueDefinition this)		:	"progress_ok.gif";
+//image(BusinessValueDescription this)	:	"build_var_obj.gif";
+//label(BusinessValueDescription this)	:	null;
 
-image(RoleDefinition this)	:	"person.gif";
-image(RoleDescription this) :	"build_var_obj.gif";
-label(RoleDescription this) :	null;
+//image(RoleDefinition this)	:	"person.gif";
+//image(RoleDescription this) :	"build_var_obj.gif";
+//label(RoleDescription this) :	null;
 
-image(SomeActionDefinition this)	:	"profile_exc.gif";
-image(SomeActionDescription this)	:	"build_var_obj.gif";
-label(SomeActionDescription this)	:	null;
+//image(SomeActionDefinition this)	:	"profile_exc.gif";
+//image(SomeActionDescription this)	:	"build_var_obj.gif";
+//label(SomeActionDescription this)	:	null;
 

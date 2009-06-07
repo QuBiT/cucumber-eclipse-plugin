@@ -1,29 +1,42 @@
 // specify your DSL grammar rules here ...
 // IMPORTANT: You should change the property 'overwrite.pluginresources=true' in the properties file to 'overwrite.pluginresources=false' AFTER first generation
 
-Cucumber: f=Feature;
+Cucumber: (f+=Feature)*;
 
-Feature:
-fi=FeatureIdentifier fd=FeatureDescription bvd=BusinessValueDefinition rd=RoleDefinition sad=SomeActionDefinition
-	(ss += Scenario)*;
+Feature: fi=FeatureIdentifier fd=FeatureDescription fb=FeatureBlock (b=Background)? (ss += Scenario)*;
+	
+FeatureBlock: (bvd=BusinessValueDefinition)? (rd=RoleDefinition)? (sad=SomeActionDefinition)?;
 
 FeatureIdentifier: "Feature:";
 FeatureDescription: (text+=Word)+;
 
-BusinessValueDefinition: bv=BusinessValueIdentifier bv_desc=BusinessValueDescription;
-Native BusinessValueIdentifier: "'In order to '";
-BusinessValueDescription: (text+=Word)+;
+BusinessValueDefinition: (text+=Word)+;//bv=BusinessValueIdentifier bv_desc=BusinessValueDescription;
+//Native BusinessValueIdentifier: "'In order to '";
+//BusinessValueDescription: (text+=Word)+;
 
-RoleDefinition: ri=RoleIdentifier role_desc=RoleDescription;
-Native RoleIdentifier: "'As a '|'As an '";
-RoleDescription: (text+=Word)+;
+RoleDefinition: (text+=Word)+; //ri=RoleIdentifier role_desc=RoleDescription;
+//Native RoleIdentifier: "'As a '|'As an '";
+//RoleDescription: (text+=Word)+;
 
-SomeActionDefinition: sa=SomeActionIdentifier sa_desc=SomeActionDescription;
-Native SomeActionIdentifier: "'I want to '";
-SomeActionDescription: (text+=Word)+;
+SomeActionDefinition: (text+=Word)+; //sa=SomeActionIdentifier sa_desc=SomeActionDescription;
+//Native SomeActionIdentifier: "'I want to '";
+//SomeActionDescription: (text+=Word)+;
 
-Scenario:
-si=ScenarioIdentifier sd=ScenarioDescription gb=GivenBlock wb=WhenBlock tb=ThenBlock;
+Background: bi=BackgroundIdentifier (gb=GivenBlock)? (wb=WhenBlock)? (tb=ThenBlock)?;
+BackgroundIdentifier: "Background:";
+
+Scenario: BasicScenario | TableScenario;
+BasicScenario: si=ScenarioIdentifier sd=ScenarioDescription (gb=GivenBlock)? (wb=WhenBlock)? (tb=ThenBlock)?;
+TableScenario: tsi=TableScenarioIdentifier sd=ScenarioDescription (gb=GivenBlock)? (wb=WhenBlock)? (tb=ThenBlock)? table_block=TableBlock;
+TableScenarioIdentifier: "Scenario Outline:";
+
+TableBlock: ti=TableIdentifier th=TableHeader
+		(tr+=TableRow)*;
+TableIdentifier: "Examples:";
+TableHeader: (text+=Word)+;
+TableRow: (text+=Word)+;
+
+//Scenario: si=ScenarioIdentifier sd=ScenarioDescription gb=GivenBlock wb=WhenBlock tb=ThenBlock;
 
 ScenarioIdentifier: "Scenario:";
 ScenarioDescription: (text+=Word)+;
@@ -58,11 +71,16 @@ AndDefinition: (text+=Word)+;
 
 //Native WS:"(' '|'\t'|'\r'|'\n')+";
 
-String Word: ID|STRING|INT|NotInorderto|NotAsa|NotIwantto|".";//|WS;
+//Number: _Number;
+//String _Number: INT;
 
-Native NotInorderto:"'In '(~'o')?|'In o'(~'r')?|'In or'(~'d')?|'In ord'(~'e')?|'In orde'(~'r')?| 'In order '(~'t')?|'In order t'(~'o')?";
-Native NotAsa:"'As '(~'a')?|'As a'(~'n')?";
-Native NotIwantto:"'I '(~'w')?|'I w'(~'a')?|'I wa'(~'n')?|'In wan'(~'t')?|'In want '(~'t')?|'In want t'(~'o')?";
+//Word: _Word|Number;
+
+String Word: ID|STRING|INT|"."|":"|","|"|"|"<"|">";//|WS; //NotInorderto|NotAsa|NotIwantto|
+
+//Native NotInorderto:"'In '(~'o')?|'In o'(~'r')?|'In or'(~'d')?|'In ord'(~'e')?|'In orde'(~'r')?| 'In order '(~'t')?|'In order t'(~'o')?";
+//Native NotAsa:"'As '(~'a')?|'As a'(~'n')?";
+//Native NotIwantto:"'I '(~'w')?|'I w'(~'a')?|'I wa'(~'n')?|'In wan'(~'t')?|'In want '(~'t')?|'In want t'(~'o')?";
 
 // special_word:"Feature"|"Scenario"|"As"|"a"|"an"|"I"|"want"|"to"|"In"|"order"|"to"|"Given"|"When"|"Then";
 

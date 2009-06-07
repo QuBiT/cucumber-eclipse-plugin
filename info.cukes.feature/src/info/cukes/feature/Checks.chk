@@ -33,7 +33,7 @@ context GivenBlock ERROR "Write your constraint message here...!" :
 context ThenBlock ERROR "Write your constraint message here...!" :
 	true;
 
-context ScenarioDescription WARNING "Scenario with the same name detected: "+ this.text :
+context ScenarioDescription WARNING "Scenarios with the same name detected: "+ this.text :
 	allElements().
 	typeSelect(ScenarioDescription).
 	select(e|e.text == this.text).size==1;

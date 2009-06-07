@@ -13,7 +13,7 @@ parse :
 ruleCucumber 
 
 :
-(ruleFeature)
+(ruleFeature)*
 ;
 
 ruleFeature 
@@ -23,13 +23,22 @@ ruleFeature
 
 (ruleFeatureDescription)
 
-(ruleBusinessValueDefinition)
+(ruleFeatureBlock)
 
-(ruleRoleDefinition)
-
-(ruleSomeActionDefinition)
+(ruleBackground)?
 
 (ruleScenario)*
+)
+;
+
+ruleFeatureBlock 
+
+:
+((ruleBusinessValueDefinition)?
+
+(ruleRoleDefinition)?
+
+(ruleSomeActionDefinition)?
 )
 ;
 
@@ -48,38 +57,10 @@ ruleFeatureDescription
 ruleBusinessValueDefinition 
 
 :
-((RULE_BusinessValueIdentifier)
-
-(ruleBusinessValueDescription)
-)
-;
-
-RULE_BusinessValueIdentifier :
-
-	 'In order to '
-;
-
-ruleBusinessValueDescription 
-
-:
 (ruleWord)+
 ;
 
 ruleRoleDefinition 
-
-:
-((RULE_RoleIdentifier)
-
-(ruleRoleDescription)
-)
-;
-
-RULE_RoleIdentifier :
-
-	 'As a '|'As an '
-;
-
-ruleRoleDescription 
 
 :
 (ruleWord)+
@@ -88,36 +69,97 @@ ruleRoleDescription
 ruleSomeActionDefinition 
 
 :
-((RULE_SomeActionIdentifier)
-
-(ruleSomeActionDescription)
-)
-;
-
-RULE_SomeActionIdentifier :
-
-	 'I want to '
-;
-
-ruleSomeActionDescription 
-
-:
 (ruleWord)+
 ;
 
+ruleBackground 
+
+:
+((ruleBackgroundIdentifier)
+
+(ruleGivenBlock)?
+
+(ruleWhenBlock)?
+
+(ruleThenBlock)?
+)
+;
+
+ruleBackgroundIdentifier 
+
+:
+('Background:')
+;
+
 ruleScenario 
+:
+        temp_basicscenario=ruleBasicScenario 	|        temp_tablescenario=ruleTableScenario 	;
+
+ruleBasicScenario 
 
 :
 ((ruleScenarioIdentifier)
 
 (ruleScenarioDescription)
 
-(ruleGivenBlock)
+(ruleGivenBlock)?
 
-(ruleWhenBlock)
+(ruleWhenBlock)?
 
-(ruleThenBlock)
+(ruleThenBlock)?
 )
+;
+
+ruleTableScenario 
+
+:
+((ruleTableScenarioIdentifier)
+
+(ruleScenarioDescription)
+
+(ruleGivenBlock)?
+
+(ruleWhenBlock)?
+
+(ruleThenBlock)?
+
+(ruleTableBlock)
+)
+;
+
+ruleTableScenarioIdentifier 
+
+:
+('Scenario Outline:')
+;
+
+ruleTableBlock 
+
+:
+((ruleTableIdentifier)
+
+(ruleTableHeader)
+
+(ruleTableRow)*
+)
+;
+
+ruleTableIdentifier 
+
+:
+('Examples:')
+;
+
+ruleTableHeader 
+
+:
+(ruleWord)+
+;
+
+ruleTableRow 
+
+:
+(ruleWord)+
 ;
 
 ruleScenarioIdentifier 
@@ -230,30 +272,19 @@ ruleWord :
 ) |
 (RULE_INT
 ) |
-(RULE_NotInorderto
-) |
-(RULE_NotAsa
-) |
-(RULE_NotIwantto
-) |
 (		'.' 
+) |
+(		':' 
+) |
+(		',' 
+) |
+(		'|' 
+) |
+(		'<' 
+) |
+(		'>' 
 ))
 
-;
-
-RULE_NotInorderto :
-
-	 'In '(~'o')?|'In o'(~'r')?|'In or'(~'d')?|'In ord'(~'e')?|'In orde'(~'r')?| 'In order '(~'t')?|'In order t'(~'o')?
-;
-
-RULE_NotAsa :
-
-	 'As '(~'a')?|'As a'(~'n')?
-;
-
-RULE_NotIwantto :
-
-	 'I '(~'w')?|'I w'(~'a')?|'I wa'(~'n')?|'In wan'(~'t')?|'In want '(~'t')?|'In want t'(~'o')?
 ;
 
 RULE_SL_COMMENT :

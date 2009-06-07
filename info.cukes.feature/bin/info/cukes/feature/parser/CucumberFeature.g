@@ -119,13 +119,13 @@ ruleCucumber returns [EObject result]
 ruleFeature{if (temp_Feature != null) {
   hasContent = true;
   ptm.setModelElement(temp_Feature);
-  factory.set($result,"f",convert(temp_Feature),false);
+  factory.add($result,"f",convert(temp_Feature),false);
   ptm.ruleFinished(temp_Feature);
 } else {
   ptm.destroyNode();
 }
 }
-)
+)*
  {if (!hasContent)
   $result = null;};
 catch [RecognitionException re] {if (!hasContent)
@@ -163,43 +163,31 @@ ruleFeatureDescription{if (temp_FeatureDescription != null) {
 }
 )
 
-({ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(1)).eContents().get(1)).eContents().get(2)));}temp_BusinessValueDefinition=
-ruleBusinessValueDefinition{if (temp_BusinessValueDefinition != null) {
+({ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(1)).eContents().get(1)).eContents().get(2)));}temp_FeatureBlock=
+ruleFeatureBlock{if (temp_FeatureBlock != null) {
   hasContent = true;
-  ptm.setModelElement(temp_BusinessValueDefinition);
-  factory.set($result,"bvd",convert(temp_BusinessValueDefinition),false);
-  ptm.ruleFinished(temp_BusinessValueDefinition);
+  ptm.setModelElement(temp_FeatureBlock);
+  factory.set($result,"fb",convert(temp_FeatureBlock),false);
+  ptm.ruleFinished(temp_FeatureBlock);
 } else {
   ptm.destroyNode();
 }
 }
 )
 
-({ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(1)).eContents().get(1)).eContents().get(3)));}temp_RoleDefinition=
-ruleRoleDefinition{if (temp_RoleDefinition != null) {
+({ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(1)).eContents().get(1)).eContents().get(3)));}temp_Background=
+ruleBackground{if (temp_Background != null) {
   hasContent = true;
-  ptm.setModelElement(temp_RoleDefinition);
-  factory.set($result,"rd",convert(temp_RoleDefinition),false);
-  ptm.ruleFinished(temp_RoleDefinition);
+  ptm.setModelElement(temp_Background);
+  factory.set($result,"b",convert(temp_Background),false);
+  ptm.ruleFinished(temp_Background);
 } else {
   ptm.destroyNode();
 }
 }
-)
+)?
 
-({ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(1)).eContents().get(1)).eContents().get(4)));}temp_SomeActionDefinition=
-ruleSomeActionDefinition{if (temp_SomeActionDefinition != null) {
-  hasContent = true;
-  ptm.setModelElement(temp_SomeActionDefinition);
-  factory.set($result,"sad",convert(temp_SomeActionDefinition),false);
-  ptm.ruleFinished(temp_SomeActionDefinition);
-} else {
-  ptm.destroyNode();
-}
-}
-)
-
-({ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(1)).eContents().get(1)).eContents().get(5)));}temp_Scenario=
+({ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(1)).eContents().get(1)).eContents().get(4)));}temp_Scenario=
 ruleScenario{if (temp_Scenario != null) {
   hasContent = true;
   ptm.setModelElement(temp_Scenario);
@@ -218,6 +206,55 @@ catch [RecognitionException re] {if (!hasContent)
 reportError(re);
 recover(input,re);}
 
+ruleFeatureBlock returns [EObject result]
+@init {boolean hasContent = false;}
+:
+			{
+				$result = factory.create("", "FeatureBlock");
+			 }
+(({ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(2)).eContents().get(1)).eContents().get(0)));}temp_BusinessValueDefinition=
+ruleBusinessValueDefinition{if (temp_BusinessValueDefinition != null) {
+  hasContent = true;
+  ptm.setModelElement(temp_BusinessValueDefinition);
+  factory.set($result,"bvd",convert(temp_BusinessValueDefinition),false);
+  ptm.ruleFinished(temp_BusinessValueDefinition);
+} else {
+  ptm.destroyNode();
+}
+}
+)?
+
+({ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(2)).eContents().get(1)).eContents().get(1)));}temp_RoleDefinition=
+ruleRoleDefinition{if (temp_RoleDefinition != null) {
+  hasContent = true;
+  ptm.setModelElement(temp_RoleDefinition);
+  factory.set($result,"rd",convert(temp_RoleDefinition),false);
+  ptm.ruleFinished(temp_RoleDefinition);
+} else {
+  ptm.destroyNode();
+}
+}
+)?
+
+({ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(2)).eContents().get(1)).eContents().get(2)));}temp_SomeActionDefinition=
+ruleSomeActionDefinition{if (temp_SomeActionDefinition != null) {
+  hasContent = true;
+  ptm.setModelElement(temp_SomeActionDefinition);
+  factory.set($result,"sad",convert(temp_SomeActionDefinition),false);
+  ptm.ruleFinished(temp_SomeActionDefinition);
+} else {
+  ptm.destroyNode();
+}
+}
+)?
+)
+ {if (!hasContent)
+  $result = null;};
+catch [RecognitionException re] {if (!hasContent)
+    $result = null;
+reportError(re);
+recover(input,re);}
+
 ruleFeatureIdentifier returns [EObject result]
 @init {boolean hasContent = false;}
 :
@@ -226,7 +263,7 @@ ruleFeatureIdentifier returns [EObject result]
 			 }
 ({skipCurrentToken = false;}'Feature:'{if (!skipCurrentToken) {
   hasContent = true;
-  ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(2)).eContents().get(1)));
+  ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(3)).eContents().get(1)));
   ptm.ruleFinished(getLastToken());
 }})
  {if (!hasContent)
@@ -242,7 +279,7 @@ ruleFeatureDescription returns [EObject result]
 			{
 				$result = factory.create("", "FeatureDescription");
 			 }
-({ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(3)).eContents().get(1)));}temp_Word=
+({ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(4)).eContents().get(1)));}temp_Word=
 ruleWord{if (temp_Word != null) {
   hasContent = true;
   factory.add($result,"text",convert(temp_Word),false);
@@ -265,47 +302,7 @@ ruleBusinessValueDefinition returns [EObject result]
 			{
 				$result = factory.create("", "BusinessValueDefinition");
 			 }
-(({skipCurrentToken = false;}
-RULE_BusinessValueIdentifier{if (!skipCurrentToken) {
-  hasContent = true;
-  Token temp = getLastToken();
-  ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(4)).eContents().get(1)).eContents().get(0)));
-  factory.set($result,"bv",convert(temp),false);
-  ptm.ruleFinished(temp);
-}}
-)
-
-({ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(4)).eContents().get(1)).eContents().get(1)));}temp_BusinessValueDescription=
-ruleBusinessValueDescription{if (temp_BusinessValueDescription != null) {
-  hasContent = true;
-  ptm.setModelElement(temp_BusinessValueDescription);
-  factory.set($result,"bv_desc",convert(temp_BusinessValueDescription),false);
-  ptm.ruleFinished(temp_BusinessValueDescription);
-} else {
-  ptm.destroyNode();
-}
-}
-)
-)
- {if (!hasContent)
-  $result = null;};
-catch [RecognitionException re] {if (!hasContent)
-    $result = null;
-reportError(re);
-recover(input,re);}
-
-RULE_BusinessValueIdentifier :
-
-	 'In order to '
-;
-
-ruleBusinessValueDescription returns [EObject result]
-@init {boolean hasContent = false;}
-:
-			{
-				$result = factory.create("", "BusinessValueDescription");
-			 }
-({ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(6)).eContents().get(1)));}temp_Word=
+({ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(5)).eContents().get(1)));}temp_Word=
 ruleWord{if (temp_Word != null) {
   hasContent = true;
   factory.add($result,"text",convert(temp_Word),false);
@@ -328,47 +325,7 @@ ruleRoleDefinition returns [EObject result]
 			{
 				$result = factory.create("", "RoleDefinition");
 			 }
-(({skipCurrentToken = false;}
-RULE_RoleIdentifier{if (!skipCurrentToken) {
-  hasContent = true;
-  Token temp = getLastToken();
-  ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(7)).eContents().get(1)).eContents().get(0)));
-  factory.set($result,"ri",convert(temp),false);
-  ptm.ruleFinished(temp);
-}}
-)
-
-({ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(7)).eContents().get(1)).eContents().get(1)));}temp_RoleDescription=
-ruleRoleDescription{if (temp_RoleDescription != null) {
-  hasContent = true;
-  ptm.setModelElement(temp_RoleDescription);
-  factory.set($result,"role_desc",convert(temp_RoleDescription),false);
-  ptm.ruleFinished(temp_RoleDescription);
-} else {
-  ptm.destroyNode();
-}
-}
-)
-)
- {if (!hasContent)
-  $result = null;};
-catch [RecognitionException re] {if (!hasContent)
-    $result = null;
-reportError(re);
-recover(input,re);}
-
-RULE_RoleIdentifier :
-
-	 'As a '|'As an '
-;
-
-ruleRoleDescription returns [EObject result]
-@init {boolean hasContent = false;}
-:
-			{
-				$result = factory.create("", "RoleDescription");
-			 }
-({ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(9)).eContents().get(1)));}temp_Word=
+({ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(6)).eContents().get(1)));}temp_Word=
 ruleWord{if (temp_Word != null) {
   hasContent = true;
   factory.add($result,"text",convert(temp_Word),false);
@@ -391,47 +348,7 @@ ruleSomeActionDefinition returns [EObject result]
 			{
 				$result = factory.create("", "SomeActionDefinition");
 			 }
-(({skipCurrentToken = false;}
-RULE_SomeActionIdentifier{if (!skipCurrentToken) {
-  hasContent = true;
-  Token temp = getLastToken();
-  ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(10)).eContents().get(1)).eContents().get(0)));
-  factory.set($result,"sa",convert(temp),false);
-  ptm.ruleFinished(temp);
-}}
-)
-
-({ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(10)).eContents().get(1)).eContents().get(1)));}temp_SomeActionDescription=
-ruleSomeActionDescription{if (temp_SomeActionDescription != null) {
-  hasContent = true;
-  ptm.setModelElement(temp_SomeActionDescription);
-  factory.set($result,"sa_desc",convert(temp_SomeActionDescription),false);
-  ptm.ruleFinished(temp_SomeActionDescription);
-} else {
-  ptm.destroyNode();
-}
-}
-)
-)
- {if (!hasContent)
-  $result = null;};
-catch [RecognitionException re] {if (!hasContent)
-    $result = null;
-reportError(re);
-recover(input,re);}
-
-RULE_SomeActionIdentifier :
-
-	 'I want to '
-;
-
-ruleSomeActionDescription returns [EObject result]
-@init {boolean hasContent = false;}
-:
-			{
-				$result = factory.create("", "SomeActionDescription");
-			 }
-({ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(12)).eContents().get(1)));}temp_Word=
+({ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(7)).eContents().get(1)));}temp_Word=
 ruleWord{if (temp_Word != null) {
   hasContent = true;
   factory.add($result,"text",convert(temp_Word),false);
@@ -448,13 +365,96 @@ catch [RecognitionException re] {if (!hasContent)
 reportError(re);
 recover(input,re);}
 
-ruleScenario returns [EObject result]
+ruleBackground returns [EObject result]
 @init {boolean hasContent = false;}
 :
 			{
-				$result = factory.create("", "Scenario");
+				$result = factory.create("", "Background");
 			 }
-(({ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(13)).eContents().get(1)).eContents().get(0)));}temp_ScenarioIdentifier=
+(({ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(8)).eContents().get(1)).eContents().get(0)));}temp_BackgroundIdentifier=
+ruleBackgroundIdentifier{if (temp_BackgroundIdentifier != null) {
+  hasContent = true;
+  ptm.setModelElement(temp_BackgroundIdentifier);
+  factory.set($result,"bi",convert(temp_BackgroundIdentifier),false);
+  ptm.ruleFinished(temp_BackgroundIdentifier);
+} else {
+  ptm.destroyNode();
+}
+}
+)
+
+({ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(8)).eContents().get(1)).eContents().get(1)));}temp_GivenBlock=
+ruleGivenBlock{if (temp_GivenBlock != null) {
+  hasContent = true;
+  ptm.setModelElement(temp_GivenBlock);
+  factory.set($result,"gb",convert(temp_GivenBlock),false);
+  ptm.ruleFinished(temp_GivenBlock);
+} else {
+  ptm.destroyNode();
+}
+}
+)?
+
+({ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(8)).eContents().get(1)).eContents().get(2)));}temp_WhenBlock=
+ruleWhenBlock{if (temp_WhenBlock != null) {
+  hasContent = true;
+  ptm.setModelElement(temp_WhenBlock);
+  factory.set($result,"wb",convert(temp_WhenBlock),false);
+  ptm.ruleFinished(temp_WhenBlock);
+} else {
+  ptm.destroyNode();
+}
+}
+)?
+
+({ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(8)).eContents().get(1)).eContents().get(3)));}temp_ThenBlock=
+ruleThenBlock{if (temp_ThenBlock != null) {
+  hasContent = true;
+  ptm.setModelElement(temp_ThenBlock);
+  factory.set($result,"tb",convert(temp_ThenBlock),false);
+  ptm.ruleFinished(temp_ThenBlock);
+} else {
+  ptm.destroyNode();
+}
+}
+)?
+)
+ {if (!hasContent)
+  $result = null;};
+catch [RecognitionException re] {if (!hasContent)
+    $result = null;
+reportError(re);
+recover(input,re);}
+
+ruleBackgroundIdentifier returns [EObject result]
+@init {boolean hasContent = false;}
+:
+			{
+				$result = factory.create("", "BackgroundIdentifier");
+			 }
+({skipCurrentToken = false;}'Background:'{if (!skipCurrentToken) {
+  hasContent = true;
+  ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(9)).eContents().get(1)));
+  ptm.ruleFinished(getLastToken());
+}})
+ {if (!hasContent)
+  $result = null;};
+catch [RecognitionException re] {if (!hasContent)
+    $result = null;
+reportError(re);
+recover(input,re);}
+
+ruleScenario returns [EObject result]
+:
+        temp_basicscenario=ruleBasicScenario {$result=temp_basicscenario;}	|        temp_tablescenario=ruleTableScenario {$result=temp_tablescenario;}	;
+
+ruleBasicScenario returns [EObject result]
+@init {boolean hasContent = false;}
+:
+			{
+				$result = factory.create("", "BasicScenario");
+			 }
+(({ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(11)).eContents().get(1)).eContents().get(0)));}temp_ScenarioIdentifier=
 ruleScenarioIdentifier{if (temp_ScenarioIdentifier != null) {
   hasContent = true;
   ptm.setModelElement(temp_ScenarioIdentifier);
@@ -466,7 +466,7 @@ ruleScenarioIdentifier{if (temp_ScenarioIdentifier != null) {
 }
 )
 
-({ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(13)).eContents().get(1)).eContents().get(1)));}temp_ScenarioDescription=
+({ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(11)).eContents().get(1)).eContents().get(1)));}temp_ScenarioDescription=
 ruleScenarioDescription{if (temp_ScenarioDescription != null) {
   hasContent = true;
   ptm.setModelElement(temp_ScenarioDescription);
@@ -478,7 +478,7 @@ ruleScenarioDescription{if (temp_ScenarioDescription != null) {
 }
 )
 
-({ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(13)).eContents().get(1)).eContents().get(2)));}temp_GivenBlock=
+({ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(11)).eContents().get(1)).eContents().get(2)));}temp_GivenBlock=
 ruleGivenBlock{if (temp_GivenBlock != null) {
   hasContent = true;
   ptm.setModelElement(temp_GivenBlock);
@@ -488,9 +488,9 @@ ruleGivenBlock{if (temp_GivenBlock != null) {
   ptm.destroyNode();
 }
 }
-)
+)?
 
-({ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(13)).eContents().get(1)).eContents().get(3)));}temp_WhenBlock=
+({ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(11)).eContents().get(1)).eContents().get(3)));}temp_WhenBlock=
 ruleWhenBlock{if (temp_WhenBlock != null) {
   hasContent = true;
   ptm.setModelElement(temp_WhenBlock);
@@ -500,9 +500,9 @@ ruleWhenBlock{if (temp_WhenBlock != null) {
   ptm.destroyNode();
 }
 }
-)
+)?
 
-({ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(13)).eContents().get(1)).eContents().get(4)));}temp_ThenBlock=
+({ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(11)).eContents().get(1)).eContents().get(4)));}temp_ThenBlock=
 ruleThenBlock{if (temp_ThenBlock != null) {
   hasContent = true;
   ptm.setModelElement(temp_ThenBlock);
@@ -512,8 +512,224 @@ ruleThenBlock{if (temp_ThenBlock != null) {
   ptm.destroyNode();
 }
 }
+)?
+)
+ {if (!hasContent)
+  $result = null;};
+catch [RecognitionException re] {if (!hasContent)
+    $result = null;
+reportError(re);
+recover(input,re);}
+
+ruleTableScenario returns [EObject result]
+@init {boolean hasContent = false;}
+:
+			{
+				$result = factory.create("", "TableScenario");
+			 }
+(({ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(12)).eContents().get(1)).eContents().get(0)));}temp_TableScenarioIdentifier=
+ruleTableScenarioIdentifier{if (temp_TableScenarioIdentifier != null) {
+  hasContent = true;
+  ptm.setModelElement(temp_TableScenarioIdentifier);
+  factory.set($result,"tsi",convert(temp_TableScenarioIdentifier),false);
+  ptm.ruleFinished(temp_TableScenarioIdentifier);
+} else {
+  ptm.destroyNode();
+}
+}
+)
+
+({ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(12)).eContents().get(1)).eContents().get(1)));}temp_ScenarioDescription=
+ruleScenarioDescription{if (temp_ScenarioDescription != null) {
+  hasContent = true;
+  ptm.setModelElement(temp_ScenarioDescription);
+  factory.set($result,"sd",convert(temp_ScenarioDescription),false);
+  ptm.ruleFinished(temp_ScenarioDescription);
+} else {
+  ptm.destroyNode();
+}
+}
+)
+
+({ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(12)).eContents().get(1)).eContents().get(2)));}temp_GivenBlock=
+ruleGivenBlock{if (temp_GivenBlock != null) {
+  hasContent = true;
+  ptm.setModelElement(temp_GivenBlock);
+  factory.set($result,"gb",convert(temp_GivenBlock),false);
+  ptm.ruleFinished(temp_GivenBlock);
+} else {
+  ptm.destroyNode();
+}
+}
+)?
+
+({ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(12)).eContents().get(1)).eContents().get(3)));}temp_WhenBlock=
+ruleWhenBlock{if (temp_WhenBlock != null) {
+  hasContent = true;
+  ptm.setModelElement(temp_WhenBlock);
+  factory.set($result,"wb",convert(temp_WhenBlock),false);
+  ptm.ruleFinished(temp_WhenBlock);
+} else {
+  ptm.destroyNode();
+}
+}
+)?
+
+({ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(12)).eContents().get(1)).eContents().get(4)));}temp_ThenBlock=
+ruleThenBlock{if (temp_ThenBlock != null) {
+  hasContent = true;
+  ptm.setModelElement(temp_ThenBlock);
+  factory.set($result,"tb",convert(temp_ThenBlock),false);
+  ptm.ruleFinished(temp_ThenBlock);
+} else {
+  ptm.destroyNode();
+}
+}
+)?
+
+({ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(12)).eContents().get(1)).eContents().get(5)));}temp_TableBlock=
+ruleTableBlock{if (temp_TableBlock != null) {
+  hasContent = true;
+  ptm.setModelElement(temp_TableBlock);
+  factory.set($result,"table_block",convert(temp_TableBlock),false);
+  ptm.ruleFinished(temp_TableBlock);
+} else {
+  ptm.destroyNode();
+}
+}
 )
 )
+ {if (!hasContent)
+  $result = null;};
+catch [RecognitionException re] {if (!hasContent)
+    $result = null;
+reportError(re);
+recover(input,re);}
+
+ruleTableScenarioIdentifier returns [EObject result]
+@init {boolean hasContent = false;}
+:
+			{
+				$result = factory.create("", "TableScenarioIdentifier");
+			 }
+({skipCurrentToken = false;}'Scenario Outline:'{if (!skipCurrentToken) {
+  hasContent = true;
+  ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(13)).eContents().get(1)));
+  ptm.ruleFinished(getLastToken());
+}})
+ {if (!hasContent)
+  $result = null;};
+catch [RecognitionException re] {if (!hasContent)
+    $result = null;
+reportError(re);
+recover(input,re);}
+
+ruleTableBlock returns [EObject result]
+@init {boolean hasContent = false;}
+:
+			{
+				$result = factory.create("", "TableBlock");
+			 }
+(({ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(14)).eContents().get(1)).eContents().get(0)));}temp_TableIdentifier=
+ruleTableIdentifier{if (temp_TableIdentifier != null) {
+  hasContent = true;
+  ptm.setModelElement(temp_TableIdentifier);
+  factory.set($result,"ti",convert(temp_TableIdentifier),false);
+  ptm.ruleFinished(temp_TableIdentifier);
+} else {
+  ptm.destroyNode();
+}
+}
+)
+
+({ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(14)).eContents().get(1)).eContents().get(1)));}temp_TableHeader=
+ruleTableHeader{if (temp_TableHeader != null) {
+  hasContent = true;
+  ptm.setModelElement(temp_TableHeader);
+  factory.set($result,"th",convert(temp_TableHeader),false);
+  ptm.ruleFinished(temp_TableHeader);
+} else {
+  ptm.destroyNode();
+}
+}
+)
+
+({ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(14)).eContents().get(1)).eContents().get(2)));}temp_TableRow=
+ruleTableRow{if (temp_TableRow != null) {
+  hasContent = true;
+  ptm.setModelElement(temp_TableRow);
+  factory.add($result,"tr",convert(temp_TableRow),false);
+  ptm.ruleFinished(temp_TableRow);
+} else {
+  ptm.destroyNode();
+}
+}
+)*
+)
+ {if (!hasContent)
+  $result = null;};
+catch [RecognitionException re] {if (!hasContent)
+    $result = null;
+reportError(re);
+recover(input,re);}
+
+ruleTableIdentifier returns [EObject result]
+@init {boolean hasContent = false;}
+:
+			{
+				$result = factory.create("", "TableIdentifier");
+			 }
+({skipCurrentToken = false;}'Examples:'{if (!skipCurrentToken) {
+  hasContent = true;
+  ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(15)).eContents().get(1)));
+  ptm.ruleFinished(getLastToken());
+}})
+ {if (!hasContent)
+  $result = null;};
+catch [RecognitionException re] {if (!hasContent)
+    $result = null;
+reportError(re);
+recover(input,re);}
+
+ruleTableHeader returns [EObject result]
+@init {boolean hasContent = false;}
+:
+			{
+				$result = factory.create("", "TableHeader");
+			 }
+({ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(16)).eContents().get(1)));}temp_Word=
+ruleWord{if (temp_Word != null) {
+  hasContent = true;
+  factory.add($result,"text",convert(temp_Word),false);
+  ptm.ruleFinished(temp_Word);
+} else {
+  ptm.destroyNode();
+}
+}
+)+
+ {if (!hasContent)
+  $result = null;};
+catch [RecognitionException re] {if (!hasContent)
+    $result = null;
+reportError(re);
+recover(input,re);}
+
+ruleTableRow returns [EObject result]
+@init {boolean hasContent = false;}
+:
+			{
+				$result = factory.create("", "TableRow");
+			 }
+({ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(17)).eContents().get(1)));}temp_Word=
+ruleWord{if (temp_Word != null) {
+  hasContent = true;
+  factory.add($result,"text",convert(temp_Word),false);
+  ptm.ruleFinished(temp_Word);
+} else {
+  ptm.destroyNode();
+}
+}
+)+
  {if (!hasContent)
   $result = null;};
 catch [RecognitionException re] {if (!hasContent)
@@ -529,7 +745,7 @@ ruleScenarioIdentifier returns [EObject result]
 			 }
 ({skipCurrentToken = false;}'Scenario:'{if (!skipCurrentToken) {
   hasContent = true;
-  ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(14)).eContents().get(1)));
+  ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(18)).eContents().get(1)));
   ptm.ruleFinished(getLastToken());
 }})
  {if (!hasContent)
@@ -545,7 +761,7 @@ ruleScenarioDescription returns [EObject result]
 			{
 				$result = factory.create("", "ScenarioDescription");
 			 }
-({ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(15)).eContents().get(1)));}temp_Word=
+({ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(19)).eContents().get(1)));}temp_Word=
 ruleWord{if (temp_Word != null) {
   hasContent = true;
   factory.add($result,"text",convert(temp_Word),false);
@@ -568,7 +784,7 @@ ruleGivenBlock returns [EObject result]
 			{
 				$result = factory.create("", "GivenBlock");
 			 }
-(({ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(16)).eContents().get(1)).eContents().get(0)));}temp_GivenIdentifier=
+(({ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(20)).eContents().get(1)).eContents().get(0)));}temp_GivenIdentifier=
 ruleGivenIdentifier{if (temp_GivenIdentifier != null) {
   hasContent = true;
   ptm.setModelElement(temp_GivenIdentifier);
@@ -580,7 +796,7 @@ ruleGivenIdentifier{if (temp_GivenIdentifier != null) {
 }
 )
 
-({ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(16)).eContents().get(1)).eContents().get(1)));}temp_GivenDefinition=
+({ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(20)).eContents().get(1)).eContents().get(1)));}temp_GivenDefinition=
 ruleGivenDefinition{if (temp_GivenDefinition != null) {
   hasContent = true;
   ptm.setModelElement(temp_GivenDefinition);
@@ -592,7 +808,7 @@ ruleGivenDefinition{if (temp_GivenDefinition != null) {
 }
 )
 
-({ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(16)).eContents().get(1)).eContents().get(2)));}temp_AndBlock=
+({ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(20)).eContents().get(1)).eContents().get(2)));}temp_AndBlock=
 ruleAndBlock{if (temp_AndBlock != null) {
   hasContent = true;
   ptm.setModelElement(temp_AndBlock);
@@ -619,7 +835,7 @@ ruleGivenIdentifier returns [EObject result]
 			 }
 ({skipCurrentToken = false;}'Given'{if (!skipCurrentToken) {
   hasContent = true;
-  ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(17)).eContents().get(1)));
+  ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(21)).eContents().get(1)));
   ptm.ruleFinished(getLastToken());
 }})
  {if (!hasContent)
@@ -635,7 +851,7 @@ ruleWhenBlock returns [EObject result]
 			{
 				$result = factory.create("", "WhenBlock");
 			 }
-(({ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(18)).eContents().get(1)).eContents().get(0)));}temp_WhenIdentifier=
+(({ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(22)).eContents().get(1)).eContents().get(0)));}temp_WhenIdentifier=
 ruleWhenIdentifier{if (temp_WhenIdentifier != null) {
   hasContent = true;
   ptm.setModelElement(temp_WhenIdentifier);
@@ -647,7 +863,7 @@ ruleWhenIdentifier{if (temp_WhenIdentifier != null) {
 }
 )
 
-({ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(18)).eContents().get(1)).eContents().get(1)));}temp_WhenDefinition=
+({ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(22)).eContents().get(1)).eContents().get(1)));}temp_WhenDefinition=
 ruleWhenDefinition{if (temp_WhenDefinition != null) {
   hasContent = true;
   ptm.setModelElement(temp_WhenDefinition);
@@ -659,7 +875,7 @@ ruleWhenDefinition{if (temp_WhenDefinition != null) {
 }
 )
 
-({ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(18)).eContents().get(1)).eContents().get(2)));}temp_AndBlock=
+({ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(22)).eContents().get(1)).eContents().get(2)));}temp_AndBlock=
 ruleAndBlock{if (temp_AndBlock != null) {
   hasContent = true;
   ptm.setModelElement(temp_AndBlock);
@@ -686,7 +902,7 @@ ruleWhenIdentifier returns [EObject result]
 			 }
 ({skipCurrentToken = false;}'When'{if (!skipCurrentToken) {
   hasContent = true;
-  ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(19)).eContents().get(1)));
+  ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(23)).eContents().get(1)));
   ptm.ruleFinished(getLastToken());
 }})
  {if (!hasContent)
@@ -702,7 +918,7 @@ ruleThenBlock returns [EObject result]
 			{
 				$result = factory.create("", "ThenBlock");
 			 }
-(({ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(20)).eContents().get(1)).eContents().get(0)));}temp_ThenIdentifier=
+(({ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(24)).eContents().get(1)).eContents().get(0)));}temp_ThenIdentifier=
 ruleThenIdentifier{if (temp_ThenIdentifier != null) {
   hasContent = true;
   ptm.setModelElement(temp_ThenIdentifier);
@@ -714,7 +930,7 @@ ruleThenIdentifier{if (temp_ThenIdentifier != null) {
 }
 )
 
-({ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(20)).eContents().get(1)).eContents().get(1)));}temp_ThenDefinition=
+({ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(24)).eContents().get(1)).eContents().get(1)));}temp_ThenDefinition=
 ruleThenDefinition{if (temp_ThenDefinition != null) {
   hasContent = true;
   ptm.setModelElement(temp_ThenDefinition);
@@ -726,7 +942,7 @@ ruleThenDefinition{if (temp_ThenDefinition != null) {
 }
 )
 
-({ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(20)).eContents().get(1)).eContents().get(2)));}temp_AndBlock=
+({ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(24)).eContents().get(1)).eContents().get(2)));}temp_AndBlock=
 ruleAndBlock{if (temp_AndBlock != null) {
   hasContent = true;
   ptm.setModelElement(temp_AndBlock);
@@ -753,7 +969,7 @@ ruleThenIdentifier returns [EObject result]
 			 }
 ({skipCurrentToken = false;}'Then'{if (!skipCurrentToken) {
   hasContent = true;
-  ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(21)).eContents().get(1)));
+  ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(25)).eContents().get(1)));
   ptm.ruleFinished(getLastToken());
 }})
  {if (!hasContent)
@@ -769,7 +985,7 @@ ruleAndBlock returns [EObject result]
 			{
 				$result = factory.create("", "AndBlock");
 			 }
-(({ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(22)).eContents().get(1)).eContents().get(0)));}temp_AndIdentifier=
+(({ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(26)).eContents().get(1)).eContents().get(0)));}temp_AndIdentifier=
 ruleAndIdentifier{if (temp_AndIdentifier != null) {
   hasContent = true;
   ptm.setModelElement(temp_AndIdentifier);
@@ -781,7 +997,7 @@ ruleAndIdentifier{if (temp_AndIdentifier != null) {
 }
 )
 
-({ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(22)).eContents().get(1)).eContents().get(1)));}temp_AndDefinition=
+({ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(26)).eContents().get(1)).eContents().get(1)));}temp_AndDefinition=
 ruleAndDefinition{if (temp_AndDefinition != null) {
   hasContent = true;
   ptm.setModelElement(temp_AndDefinition);
@@ -808,7 +1024,7 @@ ruleAndIdentifier returns [EObject result]
 			 }
 ({skipCurrentToken = false;}'And'{if (!skipCurrentToken) {
   hasContent = true;
-  ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(23)).eContents().get(1)));
+  ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(27)).eContents().get(1)));
   ptm.ruleFinished(getLastToken());
 }})
  {if (!hasContent)
@@ -824,7 +1040,7 @@ ruleGivenDefinition returns [EObject result]
 			{
 				$result = factory.create("", "GivenDefinition");
 			 }
-({ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(24)).eContents().get(1)));}temp_Word=
+({ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(28)).eContents().get(1)));}temp_Word=
 ruleWord{if (temp_Word != null) {
   hasContent = true;
   factory.add($result,"text",convert(temp_Word),false);
@@ -847,7 +1063,7 @@ ruleWhenDefinition returns [EObject result]
 			{
 				$result = factory.create("", "WhenDefinition");
 			 }
-({ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(25)).eContents().get(1)));}temp_Word=
+({ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(29)).eContents().get(1)));}temp_Word=
 ruleWord{if (temp_Word != null) {
   hasContent = true;
   factory.add($result,"text",convert(temp_Word),false);
@@ -870,7 +1086,7 @@ ruleThenDefinition returns [EObject result]
 			{
 				$result = factory.create("", "ThenDefinition");
 			 }
-({ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(26)).eContents().get(1)));}temp_Word=
+({ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(30)).eContents().get(1)));}temp_Word=
 ruleWord{if (temp_Word != null) {
   hasContent = true;
   factory.add($result,"text",convert(temp_Word),false);
@@ -893,7 +1109,7 @@ ruleAndDefinition returns [EObject result]
 			{
 				$result = factory.create("", "AndDefinition");
 			 }
-({ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(27)).eContents().get(1)));}temp_Word=
+({ptm.createNode(((EObject)((EObject)xtextfile.eContents().get(31)).eContents().get(1)));}temp_Word=
 ruleWord{if (temp_Word != null) {
   hasContent = true;
   factory.add($result,"text",convert(temp_Word),false);
@@ -918,7 +1134,7 @@ RULE_ID
 {if (!skipCurrentToken) {
   hasContent = true;
   Token temp = getLastToken();
-  ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(28)).eContents().get(0)).eContents().get(0)));
+  ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(32)).eContents().get(0)).eContents().get(0)));
   ptm.ruleFinished(temp);
   if (temp.getType() == CucumberFeatureLexer.RULE_ID)
     temp.setText((String) convert(temp));
@@ -929,7 +1145,7 @@ RULE_STRING
 {if (!skipCurrentToken) {
   hasContent = true;
   Token temp = getLastToken();
-  ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(28)).eContents().get(0)).eContents().get(1)));
+  ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(32)).eContents().get(0)).eContents().get(1)));
   ptm.ruleFinished(temp);
   if (temp.getType() == CucumberFeatureLexer.RULE_ID)
     temp.setText((String) convert(temp));
@@ -940,40 +1156,7 @@ RULE_INT
 {if (!skipCurrentToken) {
   hasContent = true;
   Token temp = getLastToken();
-  ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(28)).eContents().get(0)).eContents().get(2)));
-  ptm.ruleFinished(temp);
-  if (temp.getType() == CucumberFeatureLexer.RULE_ID)
-    temp.setText((String) convert(temp));
-  buff.append(temp.getText());
-}}) |
-({skipCurrentToken = false;}
-RULE_NotInorderto
-{if (!skipCurrentToken) {
-  hasContent = true;
-  Token temp = getLastToken();
-  ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(28)).eContents().get(0)).eContents().get(3)));
-  ptm.ruleFinished(temp);
-  if (temp.getType() == CucumberFeatureLexer.RULE_ID)
-    temp.setText((String) convert(temp));
-  buff.append(temp.getText());
-}}) |
-({skipCurrentToken = false;}
-RULE_NotAsa
-{if (!skipCurrentToken) {
-  hasContent = true;
-  Token temp = getLastToken();
-  ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(28)).eContents().get(0)).eContents().get(4)));
-  ptm.ruleFinished(temp);
-  if (temp.getType() == CucumberFeatureLexer.RULE_ID)
-    temp.setText((String) convert(temp));
-  buff.append(temp.getText());
-}}) |
-({skipCurrentToken = false;}
-RULE_NotIwantto
-{if (!skipCurrentToken) {
-  hasContent = true;
-  Token temp = getLastToken();
-  ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(28)).eContents().get(0)).eContents().get(5)));
+  ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(32)).eContents().get(0)).eContents().get(2)));
   ptm.ruleFinished(temp);
   if (temp.getType() == CucumberFeatureLexer.RULE_ID)
     temp.setText((String) convert(temp));
@@ -982,7 +1165,47 @@ RULE_NotIwantto
 (	{skipCurrentToken = false;}	'.' {if (!skipCurrentToken) {
   hasContent = true;
   Token temp = getLastToken();
-  ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(28)).eContents().get(0)).eContents().get(6)));
+  ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(32)).eContents().get(0)).eContents().get(3)));
+  ptm.ruleFinished(temp);
+  buff.append(temp.getText());
+}}
+) |
+(	{skipCurrentToken = false;}	':' {if (!skipCurrentToken) {
+  hasContent = true;
+  Token temp = getLastToken();
+  ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(32)).eContents().get(0)).eContents().get(4)));
+  ptm.ruleFinished(temp);
+  buff.append(temp.getText());
+}}
+) |
+(	{skipCurrentToken = false;}	',' {if (!skipCurrentToken) {
+  hasContent = true;
+  Token temp = getLastToken();
+  ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(32)).eContents().get(0)).eContents().get(5)));
+  ptm.ruleFinished(temp);
+  buff.append(temp.getText());
+}}
+) |
+(	{skipCurrentToken = false;}	'|' {if (!skipCurrentToken) {
+  hasContent = true;
+  Token temp = getLastToken();
+  ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(32)).eContents().get(0)).eContents().get(6)));
+  ptm.ruleFinished(temp);
+  buff.append(temp.getText());
+}}
+) |
+(	{skipCurrentToken = false;}	'<' {if (!skipCurrentToken) {
+  hasContent = true;
+  Token temp = getLastToken();
+  ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(32)).eContents().get(0)).eContents().get(7)));
+  ptm.ruleFinished(temp);
+  buff.append(temp.getText());
+}}
+) |
+(	{skipCurrentToken = false;}	'>' {if (!skipCurrentToken) {
+  hasContent = true;
+  Token temp = getLastToken();
+  ptm.createNode(((EObject)((EObject)((EObject)xtextfile.eContents().get(32)).eContents().get(0)).eContents().get(8)));
   ptm.ruleFinished(temp);
   buff.append(temp.getText());
 }}
@@ -995,21 +1218,6 @@ catch [RecognitionException re] {if (hasContent)
 $s =buff.toString();
 reportError(re);
 recover(input,re);}
-
-RULE_NotInorderto :
-
-	 'In '(~'o')?|'In o'(~'r')?|'In or'(~'d')?|'In ord'(~'e')?|'In orde'(~'r')?| 'In order '(~'t')?|'In order t'(~'o')?
-;
-
-RULE_NotAsa :
-
-	 'As '(~'a')?|'As a'(~'n')?
-;
-
-RULE_NotIwantto :
-
-	 'I '(~'w')?|'I w'(~'a')?|'I wa'(~'n')?|'In wan'(~'t')?|'In want '(~'t')?|'In want t'(~'o')?
-;
 
 RULE_SL_COMMENT :
 
