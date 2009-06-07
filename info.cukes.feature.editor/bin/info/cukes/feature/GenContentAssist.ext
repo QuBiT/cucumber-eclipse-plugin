@@ -3,10 +3,6 @@ import codeassist;
 
 extension info::cukes::feature::EditorExtensions;
 
-/* proposals for Feature BusinessValueDefinition::bv */
-List[Proposal] completeBusinessValueDefinition_bv(emf::EObject ctx, String prefix) :
-	{newProposal("BusinessValueDefinitionBv")};
-
 /* proposals for Feature RoleDefinition::ri */
 List[Proposal] completeRoleDefinition_ri(emf::EObject ctx, String prefix) :
 	{newProposal("RoleDefinitionRi")};
@@ -15,146 +11,150 @@ List[Proposal] completeRoleDefinition_ri(emf::EObject ctx, String prefix) :
 List[Proposal] completeSomeActionDefinition_sa(emf::EObject ctx, String prefix) :
 	{newProposal("SomeActionDefinitionSa")};
 
+/* proposals for Feature BusinessValueDefinition::bv */
+List[Proposal] completeBusinessValueDefinition_bv(emf::EObject ctx, String prefix) :
+	{newProposal("BusinessValueDefinitionBv")};
 
 
-/* proposals for Feature ScenarioDescription::text */
-List[Proposal] completeScenarioDescription_text(emf::EObject ctx, String prefix) :
-	{};
 
-/* proposals for Feature ThenBlock::ti */
-List[Proposal] completeThenBlock_ti(emf::EObject ctx, String prefix) :
-	{};
-
-/* proposals for Feature BusinessValueDescription::text */
-List[Proposal] completeBusinessValueDescription_text(emf::EObject ctx, String prefix) :
-	{};
-
-/* proposals for Feature SomeActionDescription::text */
-List[Proposal] completeSomeActionDescription_text(emf::EObject ctx, String prefix) :
-	{};
-
-/* proposals for Feature ThenDefinition::text */
-List[Proposal] completeThenDefinition_text(emf::EObject ctx, String prefix) :
-	{};
-
-/* proposals for Feature Scenario::si */
-List[Proposal] completeScenario_si(emf::EObject ctx, String prefix) :
-	{};
-
-/* proposals for Feature AndDefinition::text */
-List[Proposal] completeAndDefinition_text(emf::EObject ctx, String prefix) :
-	{};
-
-/* proposals for Feature Feature::bvd */
-List[Proposal] completeFeature_bvd(emf::EObject ctx, String prefix) :
-	{};
-
-/* proposals for Feature RoleDefinition::role_desc */
-List[Proposal] completeRoleDefinition_role_desc(emf::EObject ctx, String prefix) :
-	{};
-
-/* proposals for Feature Cucumber::f */
-List[Proposal] completeCucumber_f(emf::EObject ctx, String prefix) :
-	{};
-
-/* proposals for Feature AndBlock::and_def */
-List[Proposal] completeAndBlock_and_def(emf::EObject ctx, String prefix) :
-	{};
-
-/* proposals for Feature WhenDefinition::text */
-List[Proposal] completeWhenDefinition_text(emf::EObject ctx, String prefix) :
-	{};
-
-/* proposals for Feature GivenBlock::ab */
-List[Proposal] completeGivenBlock_ab(emf::EObject ctx, String prefix) :
-	{};
-
-/* proposals for Feature Scenario::wb */
-List[Proposal] completeScenario_wb(emf::EObject ctx, String prefix) :
-	{};
-
-/* proposals for Feature WhenBlock::when_def */
-List[Proposal] completeWhenBlock_when_def(emf::EObject ctx, String prefix) :
-	{};
-
-/* proposals for Feature Feature::ss */
-List[Proposal] completeFeature_ss(emf::EObject ctx, String prefix) :
-	{};
-
-/* proposals for Feature Feature::rd */
-List[Proposal] completeFeature_rd(emf::EObject ctx, String prefix) :
-	{};
-
-/* proposals for Feature WhenBlock::ab */
-List[Proposal] completeWhenBlock_ab(emf::EObject ctx, String prefix) :
+/* proposals for Feature GivenBlock::gi */
+List[Proposal] completeGivenBlock_gi(emf::EObject ctx, String prefix) :
 	{};
 
 /* proposals for Feature BusinessValueDefinition::bv_desc */
 List[Proposal] completeBusinessValueDefinition_bv_desc(emf::EObject ctx, String prefix) :
 	{};
 
-/* proposals for Feature AndBlock::ai */
-List[Proposal] completeAndBlock_ai(emf::EObject ctx, String prefix) :
-	{};
-
-/* proposals for Feature Feature::fi */
-List[Proposal] completeFeature_fi(emf::EObject ctx, String prefix) :
-	{};
-
-/* proposals for Feature RoleDescription::text */
-List[Proposal] completeRoleDescription_text(emf::EObject ctx, String prefix) :
-	{};
-
-/* proposals for Feature GivenBlock::given_def */
-List[Proposal] completeGivenBlock_given_def(emf::EObject ctx, String prefix) :
-	{};
-
-/* proposals for Feature Feature::fd */
-List[Proposal] completeFeature_fd(emf::EObject ctx, String prefix) :
-	{};
-
-/* proposals for Feature ThenBlock::ab */
-List[Proposal] completeThenBlock_ab(emf::EObject ctx, String prefix) :
-	{};
-
-/* proposals for Feature Feature::sad */
-List[Proposal] completeFeature_sad(emf::EObject ctx, String prefix) :
-	{};
-
-/* proposals for Feature GivenBlock::gi */
-List[Proposal] completeGivenBlock_gi(emf::EObject ctx, String prefix) :
-	{};
-
-/* proposals for Feature FeatureDescription::text */
-List[Proposal] completeFeatureDescription_text(emf::EObject ctx, String prefix) :
-	{};
-
-/* proposals for Feature WhenBlock::wi */
-List[Proposal] completeWhenBlock_wi(emf::EObject ctx, String prefix) :
-	{};
-
-/* proposals for Feature GivenDefinition::text */
-List[Proposal] completeGivenDefinition_text(emf::EObject ctx, String prefix) :
-	{};
-
-/* proposals for Feature SomeActionDefinition::sa_desc */
-List[Proposal] completeSomeActionDefinition_sa_desc(emf::EObject ctx, String prefix) :
-	{};
-
-/* proposals for Feature Scenario::tb */
-List[Proposal] completeScenario_tb(emf::EObject ctx, String prefix) :
+/* proposals for Feature Scenario::si */
+List[Proposal] completeScenario_si(emf::EObject ctx, String prefix) :
 	{};
 
 /* proposals for Feature ThenBlock::then_def */
 List[Proposal] completeThenBlock_then_def(emf::EObject ctx, String prefix) :
 	{};
 
-/* proposals for Feature Scenario::gb */
-List[Proposal] completeScenario_gb(emf::EObject ctx, String prefix) :
+/* proposals for Feature ThenDefinition::text */
+List[Proposal] completeThenDefinition_text(emf::EObject ctx, String prefix) :
+	{};
+
+/* proposals for Feature Feature::fi */
+List[Proposal] completeFeature_fi(emf::EObject ctx, String prefix) :
+	{};
+
+/* proposals for Feature GivenDefinition::text */
+List[Proposal] completeGivenDefinition_text(emf::EObject ctx, String prefix) :
+	{};
+
+/* proposals for Feature BusinessValueDescription::text */
+List[Proposal] completeBusinessValueDescription_text(emf::EObject ctx, String prefix) :
+	{};
+
+/* proposals for Feature AndBlock::ai */
+List[Proposal] completeAndBlock_ai(emf::EObject ctx, String prefix) :
+	{};
+
+/* proposals for Feature SomeActionDefinition::sa_desc */
+List[Proposal] completeSomeActionDefinition_sa_desc(emf::EObject ctx, String prefix) :
+	{};
+
+/* proposals for Feature AndDefinition::text */
+List[Proposal] completeAndDefinition_text(emf::EObject ctx, String prefix) :
+	{};
+
+/* proposals for Feature GivenBlock::given_def */
+List[Proposal] completeGivenBlock_given_def(emf::EObject ctx, String prefix) :
+	{};
+
+/* proposals for Feature RoleDescription::text */
+List[Proposal] completeRoleDescription_text(emf::EObject ctx, String prefix) :
+	{};
+
+/* proposals for Feature FeatureDescription::text */
+List[Proposal] completeFeatureDescription_text(emf::EObject ctx, String prefix) :
+	{};
+
+/* proposals for Feature ThenBlock::ab */
+List[Proposal] completeThenBlock_ab(emf::EObject ctx, String prefix) :
+	{};
+
+/* proposals for Feature GivenBlock::ab */
+List[Proposal] completeGivenBlock_ab(emf::EObject ctx, String prefix) :
+	{};
+
+/* proposals for Feature WhenBlock::ab */
+List[Proposal] completeWhenBlock_ab(emf::EObject ctx, String prefix) :
+	{};
+
+/* proposals for Feature Feature::rd */
+List[Proposal] completeFeature_rd(emf::EObject ctx, String prefix) :
 	{};
 
 /* proposals for Feature Scenario::sd */
 List[Proposal] completeScenario_sd(emf::EObject ctx, String prefix) :
+	{};
+
+/* proposals for Feature SomeActionDescription::text */
+List[Proposal] completeSomeActionDescription_text(emf::EObject ctx, String prefix) :
+	{};
+
+/* proposals for Feature RoleDefinition::role_desc */
+List[Proposal] completeRoleDefinition_role_desc(emf::EObject ctx, String prefix) :
+	{};
+
+/* proposals for Feature Scenario::wb */
+List[Proposal] completeScenario_wb(emf::EObject ctx, String prefix) :
+	{};
+
+/* proposals for Feature Feature::fd */
+List[Proposal] completeFeature_fd(emf::EObject ctx, String prefix) :
+	{};
+
+/* proposals for Feature ThenBlock::ti */
+List[Proposal] completeThenBlock_ti(emf::EObject ctx, String prefix) :
+	{};
+
+/* proposals for Feature Scenario::tb */
+List[Proposal] completeScenario_tb(emf::EObject ctx, String prefix) :
+	{};
+
+/* proposals for Feature WhenBlock::when_def */
+List[Proposal] completeWhenBlock_when_def(emf::EObject ctx, String prefix) :
+	{};
+
+/* proposals for Feature Feature::sad */
+List[Proposal] completeFeature_sad(emf::EObject ctx, String prefix) :
+	{};
+
+/* proposals for Feature Feature::bvd */
+List[Proposal] completeFeature_bvd(emf::EObject ctx, String prefix) :
+	{};
+
+/* proposals for Feature Cucumber::f */
+List[Proposal] completeCucumber_f(emf::EObject ctx, String prefix) :
+	{};
+
+/* proposals for Feature WhenBlock::wi */
+List[Proposal] completeWhenBlock_wi(emf::EObject ctx, String prefix) :
+	{};
+
+/* proposals for Feature AndBlock::and_def */
+List[Proposal] completeAndBlock_and_def(emf::EObject ctx, String prefix) :
+	{};
+
+/* proposals for Feature ScenarioDescription::text */
+List[Proposal] completeScenarioDescription_text(emf::EObject ctx, String prefix) :
+	{};
+
+/* proposals for Feature Scenario::gb */
+List[Proposal] completeScenario_gb(emf::EObject ctx, String prefix) :
+	{};
+
+/* proposals for Feature Feature::ss */
+List[Proposal] completeFeature_ss(emf::EObject ctx, String prefix) :
+	{};
+
+/* proposals for Feature WhenDefinition::text */
+List[Proposal] completeWhenDefinition_text(emf::EObject ctx, String prefix) :
 	{};
 
 

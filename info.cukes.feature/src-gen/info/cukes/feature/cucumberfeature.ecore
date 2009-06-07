@@ -4,12 +4,12 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="f" ordered="false" eType="//Feature" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Feature">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ss" ordered="false" upperBound="-1" eType="//Scenario" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rd" ordered="false" eType="//RoleDefinition" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fi" ordered="false" eType="//FeatureIdentifier" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="bvd" ordered="false" eType="//BusinessValueDefinition" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="fd" ordered="false" eType="//FeatureDescription" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="rd" ordered="false" eType="//RoleDefinition" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ss" ordered="false" upperBound="-1" eType="//Scenario" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sad" ordered="false" eType="//SomeActionDefinition" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="fi" ordered="false" eType="//FeatureIdentifier" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FeatureIdentifier"/>
   <eClassifiers xsi:type="ecore:EClass" name="FeatureDescription">
@@ -40,10 +40,10 @@
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SomeActionDefinition">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="sa_desc" ordered="false" eType="//SomeActionDescription" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sa" ordered="false" unique="false">
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sa_desc" ordered="false" eType="//SomeActionDescription" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SomeActionDescription">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" ordered="false" unique="false" upperBound="-1">
@@ -51,11 +51,11 @@
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Scenario">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tb" ordered="false" eType="//ThenBlock" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="gb" ordered="false" eType="//GivenBlock" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="wb" ordered="false" eType="//WhenBlock" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="si" ordered="false" eType="//ScenarioIdentifier" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="tb" ordered="false" eType="//ThenBlock" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sd" ordered="false" eType="//ScenarioDescription" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="gb" ordered="false" eType="//GivenBlock" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ScenarioIdentifier"/>
   <eClassifiers xsi:type="ecore:EClass" name="ScenarioDescription">
@@ -64,20 +64,20 @@
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GivenBlock">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ab" ordered="false" upperBound="-1" eType="//AndBlock" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="gi" ordered="false" eType="//GivenIdentifier" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="given_def" ordered="false" eType="//GivenDefinition" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ab" ordered="false" upperBound="-1" eType="//AndBlock" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GivenIdentifier"/>
   <eClassifiers xsi:type="ecore:EClass" name="WhenBlock">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ab" ordered="false" upperBound="-1" eType="//AndBlock" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="when_def" ordered="false" eType="//WhenDefinition" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="wi" ordered="false" eType="//WhenIdentifier" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ab" ordered="false" upperBound="-1" eType="//AndBlock" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="WhenIdentifier"/>
   <eClassifiers xsi:type="ecore:EClass" name="ThenBlock">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ti" ordered="false" eType="//ThenIdentifier" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ab" ordered="false" upperBound="-1" eType="//AndBlock" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ti" ordered="false" eType="//ThenIdentifier" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="then_def" ordered="false" eType="//ThenDefinition" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ThenIdentifier"/>

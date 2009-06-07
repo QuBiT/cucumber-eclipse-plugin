@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: CucumberFeature Plug-in
 Bundle-SymbolicName: info.cukes.feature;singleton:=true
-Bundle-Version: 1.0.0
+Bundle-Version: 1.0.1
 Require-Bundle: org.openarchitectureware.dependencies;visibility:=reexport,
  org.antlr;visibility:=reexport,
  org.openarchitectureware.xtext.core.base;visibility:=reexport,
@@ -10,4 +10,5 @@ Require-Bundle: org.openarchitectureware.dependencies;visibility:=reexport,
 Eclipse-LazyStart: true
 Export-Package: info.cukes.feature,
                 info.cukes.feature.parser
+Bundle-Vendor: Roland Guem
 

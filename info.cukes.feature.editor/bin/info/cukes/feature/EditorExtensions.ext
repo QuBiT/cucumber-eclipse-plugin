@@ -15,7 +15,7 @@ label(BusinessValueDefinition this)	:	"In order to "+bv_desc.text;
 label(RoleDefinition this)	:	"As a "+role_desc.text;
 label(SomeActionDefinition this)	:	"I want to "+sa_desc.text;
 
-image(Scenario this)	:	"file.gif";
+image(Scenario this)	:	"scenario.png";
 label(Scenario this)	:	"Scenario: "+sd.text;
 
 label(FeatureIdentifier this)	:	null;
@@ -40,7 +40,7 @@ label(AndBlock this)		:	"And "+and_def.text;
 label(AndIdentifier this)	:	null;
 label(AndDefinition this)	:	null; //this.text;
 
-image(Feature this)			:	"template.gif";
+image(Feature this)			:	"cucumber.png";
 image(FeatureDescription this)	:	"build_var_obj.gif";
 
 image(BusinessValueDefinition this)		:	"progress_ok.gif";

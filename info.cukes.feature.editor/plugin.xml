@@ -8,7 +8,7 @@
             class="info.cukes.feature.editor.CucumberFeatureEditor"
             contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
             extensions="feature"
-            icon="icons/file.gif"
+            icon="icons/cucumber.png"
             id="info.cukes.feature.editor.CucumberFeatureEditor"
             name="CucumberFeature Editor">
       </editor>
@@ -20,7 +20,7 @@
 		<wizard
 			category="org.openarchitectureware.xtext.wizards"
 			class="info.cukes.feature.wizards.NewCucumberFeatureProjectWizard"
-			icon="icons/template.gif"
+			icon="icons/scenario.png"
 			id="info.cukes.feature.wizards.NewCucumberFeatureProjectWizard"
 			name="CucumberFeature Project"
 			project="true">
@@ -29,7 +29,7 @@
 		<wizard
 			category="org.openarchitectureware.xtext.wizards"
 			class="info.cukes.feature.wizards.NewCucumberFeatureFileWizard"
-			icon="icons/file.gif"
+			icon="icons/cucumber.png"
 			id="info.cukes.feature.wizards.NewCucumberFeatureFileWizard"
 			name="CucumberFeature Editor file">
 		</wizard>
