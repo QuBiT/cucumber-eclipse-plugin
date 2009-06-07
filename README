@@ -1,5 +1,11 @@
-Development in Progress
+Developed with Xtext from Open Architecture Ware (OAW).
 
-Using Xtext for development.
+As Xtext seems not to be the perfect solution for this special case, it is more like a case study then a working plugin.
 
-Stay tuned!
+It is recommended to use the netbeans module/plugin with netbeans.
+
+If anyone is interested to improve and deploy this plugin, feel free to contact me.
+
+Currently I search for a more suitable solution then Xtext to create an eclipse plugin.
+
+Cheers, QuBiT
